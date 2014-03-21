@@ -28,7 +28,7 @@ touch ./statistics/aggrBettingByUser.html
 touch ./statistics/aggrMoneyByTerm.html
 touch ./statistics/aggrMoneyByUser.html
 touch ./statistics/moneyByTerm.html
-touch ./statistics/statement .html
+touch ./statistics/statement.html
 touch ./community/boards.html
 touch ./community/boardNotice.html
 touch ./community/events.html
@@ -71,7 +71,7 @@ touch ./statistics/aggrBettingByUser.js
 touch ./statistics/aggrMoneyByTerm.js
 touch ./statistics/aggrMoneyByUser.js
 touch ./statistics/moneyByTerm.js
-touch ./statistics/statement .js
+touch ./statistics/statement.js
 touch ./community/boards.js
 touch ./community/boardNotice.js
 touch ./community/events.js
