@@ -70,12 +70,6 @@ if (Meteor.isClient) {
          * Fire tooltips
          */
 
-        if ($("[rel=tooltip]").length) {
-            $("[rel=tooltip]").tooltip();
-        }
-
-        //TODO: was moved from window.load due to IE not firing consist
-        nav_page_height()
 
         // COLLAPSE LEFT NAV
 
@@ -168,7 +162,7 @@ if (Meteor.isClient) {
          * LOGOUT ACTION
          */
 
-        function logout() {
+        window.logout = function() {
             window.location = $.loginURL;
         }
 
@@ -195,7 +189,7 @@ if (Meteor.isClient) {
         });
 
         // SHORTCUT ANIMATE HIDE
-        function shortcut_buttons_hide() {
+        window.shortcut_buttons_hide = function() {
             $('#shortcut').animate({
                 height : "hide"
             }, 300, "easeOutCirc");
@@ -204,7 +198,7 @@ if (Meteor.isClient) {
         }
 
         // SHORTCUT ANIMATE SHOW
-        function shortcut_buttons_show() {
+        window.shortcut_buttons_show = function() {
             $('#shortcut').animate({
                 height : "show"
             }, 200, "easeOutCirc")
@@ -304,7 +298,7 @@ if (Meteor.isClient) {
      */
 
 // Fix page and nav height
-    function nav_page_height() {
+    window.nav_page_height = function() {
 
         //alert('nav_page_height');
 
@@ -330,7 +324,7 @@ if (Meteor.isClient) {
     })
 
 
-    function check_if_mobile_width() {
+    window.check_if_mobile_width = function() {
         if ($(window).width() < 979) {
             $('body').addClass('mobile-view-activated')
         } else if ($('body').hasClass('mobile-view-activated')) {
@@ -482,7 +476,7 @@ if (Meteor.isClient) {
      */
 
 // Find the right method, call on correct element
-    function launchFullscreen(element) {
+    window.launchFullscreen = function(element) {
 
         if (!$('body').hasClass("full-screen")) {
 
@@ -1232,6 +1226,9 @@ if (Meteor.isClient) {
 
 // UPDATE BREADCRUMB
     function drawBreadCrumb() {
+
+        console.log(drawBreadCrumb);
+
         var nav_elems = $('nav li.active > a'), count = nav_elems.length;
 
         //console.log("breadcrumb")
@@ -1340,6 +1337,14 @@ Template.adminLeftPanel.rendered = function(){
         $(this).effect("highlight", {}, 500);
         e.preventDefault();
     });
+
+
+    if ($("[rel=tooltip]").length) {
+        $("[rel=tooltip]").tooltip();
+    }
+
+    //TODO: was moved from window.load due to IE not firing consist
+    nav_page_height();
 
 };
 
