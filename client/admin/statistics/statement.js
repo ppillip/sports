@@ -1,3 +1,12 @@
-/**
- * Created by ppillip on 2014. 3. 22..
- */
+
+Template.statement.events({
+
+});
+
+Template.statement.rendered = function(){
+
+};
+
+Template.statement.helpers({
+
+})
