@@ -47,4 +47,6 @@ Template.adminHeader.events({
             btn.button('reset');
         }, 3000)
     }
+
+
 })
