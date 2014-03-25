@@ -802,8 +802,8 @@ Template.adminLeftPanel.events({
     ,
     'click .minifyme' : function(e) {
         $('body').toggleClass("minified");
-        $(this).effect("highlight", {}, 500);
-        e.target.preventDefault();
+        $(e.target).effect("highlight", {}, 500);
+        e.preventDefault();
     }
     ,
     'click nav>ul>li' : function(e){
