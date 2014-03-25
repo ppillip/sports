@@ -782,6 +782,11 @@ Template.adminLeftPanel.rendered = function(){
     //TODO: was moved from window.load due to IE not firing consist
     nav_page_height();
 
+    /* 현재 Template 에 맞게 메뉴를 열기 */
+    currentTemplate = $("a[href^='/"+Router.current().template+"']");
+    currentTemplate && currentTemplate.closest('li').addClass('active')
+      .closest('ul').attr('style', 'display: block')
+      .closest('li').addClass('open');
 };
 
 Template.adminLeftPanel.events({
