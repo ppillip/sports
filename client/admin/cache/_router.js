@@ -1,98 +1,98 @@
 Router.map(function () {
 /*머니내역 > 충전내역*/
-this.route('charge', {
-    path: '/charge'
-    ,template:'charge'
+this.route('moneyDeposit', {
+    path: '/moneyDeposit'
+    ,template:'moneyDeposit'
     ,waitOn: function () {
         return [  ];
     }
     ,data: function() {
         return {
-            test     : 'charge'
+            test     : 'moneyDeposit'
         }
     }
 });
 
 /*머니내역 > 환전내역*/
-this.route('change', {
-    path: '/change'
-    ,template:'change'
+this.route('moneyWithdraw', {
+    path: '/moneyWithdraw'
+    ,template:'moneyWithdraw'
     ,waitOn: function () {
         return [  ];
     }
     ,data: function() {
         return {
-            test     : 'change'
+            test     : 'moneyWithdraw'
         }
     }
 });
 
 /*머니내역 > 배당내역*/
-this.route('dividend', {
-    path: '/dividend'
-    ,template:'dividend'
+this.route('moneyDividend', {
+    path: '/moneyDividend'
+    ,template:'moneyDividend'
     ,waitOn: function () {
         return [  ];
     }
     ,data: function() {
         return {
-            test     : 'dividend'
+            test     : 'moneyDividend'
         }
     }
 });
 
-/*머니내역 > 구매내역*/
-this.route('purchase', {
-    path: '/purchase'
-    ,template:'purchase'
+/*머니내역 > 베팅내역*/
+this.route('moneyPurchase', {
+    path: '/moneyPurchase'
+    ,template:'moneyPurchase'
     ,waitOn: function () {
         return [  ];
     }
     ,data: function() {
         return {
-            test     : 'purchase'
+            test     : 'moneyPurchase'
         }
     }
 });
 
 /*머니내역 > 지급내역*/
-this.route('payment', {
-    path: '/payment'
-    ,template:'payment'
+this.route('moneyPayment', {
+    path: '/moneyPayment'
+    ,template:'moneyPayment'
     ,waitOn: function () {
         return [  ];
     }
     ,data: function() {
         return {
-            test     : 'payment'
+            test     : 'moneyPayment'
         }
     }
 });
 
 /*머니내역 > 회수내역*/
-this.route('payback', {
-    path: '/payback'
-    ,template:'payback'
+this.route('moneyPayback', {
+    path: '/moneyPayback'
+    ,template:'moneyPayback'
     ,waitOn: function () {
         return [  ];
     }
     ,data: function() {
         return {
-            test     : 'payback'
+            test     : 'moneyPayback'
         }
     }
 });
 
 /*머니내역 > 관리자포인트*/
-this.route('adminPoint', {
-    path: '/adminPoint'
-    ,template:'adminPoint'
+this.route('moneyAdminPoint', {
+    path: '/moneyAdminPoint'
+    ,template:'moneyAdminPoint'
     ,waitOn: function () {
         return [  ];
     }
     ,data: function() {
         return {
-            test     : 'adminPoint'
+            test     : 'moneyAdminPoint'
         }
     }
 });

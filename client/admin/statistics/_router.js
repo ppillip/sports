@@ -1,98 +1,98 @@
 Router.map(function () {
-/*통계내역 > 통계*/
-this.route('statistics', {
-    path: '/statistics'
-    ,template:'statistics'
+/*통계관리 > 통계정보*/
+this.route('statisticsInfo', {
+    path: '/statisticsInfo'
+    ,template:'statisticsInfo'
     ,waitOn: function () {
         return [  ];
     }
     ,data: function() {
         return {
-            test     : 'statistics'
+            test     : 'statisticsInfo'
         }
     }
 });
 
-/*통계내역 > 기간별배팅집계*/
-this.route('aggrBettingByTerm', {
-    path: '/aggrBettingByTerm'
-    ,template:'aggrBettingByTerm'
+/*통계관리 > 기간별베팅집계*/
+this.route('statisticsAggrBettingByTerm', {
+    path: '/statisticsAggrBettingByTerm'
+    ,template:'statisticsAggrBettingByTerm'
     ,waitOn: function () {
         return [  ];
     }
     ,data: function() {
         return {
-            test     : 'aggrBettingByTerm'
+            test     : 'statisticsAggrBettingByTerm'
         }
     }
 });
 
-/*통계내역 > 회원별배팅집계*/
-this.route('aggrBettingByUser', {
-    path: '/aggrBettingByUser'
-    ,template:'aggrBettingByUser'
+/*통계관리 > 회원별베팅집계*/
+this.route('statisticsAggrBettingByUser', {
+    path: '/statisticsAggrBettingByUser'
+    ,template:'statisticsAggrBettingByUser'
     ,waitOn: function () {
         return [  ];
     }
     ,data: function() {
         return {
-            test     : 'aggrBettingByUser'
+            test     : 'statisticsAggrBettingByUser'
         }
     }
 });
 
-/*통계내역 > 기간별입출금집계*/
-this.route('aggrMoneyByTerm', {
-    path: '/aggrMoneyByTerm'
-    ,template:'aggrMoneyByTerm'
+/*통계관리 > 기간별입출금집계*/
+this.route('statisticsAggrMoneyByTerm', {
+    path: '/statisticsAggrMoneyByTerm'
+    ,template:'statisticsAggrMoneyByTerm'
     ,waitOn: function () {
         return [  ];
     }
     ,data: function() {
         return {
-            test     : 'aggrMoneyByTerm'
+            test     : 'statisticsAggrMoneyByTerm'
         }
     }
 });
 
-/*통계내역 > 회원별입출금집계*/
-this.route('aggrMoneyByUser', {
-    path: '/aggrMoneyByUser'
-    ,template:'aggrMoneyByUser'
+/*통계관리 > 회원별입출금집계*/
+this.route('statisticsAggrMoneyByUser', {
+    path: '/statisticsAggrMoneyByUser'
+    ,template:'statisticsAggrMoneyByUser'
     ,waitOn: function () {
         return [  ];
     }
     ,data: function() {
         return {
-            test     : 'aggrMoneyByUser'
+            test     : 'statisticsAggrMoneyByUser'
         }
     }
 });
 
-/*통계내역 > 기간별금액*/
-this.route('moneyByTerm', {
-    path: '/moneyByTerm'
-    ,template:'moneyByTerm'
+/*통계관리 > 기간별금액*/
+this.route('statisticsMoneyByTerm', {
+    path: '/statisticsMoneyByTerm'
+    ,template:'statisticsMoneyByTerm'
     ,waitOn: function () {
         return [  ];
     }
     ,data: function() {
         return {
-            test     : 'moneyByTerm'
+            test     : 'statisticsMoneyByTerm'
         }
     }
 });
 
-/*통계내역 > 정산내역*/
-this.route('statement', {
-    path: '/statement'
-    ,template:'statement'
+/*통계관리 > 정산내역*/
+this.route('statisticsSettle', {
+    path: '/statisticsSettle'
+    ,template:'statisticsSettle'
     ,waitOn: function () {
         return [  ];
     }
     ,data: function() {
         return {
-            test     : 'statement'
+            test     : 'statisticsSettle'
         }
     }
 });
