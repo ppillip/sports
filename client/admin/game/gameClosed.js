@@ -1,12 +1,12 @@
 
-Template.gameClosed.events({
+Template.gameFinished.events({
 
 });
 
-Template.gameClosed.rendered = function(){
+Template.gameFinished.rendered = function(){
 
 };
 
-Template.gameClosed.helpers({
+Template.gameFinished.helpers({
 
 })

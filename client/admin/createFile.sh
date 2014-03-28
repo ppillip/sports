@@ -2,7 +2,7 @@
 touch ./game/dashBoard.html
 touch ./game/gameInfo.html
 touch ./game/gameStatus.html
-touch ./game/gameClosed.html
+touch ./game/gameFinished.html
 touch ./game/gameCate.html
 touch ./game/bounsConfig.html
 touch ./cache/charge.html
@@ -45,7 +45,7 @@ touch ./etc/adminIp.html
 touch ./game/dashBoard.js
 touch ./game/gameInfo.js
 touch ./game/gameStatus.js
-touch ./game/gameClosed.js
+touch ./game/gameFinished.js
 touch ./game/gameCate.js
 touch ./game/bounsConfig.js
 touch ./cache/charge.js

@@ -28,16 +28,16 @@ this.route('gameStatus', {
     }
 });
 
-/*게임관리 > 마감게임정보*/
-this.route('gameClosed', {
-    path: '/gameClosed'
-    ,template:'gameClosed'
+/*게임관리 > 종료게임정보*/
+this.route('gameFinished', {
+    path: '/gameFinished'
+    ,template:'gameFinished'
     ,waitOn: function () {
         return [  ];
     }
     ,data: function() {
         return {
-            test     : 'gameClosed'
+            test     : 'gameFinished'
         }
     }
 });
