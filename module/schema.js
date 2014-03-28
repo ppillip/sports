@@ -13,7 +13,7 @@ sportsSchema =
 
 schema = [
     {
-        name : 'agency'
+        name : 'schema_agency'
         ,definition : {
         "name" : "총판"
         ,"desc" : "매장을 소유하고 있음. (매장에 총판 키가 있음.)"
@@ -34,7 +34,7 @@ schema = [
         ]
     }}
     ,{
-        name : 'branch'
+        name : 'schema_branch'
         ,definition : {
             "name" : "매장"
             ,"desc" : "총판에서 소유한 매장"
@@ -50,15 +50,11 @@ schema = [
                 ,{ "key"   : {"name" : "branch_bank_account"    } , "value" : {"type" : "string" , "default":'' , "desc" : "매장 계좌번호" }}
                 ,{ "key"   : {"name" : "branch_bank_name"       } , "value" : {"type" : "string" , "default":'' , "desc" : "매장 계좌은행명" }}
                 ,{ "key"   : {"name" : "branch_bank_owner_name" } , "value" : {"type" : "string" , "default":'' , "desc" : "매장 계좌주명" }}
-                ,{
-                    "key"   : {"name" : "tmp"}
-                    ,"value" : {"type" : "array" , "default":[] , ref:"tmp2", "desc" : "tmp" }
-                }
-
+                ,{ "key"   : {"name" : "agency_id"              } , "value" : {"type" : "string" , "default":'' , "desc" : "소속된 총판 id" }} //_id값을 써야 하겠지?
             ]
         }}
     ,{
-        name : 'user'
+        name : 'schema_user'
         ,definition : {
             "name" : "사용자"
             ,"desc" : "일반 사용자"
@@ -83,10 +79,10 @@ schema = [
             ]
         }}
     ,{
-        name : 'user_money_log'
+        name : 'schema_user_money_log'
         ,definition : {
             "name" : "user_money_log"
-            ,"desc" : "사용자 입출금 로그"
+            ,"desc" : "사용자 머니 입출금 로그"
             ,"properties" : [
                  { "key"   : {"name" : "user_money_user_id"         } , "value" : {"type" : "string" , "default":'' , "desc" : "로그 사용자 ID" }}
                 ,{ "key"   : {"name" : "user_money_status"          } , "value" : {"type" : "string" , "default":'' , "desc" : "user 테이블의 user_money 필드에 입/출금을 할 시 다음의 각 영문명으로 거래 상태 표시 : deposit(입금) / withdraw(출금) / admin_deposit(관리자 강제입금) / admin_withdraw(관리자 강제출금)" }}
@@ -99,10 +95,10 @@ schema = [
             ]
         }}
     ,{
-        name : 'user_point_log'
+        name : 'schema_user_point_log'
         ,definition : {
             "name" : "user_point_log"
-            ,"desc" : "사용자 입출금 로그"
+            ,"desc" : "사용자 포인트 입출금 로그"
             ,"properties" : [
                  { "key"   : {"name" : "user_point_user_id"         } ,"value" : {"type" : "string" , "default":'' , "desc" : "로그 사용자 ID" }}
                 ,{ "key"   : {"name" : "user_point_status"          } ,"value" : {"type" : "string" , "default":'' , "desc" : "user 테이블의 user_point 필드에 입/출금을 할 시 다음의 각 영문명으로 거래 상태 표시 : deposit(입금) / withdraw(출금) / admin_deposit(관리자 강제입금) / admin_withdraw(관리자 강제출금)" }}
@@ -115,31 +111,7 @@ schema = [
             ]
         }}
     ,{
-        name : 'user_point_log'
-        ,definition : {
-            "name" : "user_point_log"
-            ,"desc" : "사용자 포인트 입출금 로그"
-            ,"properties" : [
-                 { "key"   : {"name" : "tmp_id"},"value" : {"type" : "string" , "default":'' , "desc" : "tmp description" }}
-                ,{ "key"   : {"name" : "tmp_id"},"value" : {"type" : "string" , "default":'' , "desc" : "description" }}
-                ,{ "key"   : {"name" : "tmp_id"},"value" : {"type" : "string" , "default":'' , "desc" : "description" }}
-                ,{ "key"   : {"name" : "tmp_id"},"value" : {"type" : "string" , "default":'' , "desc" : "description" }}
-                ,{ "key"   : {"name" : "tmp_id"},"value" : {"type" : "string" , "default":'' , "desc" : "description" }}
-                ,{ "key"   : {"name" : "tmp_id"},"value" : {"type" : "string" , "default":'' , "desc" : "description" }}
-                ,{ "key"   : {"name" : "tmp_id"},"value" : {"type" : "string" , "default":'' , "desc" : "description" }}
-                ,{ "key"   : {"name" : "tmp_id"},"value" : {"type" : "string" , "default":'' , "desc" : "description" }}
-                ,{ "key"   : {"name" : "tmp_id"},"value" : {"type" : "string" , "default":'' , "desc" : "description" }}
-                ,{ "key"   : {"name" : "tmp_id"},"value" : {"type" : "string" , "default":'' , "desc" : "description" }}
-                ,{ "key"   : {"name" : "tmp_id"},"value" : {"type" : "string" , "default":'' , "desc" : "description" }}
-                ,{
-                    "key"   : {"name" : "tmp"}
-                    ,"value" : {"type" : "array" , "default":[] , ref:"tmp2", "desc" : "tmp" }
-                }
-
-            ]
-        }}
-    ,{
-        name : 'money_status'
+        name : 'schema_money_status'
         ,definition : {
             "name" : "유저"
             ,"desc" : "총판"
@@ -151,103 +123,125 @@ schema = [
             ]
         }}
     ,{
-        name : 'schemaTmp'
+        name : 'schema_game_category_event'
         ,definition : {
-            "name" : "agency"
-            ,"desc" : "총판"
+            "name" : "게임 카테고리 대분류"
+            ,"desc" : "종목명 (축구/농구)"
             ,"properties" : [
-                { "key"   : {"name" : "tmp_id"},"value" : {"type" : "string" , "default":'' , "desc" : "tmp description" }}
+                 { "key"   : {"name" : "image"          },"value" : {"type" : "object" , "default":null , "desc" : "종목 이미지 (공모양 / 깃발 등)" }}
+                ,{ "key"   : {"name" : "name"           },"value" : {"type" : "string" , "default":'' , "desc" : "종목명" }}
                 ,{
                     "key"   : {"name" : "tmp"}
                     ,"value" : {"type" : "array" , "default":[] , ref:"tmp2", "desc" : "tmp" }
                 }
-
             ]
         }}
     ,{
-        name : 'schemaTmp'
+        name : 'schema_game_category_league'
         ,definition : {
-            "name" : "agency"
-            ,"desc" : "총판"
+            "name" : "게임 카테고리 중분류"
+            ,"desc" : "리그명 (MLB / NBA)"
             ,"properties" : [
-                { "key"   : {"name" : "tmp_id"},"value" : {"type" : "string" , "default":'' , "desc" : "tmp description" }}
+                 { "key"   : {"name" : "image"          },"value" : {"type" : "object" , "default":null , "desc" : "리그 이미지 (공모양 / 깃발 등)" }}
+                ,{ "key"   : {"name" : "name"           },"value" : {"type" : "string" , "default":'' , "desc" : "리그명" }}
                 ,{
                     "key"   : {"name" : "tmp"}
                     ,"value" : {"type" : "array" , "default":[] , ref:"tmp2", "desc" : "tmp" }
                 }
-
             ]
-        }}
+        }
+    }
     ,{
-        name : 'schemaTmp'
+        name : 'schema_'
         ,definition : {
-            "name" : "agency"
-            ,"desc" : "총판"
+            "name" : ""
+            ,"desc" : ""
             ,"properties" : [
-                { "key"   : {"name" : "tmp_id"},"value" : {"type" : "string" , "default":'' , "desc" : "tmp description" }}
+                 { "key"   : {"name" : "name"           },"value" : {"type" : "string" , "default":'' , "desc" : "" }}
+                ,{ "key"   : {"name" : "field"           },"value" : {"type" : "string" , "default":'' , "desc" : "" }}
                 ,{
                     "key"   : {"name" : "tmp"}
                     ,"value" : {"type" : "array" , "default":[] , ref:"tmp2", "desc" : "tmp" }
                 }
-
             ]
-        }}
+        }
+    }
     ,{
-        name : 'schemaTmp'
+        name : 'schema_'
         ,definition : {
-            "name" : "agency"
-            ,"desc" : "총판"
+            "name" : ""
+            ,"desc" : ""
             ,"properties" : [
-                { "key"   : {"name" : "tmp_id"},"value" : {"type" : "string" , "default":'' , "desc" : "tmp description" }}
+                { "key"   : {"name" : "name"           },"value" : {"type" : "string" , "default":'' , "desc" : "" }}
+                ,{ "key"   : {"name" : "field"           },"value" : {"type" : "string" , "default":'' , "desc" : "" }}
                 ,{
                     "key"   : {"name" : "tmp"}
                     ,"value" : {"type" : "array" , "default":[] , ref:"tmp2", "desc" : "tmp" }
                 }
-
             ]
-        }}
+        }
+    }
     ,{
-        name : 'schemaTmp'
+        name : 'schema_'
         ,definition : {
-            "name" : "agency"
-            ,"desc" : "총판"
+            "name" : ""
+            ,"desc" : ""
             ,"properties" : [
-                { "key"   : {"name" : "tmp_id"},"value" : {"type" : "string" , "default":'' , "desc" : "tmp description" }}
+                { "key"   : {"name" : "name"           },"value" : {"type" : "string" , "default":'' , "desc" : "" }}
+                ,{ "key"   : {"name" : "field"           },"value" : {"type" : "string" , "default":'' , "desc" : "" }}
                 ,{
                     "key"   : {"name" : "tmp"}
                     ,"value" : {"type" : "array" , "default":[] , ref:"tmp2", "desc" : "tmp" }
                 }
-
             ]
-        }}
+        }
+    }
     ,{
-        name : 'schemaTmp'
+        name : 'schema_'
         ,definition : {
-            "name" : "agency"
-            ,"desc" : "총판"
+            "name" : ""
+            ,"desc" : ""
             ,"properties" : [
-                { "key"   : {"name" : "tmp_id"},"value" : {"type" : "string" , "default":'' , "desc" : "tmp description" }}
+                { "key"   : {"name" : "name"           },"value" : {"type" : "string" , "default":'' , "desc" : "" }}
+                ,{ "key"   : {"name" : "field"           },"value" : {"type" : "string" , "default":'' , "desc" : "" }}
                 ,{
                     "key"   : {"name" : "tmp"}
                     ,"value" : {"type" : "array" , "default":[] , ref:"tmp2", "desc" : "tmp" }
                 }
-
             ]
-        }}
+        }
+    }
     ,{
-        name : 'schemaTmp'
+        name : 'schema_'
         ,definition : {
-            "name" : "agency"
-            ,"desc" : "총판"
+            "name" : ""
+            ,"desc" : ""
             ,"properties" : [
-                { "key"   : {"name" : "tmp_id"},"value" : {"type" : "string" , "default":'' , "desc" : "tmp description" }}
+                { "key"   : {"name" : "name"           },"value" : {"type" : "string" , "default":'' , "desc" : "" }}
+                ,{ "key"   : {"name" : "field"           },"value" : {"type" : "string" , "default":'' , "desc" : "" }}
                 ,{
                     "key"   : {"name" : "tmp"}
                     ,"value" : {"type" : "array" , "default":[] , ref:"tmp2", "desc" : "tmp" }
                 }
-
             ]
-        }}
+        }
+    }
+    ,{
+        name : 'schema_'
+        ,definition : {
+            "name" : ""
+            ,"desc" : ""
+            ,"properties" : [
+                { "key"   : {"name" : "name"           },"value" : {"type" : "string" , "default":'' , "desc" : "" }}
+                ,{ "key"   : {"name" : "field"           },"value" : {"type" : "string" , "default":'' , "desc" : "" }}
+                ,{
+                    "key"   : {"name" : "tmp"}
+                    ,"value" : {"type" : "array" , "default":[] , ref:"tmp2", "desc" : "tmp" }
+                }
+            ]
+        }
+    }
+
 ];
 
 //schema = [
