@@ -14,7 +14,7 @@ this.route('gameInfo', {
     }
 });
 
-/*게임관리 > 게임진행정보*/
+/*게임관리 > 진행게임정보*/
 this.route('gameStatus', {
     path: '/gameStatus'
     ,template:'gameStatus'
@@ -28,44 +28,44 @@ this.route('gameStatus', {
     }
 });
 
-/*게임관리 > 마감게임정보*/
-this.route('gameClosed', {
-    path: '/gameClosed'
-    ,template:'gameClosed'
+/*게임관리 > 종료게임정보*/
+this.route('gameFinished', {
+    path: '/gameFinished'
+    ,template:'gameFinished'
     ,waitOn: function () {
         return [  ];
     }
     ,data: function() {
         return {
-            test     : 'gameClosed'
+            test     : 'gameFinished'
         }
     }
 });
 
 /*게임관리 > 게임분류정보*/
-this.route('gameCate', {
-    path: '/gameCate'
-    ,template:'gameCate'
+this.route('gameCategoryInfo', {
+    path: '/gameCategoryInfo'
+    ,template:'gameCategoryInfo'
     ,waitOn: function () {
         return [  ];
     }
     ,data: function() {
         return {
-            test     : 'gameCate'
+            test     : 'gameCategoryInfo'
         }
     }
 });
 
-/*게임관리 > 보너스배당설정*/
-this.route('bounsConfig', {
-    path: '/bounsConfig'
-    ,template:'bounsConfig'
+/*게임관리 > 보너스배당*/
+this.route('gameBonusConfig', {
+    path: '/gameBonusConfig'
+    ,template:'gameBonusConfig'
     ,waitOn: function () {
         return [  ];
     }
     ,data: function() {
         return {
-            test     : 'bounsConfig'
+            test     : 'gameBonusConfig'
         }
     }
 });

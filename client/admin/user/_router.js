@@ -13,128 +13,128 @@ Router.map(function () {
         }
     });
 
-    /*회원관리 > 배팅회원*/
-    this.route('bettingUser', {
-        path: '/bettingUser'
-        ,template:'bettingUser'
+    /*회원관리 > 베팅회원*/
+    this.route('userBettingUser', {
+        path: '/userBettingUser'
+        ,template:'userBettingUser'
         ,waitOn: function () {
             return [  ];
         }
         ,data: function() {
             return {
-                test     : 'bettingUser'
+                test     : 'userBettingUser'
             }
         }
     });
 
     /*회원관리 > 블랙리스트*/
-    this.route('blackList', {
-        path: '/blackList'
-        ,template:'blackList'
+    this.route('userBlackList', {
+        path: '/userBlackList'
+        ,template:'userBlackList'
         ,waitOn: function () {
             return [  ];
         }
         ,data: function() {
             return {
-                test     : 'blackList'
+                test     : 'userBlackList'
             }
         }
     });
 
-    /*회원관리 > 유저배팅현황*/
-    this.route('userBattingStatus', {
-        path: '/userBattingStatus'
-        ,template:'userBattingStatus'
+    /*회원관리 > 유저베팅현황*/
+    this.route('gameUserBettingStatus', {
+        path: '/gameUserBettingStatus'
+        ,template:'gameUserBettingStatus'
         ,waitOn: function () {
             return [  ];
         }
         ,data: function() {
             return {
-                test     : 'userBattingStatus'
+                test     : 'gameUserBettingStatus'
             }
         }
     });
 
-    /*회원관리 > 본사회원배팅현황*/
-    this.route('HQUserBattingStatus', {
-        path: '/HQUserBattingStatus'
-        ,template:'HQUserBattingStatus'
+    /*회원관리 > 본사회원베팅현황*/
+    this.route('gameHQUserBettingStatus', {
+        path: '/gameHQUserBettingStatus'
+        ,template:'gameHQUserBettingStatus'
         ,waitOn: function () {
             return [  ];
         }
         ,data: function() {
             return {
-                test     : 'HQUserBattingStatus'
+                test     : 'gameHQUserBettingStatus'
             }
         }
     });
 
     /*회원관리 > 본사회원*/
-    this.route('HQUser', {
-        path: '/HQUser'
-        ,template:'HQUser'
+    this.route('userHQUser', {
+        path: '/userHQUser'
+        ,template:'userHQUser'
         ,waitOn: function () {
             return [  ];
         }
         ,data: function() {
             return {
-                test     : 'HQUser'
+                test     : 'userHQUser'
             }
         }
     });
 
-    /*회원관리 > 총판*/
-    this.route('agency', {
-        path: '/agency'
-        ,template:'agency'
+    /*회원관리 > 총판회원*/
+    this.route('userAgency', {
+        path: '/userAgency'
+        ,template:'userAgency'
         ,waitOn: function () {
             return [  ];
         }
         ,data: function() {
             return {
-                test     : 'agency'
+                test     : 'userAgency'
             }
         }
     });
 
-    /*회원관리 > 매장*/
-    this.route('branch', {
-        path: '/branch'
-        ,template:'branch'
+    /*회원관리 > 매장회원*/
+    this.route('userBranch', {
+        path: '/userBranch'
+        ,template:'userBranch'
         ,waitOn: function () {
             return [  ];
         }
         ,data: function() {
             return {
-                test     : 'branch'
+                test     : 'userBranch'
             }
         }
     });
 
     /*회원관리 > 탈퇴회원*/
-    this.route('withdrawal', {
-        path: '/withdrawal'
-        ,template:'withdrawal'
+    this.route('userLeft', {
+        path: '/userLeft'
+        ,template:'userLeft'
         ,waitOn: function () {
             return [  ];
         }
         ,data: function() {
             return {
-                test     : 'withdrawal'
+                test     : 'userLeft'
             }
         }
     });
 
     /*회원관리 > 가입승인*/
-    this.route('underLine', {
-        path: '/underLine'
-        ,template:'underLine'
+    this.route('userJoinApprove', {
+        path: '/userJoinApprove'
+        ,template:'userJoinApprove'
         ,waitOn: function () {
             return [  ];
         }
         ,data: function() {
             return {
-                test     : 'underLine'
+                test     : 'userJoinApprove'
             }
         }
     });

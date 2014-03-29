@@ -9,4 +9,4 @@ Template.gameInfo.rendered = function(){
 
 Template.gameInfo.helpers({
 
-})
+});

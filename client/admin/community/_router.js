@@ -1,98 +1,98 @@
 Router.map(function () {
 /*커뮤니티 > 게시판*/
-this.route('boards', {
-    path: '/boards'
-    ,template:'boards'
+this.route('communityBoards', {
+    path: '/communityBoards'
+    ,template:'communityBoards'
     ,waitOn: function () {
         return [  ];
     }
     ,data: function() {
         return {
-            test     : 'boards'
+            test     : 'communityBoards'
         }
     }
 });
 
 /*커뮤니티 > 게시판공지*/
-this.route('boardNotice', {
-    path: '/boardNotice'
-    ,template:'boardNotice'
+this.route('communityBoardNotice', {
+    path: '/communityBoardNotice'
+    ,template:'communityBoardNotice'
     ,waitOn: function () {
         return [  ];
     }
     ,data: function() {
         return {
-            test     : 'boardNotice'
+            test     : 'communityBoardNotice'
         }
     }
 });
 
 /*커뮤니티 > 이벤트*/
-this.route('events', {
-    path: '/events'
-    ,template:'events'
+this.route('communityEvents', {
+    path: '/communityEvents'
+    ,template:'communityEvents'
     ,waitOn: function () {
         return [  ];
     }
     ,data: function() {
         return {
-            test     : 'events'
+            test     : 'communityEvents'
         }
     }
 });
 
 /*커뮤니티 > 이벤트공지*/
-this.route('eventNotice', {
-    path: '/eventNotice'
-    ,template:'eventNotice'
+this.route('communityEventNotice', {
+    path: '/communityEventNotice'
+    ,template:'communityEventNotice'
     ,waitOn: function () {
         return [  ];
     }
     ,data: function() {
         return {
-            test     : 'eventNotice'
+            test     : 'communityEventNotice'
         }
     }
 });
 
 /*커뮤니티 > 고객센터*/
-this.route('cs', {
-    path: '/cs'
-    ,template:'cs'
+this.route('communityCs', {
+    path: '/communityCs'
+    ,template:'communityCs'
     ,waitOn: function () {
         return [  ];
     }
     ,data: function() {
         return {
-            test     : 'cs'
+            test     : 'communityCs'
         }
     }
 });
 
 /*커뮤니티 > 고객센터 공지*/
-this.route('csNotice', {
-    path: '/csNotice'
-    ,template:'csNotice'
+this.route('communityCsNotice', {
+    path: '/communityCsNotice'
+    ,template:'communityCsNotice'
     ,waitOn: function () {
         return [  ];
     }
     ,data: function() {
         return {
-            test     : 'csNotice'
+            test     : 'communityCsNotice'
         }
     }
 });
 
 /*커뮤니티 > 게시판관리*/
-this.route('boardManage', {
-    path: '/boardManage'
-    ,template:'boardManage'
+this.route('communityBoardManage', {
+    path: '/communityBoardManage'
+    ,template:'communityBoardManage'
     ,waitOn: function () {
         return [  ];
     }
     ,data: function() {
         return {
-            test     : 'boardManage'
+            test     : 'communityBoardManage'
         }
     }
 });
