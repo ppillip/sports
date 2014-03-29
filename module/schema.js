@@ -111,18 +111,6 @@ schema = [
             ]
         }}
     ,{
-        name : 'schema_money_status'
-        ,definition : {
-            "name" : "유저"
-            ,"desc" : "총판"
-            ,"properties" : [
-                { "key"   : {"name" : "deposit"       } ,"value" : {"type" : "array" , "default":"" , ref:"", "desc" : "입금"         }}
-               ,{ "key"   : {"name" : "withdraw"      } ,"value" : {"type" : "array" , "default":"" , ref:"", "desc" : "출금"         }}
-               ,{ "key"   : {"name" : "admin_deposit" } ,"value" : {"type" : "array" , "default":"" , ref:"", "desc" : "관리자 강제입금" }}
-               ,{ "key"   : {"name" : "admin_withdraw"} ,"value" : {"type" : "array" , "default":"" , ref:"", "desc" : "관리자 강제출금" }}
-            ]
-        }}
-    ,{
         name : 'schema_game_category_event'
         ,definition : {
             "name" : "게임 카테고리 대분류"
@@ -144,7 +132,7 @@ schema = [
             ,"properties" : [
                  { "key"   : {"name" : "image"              },"value" : {"type" : "object" , "default":null , "desc" : "리그 이미지 (공모양 / 깃발 등)" }}
                 ,{ "key"   : {"name" : "name"               },"value" : {"type" : "string" , "default":'' , "desc" : "리그명" }}
-                ,{ "key"   : {"name" : "category_event_id"  },"value" : {"type" : "string" , "default":'' , "desc" : "상위 대분류(종목명) _id" }}
+                ,{ "key"   : {"name" : "schema_game_category_event_id"  },"value" : {"type" : "string" , "default":'' , "desc" : "상위 대분류(종목명) _id" }}
                 ,{
                     "key"   : {"name" : "tmp"}
                     ,"value" : {"type" : "array" , "default":[] , ref:"tmp2", "desc" : "tmp" }
@@ -155,7 +143,7 @@ schema = [
     ,{
         name : 'schema_created_game'
         ,definition : {
-            "name" : "생성된 게임"
+            "name" : "생성된 게임 정보"
             ,"desc" : "관리자에 의해 생성된 게임 정보. 리그명 _id 키를 포함한다. 게임 사전 정보만 가지고 있다."
             ,"properties" : [
                  { "key"   : {"name" : "start_date_time"            },"value" : {"type" : "object" , "default":null , "desc" : "게임시작일시" }}
@@ -165,11 +153,12 @@ schema = [
                 ,{ "key"   : {"name" : "board_type"                 },"value" : {"type" : "string" , "default":'' , "desc" : "게시 장소 코드 (승무패/핸디캡/스페셜 등 게시 될 게시판명)" }}
                 ,{ "key"   : {"name" : "home_team_name"             },"value" : {"type" : "string" , "default":'' , "desc" : "홈팀명" }}
                 ,{ "key"   : {"name" : "away_team_name"             },"value" : {"type" : "string" , "default":'' , "desc" : "원정팀명" }}
-                ,{ "key"   : {"name" : "rate_home_win"              },"value" : {"type" : "string" , "default":'' , "desc" : "" }}
-                ,{ "key"   : {"name" : "rate_away_win"              },"value" : {"type" : "string" , "default":'' , "desc" : "" }}
-                ,{ "key"   : {"name" : "rate_draw_win"              },"value" : {"type" : "string" , "default":'' , "desc" : "" }}
+                ,{ "key"   : {"name" : "rate_home_win"              },"value" : {"type" : "string" , "default":'' , "desc" : "홈팅승 배당율" }}
+                ,{ "key"   : {"name" : "rate_away_win"              },"value" : {"type" : "string" , "default":'' , "desc" : "원정팀승 배당율" }}
+                ,{ "key"   : {"name" : "rate_draw_win"              },"value" : {"type" : "string" , "default":'' , "desc" : "무승부 배당율" }}
                 ,{ "key"   : {"name" : "is_showed_on_board"         },"value" : {"type" : "string" , "default":'' , "desc" : "게임 게시판에 게시할지 여부 YES/NO" }}
                 ,{ "key"   : {"name" : "is_canceled"                },"value" : {"type" : "string" , "default":'' , "desc" : "취소되었는지 여부 YES/NO (삭제와 다름)" }}
+                ,{ "key"   : {"name" : "schema_game_category_league_id"},"value" : {"type" : "string" , "default":'' , "desc" : "소속된 리그의 _id" }}
                 ,{
                     "key"   : {"name" : "tmp"}
                     ,"value" : {"type" : "array" , "default":[] , ref:"tmp2", "desc" : "tmp" }
@@ -178,28 +167,79 @@ schema = [
         }
     }
     ,{
+        /*
+         게임 종료 전 베팅 중인 게임의 폴더 단위의 로그.
+         게임 종료시 아직 게임 종료가 되지 않은 폴더를 대상으로 게임 결과를 입력 하고,
+         폴더 전체게임의 게임이 종료시 폴더 종료를 저장하고 해당 배당금을 지급하고 로그를 기록한다.
+         (게임 성공 시 배당금을 지급하고, 게임 실패 시 게임실패 보너스 포인트를 지급한다.)
+
+         (검색 퍼포먼스 문제시 차선책 : 유저정보와 게임정보를 모두 포함하고 있으며, 게임 종료 시 (폴더의 마지막 게임이 종료 될 시) 해당 폴더 전체를 종료 게임 로그로 넘긴다.)
+          */
+
         name : 'schema_betting_game_log'
         ,definition : {
             "name" : "베팅 게임 로그"
             ,"desc" : "유저+생성된게임 으로 베팅된 게임 로그. 결과입력시 결과"
             ,"properties" : [
-                { "key"   : {"name" : "name"},"value" : {"type" : "string" , "default":'' , "desc" : "" }}
+                { "key"   : {"name" : "schema_user_id"},"value" : {"type" : "string" , "default":'' , "desc" : "베팅한 유저의 _id" }}
                 ,{ "key"   : {"name" : "field"},"value" : {"type" : "string" , "default":'' , "desc" : "" }}
                 ,{
-                    "key"   : {"name" : "tmp"}
-                    ,"value" : {"type" : "array" , "default":[] , ref:"tmp2", "desc" : "tmp" }
+                    "key"   : {"name" : "schema_created_folder"},"value" : {"type" : "array" , "default":[] , ref:"schema_created_game", "desc" : "폴더에 선택된 게임 정보들이 array형태로 들어감. 1-10개." }
                 }
             ]
         }
     }
     ,{
-        name : 'schema_finished_game_log'
+        name : 'schema_company_settings'
         ,definition : {
-            "name" : "종료 게임 로그"
-            ,"desc" : "schema_betting_game_log 에서 완료된 게임의 경우 "
+            "name" : "회사정보"
+            ,"desc" : "게임 진행에 필요한 전반적인 셋팅들을 저장"
             ,"properties" : [
-                { "key"   : {"name" : "name"},"value" : {"type" : "string" , "default":'' , "desc" : "" }}
-                ,{ "key"   : {"name" : "field"},"value" : {"type" : "string" , "default":'' , "desc" : "" }}
+                { "key"   : {"name" : "title"},"value" : {"type" : "string" , "default":'' , "desc" : "타이틀에 표시되는 이름, 회사 상호" }}
+                ,{ "key"   : {"name" : "point_sign_up"},"value" : {"type" : "string" , "default":'' , "desc" : "포인트설정 - 가입 P" }}
+                ,{ "key"   : {"name" : "point_log_in"},"value" : {"type" : "string" , "default":'' , "desc" : "포인트설정 - 로그인 P" }}
+                ,{ "key"   : {"name" : "point_writing"},"value" : {"type" : "string" , "default":'' , "desc" : "포인트설정 - 글작성 P" }}
+                ,{ "key"   : {"name" : "point_comment"},"value" : {"type" : "string" , "default":'' , "desc" : "포인트설정 - 덧글작성 P" }}
+                ,{ "key"   : {"name" : "point_betting"},"value" : {"type" : "string" , "default":'' , "desc" : "포인트설정 - 베팅 %" }}
+                ,{ "key"   : {"name" : "point_recommend"},"value" : {"type" : "string" , "default":'' , "desc" : "포인트설정 - 추천인 %" }}
+                ,{ "key"   : {"name" : "point_firstDeposit"},"value" : {"type" : "string" , "default":'' , "desc" : "포인트설정 - 첫입금 %" }}
+                ,{ "key"   : {"name" : "point_writing_limit"},"value" : {"type" : "string" , "default":'' , "desc" : "글쓰기 포인트 제한 - 글쓰기수제한" }}
+                ,{ "key"   : {"name" : "point_comment_limit"},"value" : {"type" : "string" , "default":'' , "desc" : "글쓰기 포인트 제한 - 댓글수제한" }}
+                ,{ "key"   : {"name" : "point_game_failed"},"value" : {"type" : "string" , "default":'' , "desc" : "미당첨 포인트" }}
+                ,{ "key"   : {"name" : "betting_normal_range_min"},"value" : {"type" : "string" , "default":'' , "desc" : "일반 베팅 최저 제한액" }}
+                ,{ "key"   : {"name" : "betting_normal_range_max"},"value" : {"type" : "string" , "default":'' , "desc" : "일반 베팅 최고 제한액" }}
+                ,{ "key"   : {"name" : "betting_special_range_min"},"value" : {"type" : "string" , "default":'' , "desc" : "스페셜 베팅 최저 제한액" }}
+                ,{ "key"   : {"name" : "betting_special_range_max"},"value" : {"type" : "string" , "default":'' , "desc" : "스페셜 베팅 최고 제한액" }}
+                ,{ "key"   : {"name" : "betting_folder_max_limit"},"value" : {"type" : "string" , "default":'' , "desc" : "베팅 폴더 조합 제한" }}
+                ,{ "key"   : {"name" : "betting_reward_max_limit"},"value" : {"type" : "string" , "default":'' , "desc" : "최고 배당액 설정" }}
+                ,{ "key"   : {"name" : "withdraw_min_limit"},"value" : {"type" : "string" , "default":'' , "desc" : "최저 출금액" }}
+                ,{ "key"   : {"name" : "deposit_min_limit"},"value" : {"type" : "string" , "default":'' , "desc" : "최저 입금액" }}
+                ,{ "key"   : {"name" : "deposit_account_level_0"},"value" : {"type" : "string" , "default":'' , "desc" : "레벨별 입금 계좌" }}
+                ,{ "key"   : {"name" : "deposit_account_level_1"},"value" : {"type" : "string" , "default":'' , "desc" : "레벨별 입금 계좌" }}
+                ,{ "key"   : {"name" : "deposit_account_level_2"},"value" : {"type" : "string" , "default":'' , "desc" : "레벨별 입금 계좌" }}
+                ,{ "key"   : {"name" : "deposit_account_level_3"},"value" : {"type" : "string" , "default":'' , "desc" : "레벨별 입금 계좌" }}
+                ,{ "key"   : {"name" : "deposit_account_level_4"},"value" : {"type" : "string" , "default":'' , "desc" : "레벨별 입금 계좌" }}
+                ,{ "key"   : {"name" : "deposit_account_level_5"},"value" : {"type" : "string" , "default":'' , "desc" : "레벨별 입금 계좌" }}
+                ,{ "key"   : {"name" : "deposit_account_level_6"},"value" : {"type" : "string" , "default":'' , "desc" : "레벨별 입금 계좌" }}
+                ,{ "key"   : {"name" : "deposit_account_level_7"},"value" : {"type" : "string" , "default":'' , "desc" : "레벨별 입금 계좌" }}
+                ,{ "key"   : {"name" : "deposit_account_level_8"},"value" : {"type" : "string" , "default":'' , "desc" : "레벨별 입금 계좌" }}
+                ,{ "key"   : {"name" : "deposit_account_level_9"},"value" : {"type" : "string" , "default":'' , "desc" : "레벨별 입금 계좌" }}
+                ,{ "key"   : {"name" : "point_auto_transmit"},"value" : {"type" : "string" , "default":'' , "desc" : "포인트 자동 전환 가능 여부 YES/NO" }}
+                ,{ "key"   : {"name" : "point_transmit"},"value" : {"type" : "string" , "default":'' , "desc" : "포인트 전환 가능 여부 YES/NO" }}
+                ,{ "key"   : {"name" : "point_transmit_range_min"},"value" : {"type" : "string" , "default":'' , "desc" : "포인트 전환 가능시 최저 제한. 0일시 무제한" }}
+                ,{ "key"   : {"name" : "point_transmit_range_max"},"value" : {"type" : "string" , "default":'' , "desc" : "포인트 전환 가능시 최고 제한. 0일시 무제한" }}
+                ,{ "key"   : {"name" : "betting_cancel_type"},"value" : {"type" : "string" , "default":'' , "desc" : "NO (취소 안됨) / BEFORE_FINISH (게임 시작 전)" }}
+                ,{ "key"   : {"name" : "betting_cancel_point"},"value" : {"type" : "string" , "default":'' , "desc" : "배팅 취소 포인트 P" }}
+                ,{ "key"   : {"name" : "betting_cancel_day_limit_level_0"},"value" : {"type" : "string" , "default":'' , "desc" : "레벨별 베팅 취소 일일 제한" }}
+                ,{ "key"   : {"name" : "betting_cancel_day_limit_level_1"},"value" : {"type" : "string" , "default":'' , "desc" : "레벨별 베팅 취소 일일 제한" }}
+                ,{ "key"   : {"name" : "betting_cancel_day_limit_level_2"},"value" : {"type" : "string" , "default":'' , "desc" : "레벨별 베팅 취소 일일 제한" }}
+                ,{ "key"   : {"name" : "betting_cancel_day_limit_level_3"},"value" : {"type" : "string" , "default":'' , "desc" : "레벨별 베팅 취소 일일 제한" }}
+                ,{ "key"   : {"name" : "betting_cancel_day_limit_level_4"},"value" : {"type" : "string" , "default":'' , "desc" : "레벨별 베팅 취소 일일 제한" }}
+                ,{ "key"   : {"name" : "betting_cancel_day_limit_level_5"},"value" : {"type" : "string" , "default":'' , "desc" : "레벨별 베팅 취소 일일 제한" }}
+                ,{ "key"   : {"name" : "betting_cancel_day_limit_level_6"},"value" : {"type" : "string" , "default":'' , "desc" : "레벨별 베팅 취소 일일 제한" }}
+                ,{ "key"   : {"name" : "betting_cancel_day_limit_level_7"},"value" : {"type" : "string" , "default":'' , "desc" : "레벨별 베팅 취소 일일 제한" }}
+                ,{ "key"   : {"name" : "betting_cancel_day_limit_level_8"},"value" : {"type" : "string" , "default":'' , "desc" : "레벨별 베팅 취소 일일 제한" }}
+                ,{ "key"   : {"name" : "betting_cancel_day_limit_level_9"},"value" : {"type" : "string" , "default":'' , "desc" : "레벨별 베팅 취소 일일 제한" }}
                 ,{
                     "key"   : {"name" : "tmp"}
                     ,"value" : {"type" : "array" , "default":[] , ref:"tmp2", "desc" : "tmp" }
@@ -237,7 +277,19 @@ schema = [
             ]
         }
     }
-
+    ,{
+        name : 'schema_money_status'
+        ,definition : {
+            "name" : "유저"
+            ,"desc" : "총판"
+            ,"properties" : [
+                { "key"   : {"name" : "deposit"       } ,"value" : {"type" : "array" , "default":"" , ref:"", "desc" : "입금"         }}
+                ,{ "key"   : {"name" : "withdraw"      } ,"value" : {"type" : "array" , "default":"" , ref:"", "desc" : "출금"         }}
+                ,{ "key"   : {"name" : "admin_deposit" } ,"value" : {"type" : "array" , "default":"" , ref:"", "desc" : "관리자 강제입금" }}
+                ,{ "key"   : {"name" : "admin_withdraw"} ,"value" : {"type" : "array" , "default":"" , ref:"", "desc" : "관리자 강제출금" }}
+            ]
+        }
+    }
 
 ];
 
