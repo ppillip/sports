@@ -180,8 +180,8 @@ schema = [
     ,{
         name : 'schema_betting_game_log'
         ,definition : {
-            "name" : ""
-            ,"desc" : ""
+            "name" : "베팅 게임 로그"
+            ,"desc" : "유저+생성된게임 으로 베팅된 게임 로그. 결과입력시 결과"
             ,"properties" : [
                 { "key"   : {"name" : "name"},"value" : {"type" : "string" , "default":'' , "desc" : "" }}
                 ,{ "key"   : {"name" : "field"},"value" : {"type" : "string" , "default":'' , "desc" : "" }}
@@ -193,10 +193,10 @@ schema = [
         }
     }
     ,{
-        name : 'schema_'
+        name : 'schema_finished_game_log'
         ,definition : {
-            "name" : ""
-            ,"desc" : ""
+            "name" : "종료 게임 로그"
+            ,"desc" : "schema_betting_game_log 에서 완료된 게임의 경우 "
             ,"properties" : [
                 { "key"   : {"name" : "name"},"value" : {"type" : "string" , "default":'' , "desc" : "" }}
                 ,{ "key"   : {"name" : "field"},"value" : {"type" : "string" , "default":'' , "desc" : "" }}
