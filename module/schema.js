@@ -190,9 +190,9 @@ schema = [
         }
     }
     ,{
-        name : 'schema_company_settings'
+        name : 'schema_settings'
         ,definition : {
-            "name" : "회사정보"
+            "name" : "설정정보"
             ,"desc" : "게임 진행에 필요한 전반적인 셋팅들을 저장"
             ,"properties" : [
                 { "key"   : {"name" : "title"},"value" : {"type" : "string" , "default":'' , "desc" : "타이틀에 표시되는 이름, 회사 상호" }}

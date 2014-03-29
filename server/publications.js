@@ -1,3 +1,3 @@
-Meteor.publish('CollectionSportsSettings', function() {
-    return CollectionSportsSettings.find();
+Meteor.publish('CollectionSettings', function() {
+    return CollectionSettings.find();
 });

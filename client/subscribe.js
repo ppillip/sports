@@ -1,1 +1,1 @@
-Meteor.subscribe('CollectionSportsSettings');
+Meteor.subscribe('CollectionSettings');

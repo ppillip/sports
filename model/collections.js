@@ -1,2 +1,2 @@
-CollectionSportsSettings          = new Meteor.Collection('CollectionSportsSettings');
+CollectionSettings          = new Meteor.Collection('CollectionSettings');
 

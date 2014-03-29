@@ -36,7 +36,7 @@ touch ./community/communityEventNotice.html
 touch ./community/communityCs.html
 touch ./community/communityCsNotice.html
 touch ./community/communityBoardManage.html
-touch ./manage/manageCompany.html
+touch ./manage/manageSettings.html
 touch ./manage/manageNoticeManage.html
 touch ./manage/manageIpBlock.html
 touch ./manage/manageAdminIp.html
@@ -79,7 +79,7 @@ touch ./community/communityEventNotice.js
 touch ./community/communityCs.js
 touch ./community/communityCsNotice.js
 touch ./community/communityBoardManage.js
-touch ./manage/manageCompany.js
+touch ./manage/manageSettings.js
 touch ./manage/manageNoticeManage.js
 touch ./manage/manageIpBlock.js
 touch ./manage/manageAdminIp.js

@@ -1,14 +1,14 @@
 Router.map(function () {
-/*기타관리 > 회사정보*/
-this.route('manageCompany', {
-    path: '/manageCompany'
-    ,template:'manageCompany'
+/*기타관리 > 설정정보*/
+this.route('manageSettings', {
+    path: '/manageSettings'
+    ,template:'manageSettings'
     ,waitOn: function () {
         return [  ];
     }
     ,data: function() {
         return {
-            test     : 'manageCompany'
+            test     : 'manageSettings'
         }
     }
 });
