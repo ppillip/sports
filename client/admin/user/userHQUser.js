@@ -9,4 +9,4 @@ Template.userHQUser.rendered = function(){
 
 Template.userHQUser.helpers({
 
-})
+});

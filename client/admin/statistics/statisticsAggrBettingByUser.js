@@ -9,4 +9,4 @@ Template.statisticsAggrBettingByUser.rendered = function(){
 
 Template.statisticsAggrBettingByUser.helpers({
 
-})
+});

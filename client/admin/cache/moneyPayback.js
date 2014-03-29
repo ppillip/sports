@@ -9,4 +9,4 @@ Template.moneyPayback.rendered = function(){
 
 Template.moneyPayback.helpers({
 
-})
+});

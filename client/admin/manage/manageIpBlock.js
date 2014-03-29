@@ -9,4 +9,4 @@ Template.manageIpBlock.rendered = function(){
 
 Template.manageIpBlock.helpers({
 
-})
+});

@@ -9,4 +9,4 @@ Template.userInfo.rendered = function(){
 
 Template.userInfo.helpers({
 
-})
+});

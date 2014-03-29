@@ -9,4 +9,4 @@ Template.moneyDeposit.rendered = function(){
 
 Template.moneyDeposit.helpers({
 
-})
+});

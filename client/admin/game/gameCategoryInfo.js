@@ -9,4 +9,4 @@ Template.gameCategoryInfo.rendered = function(){
 
 Template.gameCategoryInfo.helpers({
 
-})
+});

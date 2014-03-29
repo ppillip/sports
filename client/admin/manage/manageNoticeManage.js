@@ -9,4 +9,4 @@ Template.manageNoticeManage.rendered = function(){
 
 Template.manageNoticeManage.helpers({
 
-})
+});

@@ -9,4 +9,4 @@ Template.communityCs.rendered = function(){
 
 Template.communityCs.helpers({
 
-})
+});

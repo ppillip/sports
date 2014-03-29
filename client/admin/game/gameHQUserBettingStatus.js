@@ -9,4 +9,4 @@ Template.gameHQUserBettingStatus.rendered = function(){
 
 Template.gameHQUserBettingStatus.helpers({
 
-})
+});

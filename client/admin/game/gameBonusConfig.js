@@ -9,4 +9,4 @@ Template.gameBonusConfig.rendered = function(){
 
 Template.gameBonusConfig.helpers({
 
-})
+});

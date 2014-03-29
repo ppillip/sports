@@ -9,4 +9,4 @@ Template.gameFinished.rendered = function(){
 
 Template.gameFinished.helpers({
 
-})
+});

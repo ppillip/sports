@@ -9,4 +9,4 @@ Template.moneyPayment.rendered = function(){
 
 Template.moneyPayment.helpers({
 
-})
+});

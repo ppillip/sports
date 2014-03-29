@@ -9,4 +9,4 @@ Template.communityBoardManage.rendered = function(){
 
 Template.communityBoardManage.helpers({
 
-})
+});

@@ -9,4 +9,4 @@ Template.statisticsAggrMoneyByTerm.rendered = function(){
 
 Template.statisticsAggrMoneyByTerm.helpers({
 
-})
+});

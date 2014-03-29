@@ -9,4 +9,4 @@ Template.moneyDividend.rendered = function(){
 
 Template.moneyDividend.helpers({
 
-})
+});

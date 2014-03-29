@@ -9,4 +9,4 @@ Template.userBettingUser.rendered = function(){
 
 Template.userBettingUser.helpers({
 
-})
+});

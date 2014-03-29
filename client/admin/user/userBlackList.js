@@ -9,4 +9,4 @@ Template.userBlackList.rendered = function(){
 
 Template.userBlackList.helpers({
 
-})
+});

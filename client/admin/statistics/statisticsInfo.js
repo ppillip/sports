@@ -9,4 +9,4 @@ Template.statisticsInfo.rendered = function(){
 
 Template.statisticsInfo.helpers({
 
-})
+});

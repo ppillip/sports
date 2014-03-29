@@ -9,4 +9,4 @@ Template.userBranch.rendered = function(){
 
 Template.userBranch.helpers({
 
-})
+});

@@ -9,4 +9,4 @@ Template.moneyWithdraw.rendered = function(){
 
 Template.moneyWithdraw.helpers({
 
-})
+});

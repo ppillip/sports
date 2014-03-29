@@ -9,4 +9,4 @@ Template.gameStatus.rendered = function(){
 
 Template.gameStatus.helpers({
 
-})
+});

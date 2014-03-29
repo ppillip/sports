@@ -9,4 +9,4 @@ Template.moneyAdminPoint.rendered = function(){
 
 Template.moneyAdminPoint.helpers({
 
-})
+});
