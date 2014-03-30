@@ -29,7 +29,17 @@ Template.userAgency.helpers({
     dataAgency: function(){
         var obj = CollectionAgency.find();
         Session.set('tmp', obj);
-        console.log("asdf : " + obj.count());
+        console.log(obj.fetch());
+        return CollectionAgency.find();
+    }
+});
+
+
+Template.agencyList.helpers({
+    dataAgency: function(){
+        var obj = CollectionAgency.find();
+        Session.set('tmp', obj);
+        console.log(obj.fetch());
         return CollectionAgency.find();
     }
 });
