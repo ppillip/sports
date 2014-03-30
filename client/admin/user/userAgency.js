@@ -1,6 +1,6 @@
 
 Template.userAgency.events({
-    'submit form' : function(e) {
+    'submit form' : function(e,tmpl) {
         e.preventDefault();
 
         console.log("asdfasdfasdf");
@@ -14,10 +14,8 @@ Template.userAgency.events({
 
         CollectionAgency.insert(schAgency);
 
+        tmpl.find('form').reset();
 
-
-        document.getElementById("insertAgency").reset();
-        $('#insertAgency').trigger("reset");
     }
 });
 
