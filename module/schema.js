@@ -13,7 +13,7 @@ sportsSchema =
 
 schema = [
     {
-        name : 'schema_agency'
+        name : 'agency'
         ,definition : {
         "name" : "총판"
         ,"desc" : "매장을 소유하고 있음. (매장에 총판 키가 있음.)"
@@ -34,7 +34,7 @@ schema = [
         ]
     }}
     ,{
-        name : 'schema_branch'
+        name : 'branch'
         ,definition : {
             "name" : "매장"
             ,"desc" : "총판에서 소유한 매장"
@@ -54,7 +54,7 @@ schema = [
             ]
         }}
     ,{
-        name : 'schema_user'
+        name : 'user'
         ,definition : {
             "name" : "사용자"
             ,"desc" : "일반 사용자"
@@ -79,7 +79,7 @@ schema = [
             ]
         }}
     ,{
-        name : 'schema_user_money_log'
+        name : 'user_money_log'
         ,definition : {
             "name" : "사용자 머니"
             ,"desc" : "사용자 머니 입출금 로그"
@@ -95,7 +95,7 @@ schema = [
             ]
         }}
     ,{
-        name : 'schema_user_point_log'
+        name : 'user_point_log'
         ,definition : {
             "name" : "사용자 포인트"
             ,"desc" : "사용자 포인트 입출금 로그"
@@ -111,7 +111,7 @@ schema = [
             ]
         }}
     ,{
-        name : 'schema_game_category_event'
+        name : 'game_category_event'
         ,definition : {
             "name" : "게임 카테고리 대분류"
             ,"desc" : "종목명 (축구/농구)"
@@ -125,7 +125,7 @@ schema = [
             ]
         }}
     ,{
-        name : 'schema_game_category_league'
+        name : 'game_category_league'
         ,definition : {
             "name" : "게임 카테고리 중분류"
             ,"desc" : "리그명 (MLB / NBA)"
@@ -141,7 +141,7 @@ schema = [
         }
     }
     ,{
-        name : 'schema_created_game'
+        name : 'created_game'
         ,definition : {
             "name" : "생성된 게임 정보"
             ,"desc" : "관리자에 의해 생성된 게임 정보. 리그명 _id 키를 포함한다. 게임 사전 정보만 가지고 있다."
@@ -176,7 +176,7 @@ schema = [
          (검색 퍼포먼스 문제시 차선책 : 유저정보와 게임정보를 모두 포함하고 있으며, 게임 종료 시 (폴더의 마지막 게임이 종료 될 시) 해당 폴더 전체를 종료 게임 로그로 넘긴다.)
           */
 
-        name : 'schema_betting_game_log'
+        name : 'betting_game_log'
         ,definition : {
             "name" : "베팅 게임 로그"
             ,"desc" : "유저+생성된게임 으로 베팅된 게임 로그. 결과입력시 결과"
@@ -190,7 +190,7 @@ schema = [
         }
     }
     ,{
-        name : 'schema_settings'
+        name : 'settings'
         ,definition : {
             "name" : "설정정보"
             ,"desc" : "게임 진행에 필요한 전반적인 셋팅들을 저장"
