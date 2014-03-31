@@ -9,6 +9,7 @@ Template.userAgency.events({
 
 
         _.each(schAgency,function(val,idx){
+            console.log("IDX : ", idx);
             schAgency[idx] = $(e.target).find('[name='+idx+']').val();
         });
 

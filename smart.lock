@@ -19,8 +19,8 @@
       },
       "iron-router-progress": {
         "git": "https://github.com/Multiply/iron-router-progress.git",
-        "tag": "v0.2.0",
-        "commit": "ce730d1d26feadb7c75ea25f22c5bfdb0c549a8b"
+        "tag": "v0.3.0",
+        "commit": "5761294b1530d1c48a311d7e06421d563e5b45e5"
       },
       "blaze-layout": {
         "git": "https://github.com/EventedMind/blaze-layout.git",

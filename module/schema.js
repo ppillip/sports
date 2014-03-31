@@ -156,8 +156,8 @@ schema = [
                 ,{ "key"   : {"name" : "rate_home_win"              },"value" : {"type" : "string" , "default":'' , "desc" : "홈팅승 배당율" }}
                 ,{ "key"   : {"name" : "rate_away_win"              },"value" : {"type" : "string" , "default":'' , "desc" : "원정팀승 배당율" }}
                 ,{ "key"   : {"name" : "rate_draw_win"              },"value" : {"type" : "string" , "default":'' , "desc" : "무승부 배당율" }}
-                ,{ "key"   : {"name" : "is_showed_on_board"         },"value" : {"type" : "string" , "default":'' , "desc" : "게임 게시판에 게시할지 여부 YES/NO" }}
-                ,{ "key"   : {"name" : "is_canceled"                },"value" : {"type" : "string" , "default":'' , "desc" : "취소되었는지 여부 YES/NO (삭제와 다름)" }}
+                ,{ "key"   : {"name" : "is_showed_on_board"         },"value" : {"type" : "string" , "default":'' , "desc" : "게임 게시판에 게시할지 여부 true/false" }}
+                ,{ "key"   : {"name" : "is_canceled"                },"value" : {"type" : "string" , "default":'' , "desc" : "취소되었는지 여부 true/false (삭제와 다름)" }}
                 ,{ "key"   : {"name" : "schema_game_category_league_id"},"value" : {"type" : "string" , "default":'' , "desc" : "소속된 리그의 _id" }}
                 ,{
                     "key"   : {"name" : "tmp"}
@@ -224,8 +224,8 @@ schema = [
                 ,{ "key"   : {"name" : "deposit_account_level_7"},"value" : {"type" : "string" , "default":'' , "desc" : "레벨별 입금 계좌" }}
                 ,{ "key"   : {"name" : "deposit_account_level_8"},"value" : {"type" : "string" , "default":'' , "desc" : "레벨별 입금 계좌" }}
                 ,{ "key"   : {"name" : "deposit_account_level_9"},"value" : {"type" : "string" , "default":'' , "desc" : "레벨별 입금 계좌" }}
-                ,{ "key"   : {"name" : "point_auto_transmit"},"value" : {"type" : "string" , "default":'' , "desc" : "포인트 자동 전환 가능 여부 YES/NO" }}
-                ,{ "key"   : {"name" : "point_transmit"},"value" : {"type" : "string" , "default":'' , "desc" : "포인트 전환 가능 여부 YES/NO" }}
+                ,{ "key"   : {"name" : "point_auto_transmit"},"value" : {"type" : "string" , "default":'' , "desc" : "포인트 자동 전환 가능 여부 true/false" }}
+                ,{ "key"   : {"name" : "point_transmit"},"value" : {"type" : "string" , "default":'' , "desc" : "포인트 전환 가능 여부 true/false" }}
                 ,{ "key"   : {"name" : "point_transmit_range_min"},"value" : {"type" : "string" , "default":'' , "desc" : "포인트 전환 가능시 최저 제한. 0일시 무제한" }}
                 ,{ "key"   : {"name" : "point_transmit_range_max"},"value" : {"type" : "string" , "default":'' , "desc" : "포인트 전환 가능시 최고 제한. 0일시 무제한" }}
                 ,{ "key"   : {"name" : "betting_cancel_type"},"value" : {"type" : "string" , "default":'' , "desc" : "NO (취소 안됨) / BEFORE_FINISH (게임 시작 전)" }}
