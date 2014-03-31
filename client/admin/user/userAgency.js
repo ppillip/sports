@@ -5,7 +5,7 @@ Template.userAgency.events({
 
         console.log("asdfasdfasdf");
 
-        var schAgency = sportsSchema.getSchema('schema_agency');
+        var schAgency = sportsSchema.getSchema('agency');
 
 
         _.each(schAgency,function(val,idx){
