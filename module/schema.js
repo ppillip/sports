@@ -34,7 +34,7 @@ schema = [
         ]
     }}
     ,{
-        name : 'branchs'
+        name : 'branches'
         ,definition : {
             "name" : "매장"
             ,"desc" : "총판에서 소유한 매장"

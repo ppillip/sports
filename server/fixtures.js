@@ -1,6 +1,6 @@
-if(CollectionSettings.find().count() === 0) {
-    var obj = sportsSchema.getSchema('settings');
+if(SportsSettings.find().count() === 0) {
+    var obj = sportsSchema.getSchema('sportsSettings');
     obj.title = 'Sports';
 
-    CollectionSettings.insert(obj);
+    SportsSettings.insert(obj);
 }

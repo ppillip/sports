@@ -1,2 +1,2 @@
-Meteor.subscribe('CollectionSettings');
-Meteor.subscribe('CollectionAgency');
+Meteor.subscribe('SportsSettings');
+Meteor.subscribe('agencies');

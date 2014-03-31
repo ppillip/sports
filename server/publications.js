@@ -1,6 +1,6 @@
-Meteor.publish('CollectionSettings', function() {
-    return CollectionSettings.find();
+Meteor.publish('SportsSettings', function() {
+    return SportsSettings.find();
 });
-Meteor.publish('CollectionAgency', function() {
-    return CollectionAgency.find();
+Meteor.publish('Agencies', function() {
+    return Agencies.find();
 });
