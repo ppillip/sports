@@ -1,6 +1,6 @@
-Meteor.publish('SportsSettings', function() {
+Meteor.publish('sportsSettings', function() {
     return SportsSettings.find();
 });
-Meteor.publish('Agencies', function() {
+Meteor.publish('agencies', function() {
     return Agencies.find();
 });

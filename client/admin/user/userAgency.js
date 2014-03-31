@@ -3,9 +3,9 @@ Template.userAgency.events({
     'submit form' : function(e,tmpl) {
         e.preventDefault();
 
-        console.log("asdfasdfasdf");
+//        console.log("asdfasdfasdf");
 
-        var schAgency = sportsSchema.getSchema('agency');
+        var schAgency = sportsSchema.getSchema('agencies');
 
 
         _.each(schAgency,function(val,idx){
@@ -13,7 +13,7 @@ Template.userAgency.events({
             schAgency[idx] = $(e.target).find('[name='+idx+']').val();
         });
 
-        CollectionAgency.insert(schAgency);
+        Agencies.insert(schAgency);
 
         tmpl.find('form').reset();
 
@@ -26,19 +26,20 @@ Template.userAgency.rendered = function(){
 
 Template.userAgency.helpers({
     dataAgency: function(){
-        var obj = CollectionAgency.find();
+        var obj = Agencies.find();
 //        Session.set('tmp', obj);
 //        console.log(obj.fetch());
-        return CollectionAgency.find();
+        return Agencies.find();
     }
 });
 
 
 Template.agencyTable.helpers({
     dataAgency: function(){
-        var obj = CollectionAgency.find();
+        var obj = Agencies.find();
 //        Session.set('tmp', obj);
+        console.log("asdfasdfasdf");
         console.log(obj.fetch());
-        return CollectionAgency.find();
+        return Agencies.find();
     }
 });
