@@ -1,2 +1,2 @@
-CollectionSettings = new Meteor.Collection('CollectionSettings');
-CollectionAgency = new Meteor.Collection('CollectionAgency');
+SportsSettings = new Meteor.Collection('sportsSettings');
+Agencies = new Meteor.Collection('agencies');
