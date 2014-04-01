@@ -1,6 +1,6 @@
 
 Template.userAgency.events({
-    'click .createAgency' : function(e,tmpl) {
+    'click [name=createAgency]' : function(e,tmpl) {
         e.preventDefault();
 
 //        console.log("asdfasdfasdfffffffffffffffffffffffffffff : " + tmpl.find('#id'));
@@ -17,11 +17,12 @@ Template.userAgency.events({
         Agencies.insert(schAgency);
 
         tmpl.find('form').reset();
+        $(tmpl.find('[name=cancelCreateAgency]')).trigger('click');
 
 //        $('#myModal').attr('aria-hidden')
-        console.log("fffffffffff : ");
-        console.log(tmpl.find('#myModal'));
-        $(tmpl.find('#myModal')).modal({'show':false});
+//        console.log("fffffffffff : ");
+//        console.log(tmpl.find('#myModal'));
+//        $(tmpl.find('#myModal')).modal({'hide':true});
 
     },
     'click #btn_remove' : function(e,tmp) {
