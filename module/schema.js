@@ -29,7 +29,11 @@ schema = [
             ,{ "key"   : {"name" : "은행계좌번호"    } , "value" : {"type" : "string" , "default":''   , "desc" : "총판 계좌번호" }}
             ,{ "key"   : {"name" : "은행명"       } , "value" : {"type" : "string" , "default":''   , "desc" : "총판 계좌은행명" }}
             ,{ "key"   : {"name" : "은행계좌주명" } , "value" : {"type" : "string" , "default":''   , "desc" : "총판 계좌주명" }}
-            ,{ "key"   : {"name" : "정산방식" } , "value" : {"type" : "string" , "default":''   , "desc" : "정산 방식. bet(배팅액기준)/profit(당첨금 기준)" }}
+            ,{ "key"   : {"name" : "정산방식" } , "value" : {"type" : "string" , "default":''   , "desc" : "베팅액기준/당첨액기준 (구메뉴 낙첨액 = 당첨액)" }}
+            ,{ "key"   : {"name" : "정산비율" } , "value" : {"type" : "string" , "default":''   , "desc" : "%" }}
+            ,{ "key"   : {"name" : "회원승인가능여부" } , "value" : {"type" : "string" , "default":''   , "desc" : "네/아니오" }}
+            ,{ "key"   : {"name" : "게시판관리가능여부" } , "value" : {"type" : "string" , "default":''   , "desc" : "네/아니오" }}
+            ,{ "key"   : {"name" : "전체회원조회가능여부" } , "value" : {"type" : "string" , "default":''   , "desc" : "네/아니오" }}
         ]
     }}
     ,{
@@ -49,7 +53,12 @@ schema = [
                 ,{ "key"   : {"name" : "은행계좌번호"    } , "value" : {"type" : "string" , "default":'' , "desc" : "매장 계좌번호" }}
                 ,{ "key"   : {"name" : "은행명"       } , "value" : {"type" : "string" , "default":'' , "desc" : "매장 계좌은행명" }}
                 ,{ "key"   : {"name" : "은행계좌주명" } , "value" : {"type" : "string" , "default":'' , "desc" : "매장 계좌주명" }}
-                ,{ "key"   : {"name" : "소속총판_id"              } , "value" : {"type" : "string" , "default":'' , "desc" : "소속된 총판 id" }} //_id값을 써야 하겠지?
+                ,{ "key"   : {"name" : "정산방식" } , "value" : {"type" : "string" , "default":''   , "desc" : "베팅액기준/당첨액기준 (구메뉴 낙첨액 = 당첨액)" }}
+                ,{ "key"   : {"name" : "정산비율" } , "value" : {"type" : "string" , "default":''   , "desc" : "%" }}
+                ,{ "key"   : {"name" : "회원승인가능여부" } , "value" : {"type" : "string" , "default":''   , "desc" : "네/아니오" }}
+                ,{ "key"   : {"name" : "게시판관리가능여부" } , "value" : {"type" : "string" , "default":''   , "desc" : "네/아니오" }}
+                ,{ "key"   : {"name" : "전체회원조회가능여부" } , "value" : {"type" : "string" , "default":''   , "desc" : "네/아니오" }}
+                ,{ "key"   : {"name" : "소속총판_id"              } , "value" : {"type" : "string" , "default":'' , "desc" : "소속된 총판 _id" }}
             ]
         }}
     ,{

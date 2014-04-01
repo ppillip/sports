@@ -17,12 +17,12 @@ Template.userAgency.events({
         Agencies.insert(schAgency);
 
         tmpl.find('form').reset();
-        $(tmpl.find('[name=cancelCreateAgency]')).trigger('click');
+//        $(tmpl.find('[name=cancelCreateAgency]')).trigger('click');
 
 //        $('#myModal').attr('aria-hidden')
 //        console.log("fffffffffff : ");
 //        console.log(tmpl.find('#myModal'));
-//        $(tmpl.find('#myModal')).modal({'hide':true});
+        $(tmpl.find('#myModal')).modal({'show':false});
 
     },
     'click #btn_remove' : function(e,tmp) {

@@ -1,89 +1,133 @@
 <template name="userAgencyInputModal">
+    <!-- Large modal -->
+    <button class="btn btn-primary" data-toggle="modal" data-target=".bs-example-modal-lg">Large modal</button>
+
+    <div class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                123
+            </div>
+        </div>
+    </div>
+
+    <!-- Small modal -->
+    <button class="btn btn-primary" data-toggle="modal" data-target=".bs-example-modal-sm">Small modal</button>
+
+    <div class="modal fade bs-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-sm">
+            <div class="modal-content">
+                ...
+            </div>
+        </div>
+    </div>
+
     <!-- Button trigger modal -->
     <button class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">
-        총판 생성
+        Launch demo modal
     </button>
 
     <!-- Modal -->
-    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
-        <div class="modal-dialog modal-sm">
+    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
                     <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                    <h4 class="modal-title" id="myModalLabel" align="center">총판</h4>
+                    <h4 class="modal-title" id="myModalLabel">Modal title</h4>
                 </div>
                 <div class="modal-body">
-                    <form id="insertAgency">
-                        <table>
-                            <tr>
-                                <div class="control-group">
-                                    <label class="control-label">총판ID</label>
-                                    <div class="controls">
-                                        <input name="id" type="text" value="" placeholder=""/>
-                                    </div>
-                                </div>
-                                <div class="control-group">
-                                    <label class="control-label">총판주 이름</label>
-                                    <div class="controls">
-                                        <input name="name" type="text" value="" placeholder=""/>
-                                    </div>
-                                </div>
-
-                                <div class="control-group">
-                                    <label class="control-label">총판주 닉네임</label>
-                                    <div class="controls">
-                                        <input name="nick_name" type="text" value="" placeholder=""/>
-                                    </div>
-                                </div>
-                                <div class="control-group">
-                                    <label class="control-label">전화번호</label>
-                                    <div class="controls">
-                                        <input name="cellphone" type="text" value="" placeholder=""/>
-                                    </div>
-                                </div>
-                                <div class="control-group">
-                                    <label class="control-label">계좌번호</label>
-                                    <div class="controls">
-                                        <input name="bank_account" type="text" value="" placeholder=""/>
-                                    </div>
-                                </div>
-                                <div class="control-group">
-                                    <label class="control-label">은행명</label>
-                                    <div class="controls">
-                                        <input name="bank_name" type="text" value="" placeholder=""/>
-                                    </div>
-                                </div>
-                                <div class="control-group">
-                                    <label class="control-label">예금주명</label>
-                                    <div class="controls">
-                                        <input name="bank_owner_name" type="text" value="" placeholder=""/>
-                                    </div>
-                                </div>
-
-                                <!--<div class="control-group">-->
-                                <!--<label class="control-label">Message</label>-->
-                                <!--<div class="controls">-->
-                                <!--<textarea name="message" type="text" value=""> </textarea>-->
-                                <!--</div>-->
-                                <!--</div>-->
-                                <!--<br>-->
-                                <!--<div class="control-group">-->
-                                <!--<div class="controls">-->
-                                <!--<label class="control-label"></label>-->
-                                <!--<input type="submit" value="생성" class="btn btn-primary"/>-->
-                                <!--</div>-->
-                                <!--</div>-->
-                            </tr>
-                        </table>
-                    </form>
+                    ...
                 </div>
                 <div class="modal-footer">
-                    <button name="cancelCreateAgency" type="button" class="btn btn-default" data-dismiss="modal">닫기</button>
-                    <button name="createAgency" type="button" class="btn btn-primary">생성</button>
-                    <!--<input type="submit" value="생성" class="btn btn-primary"/>-->
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary">Save changes</button>
                 </div>
             </div>
         </div>
     </div>
+
+    <!-- Button trigger modal -->
+    <!--<button class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">-->
+        <!--총판 생성-->
+    <!--</button>-->
+    <!--<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">-->
+        <!--<div class="modal-dialog">-->
+            <!--<div class="modal-content">-->
+                <!--<div class="modal-header">-->
+                    <!--<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>-->
+                    <!--<h4 class="modal-title" id="myModalLabel" align="center">총판</h4>-->
+                <!--</div>-->
+                <!--<div class="modal-body">-->
+                    <!--<form id="insertAgency">-->
+                        <!--<table>-->
+                            <!--<tr>-->
+                                <!--<div class="control-group">-->
+                                    <!--<label class="control-label">총판ID</label>-->
+                                    <!--<div class="controls">-->
+                                        <!--<input name="id" type="text" value="" placeholder=""/>-->
+                                    <!--</div>-->
+                                <!--</div>-->
+                                <!--<div class="control-group">-->
+                                    <!--<label class="control-label">총판주 이름</label>-->
+                                    <!--<div class="controls">-->
+                                        <!--<input name="name" type="text" value="" placeholder=""/>-->
+                                    <!--</div>-->
+                                <!--</div>-->
+
+                                <!--<div class="control-group">-->
+                                    <!--<label class="control-label">총판주 닉네임</label>-->
+                                    <!--<div class="controls">-->
+                                        <!--<input name="nick_name" type="text" value="" placeholder=""/>-->
+                                    <!--</div>-->
+                                <!--</div>-->
+                                <!--<div class="control-group">-->
+                                    <!--<label class="control-label">전화번호</label>-->
+                                    <!--<div class="controls">-->
+                                        <!--<input name="cellphone" type="text" value="" placeholder=""/>-->
+                                    <!--</div>-->
+                                <!--</div>-->
+                                <!--<div class="control-group">-->
+                                    <!--<label class="control-label">계좌번호</label>-->
+                                    <!--<div class="controls">-->
+                                        <!--<input name="bank_account" type="text" value="" placeholder=""/>-->
+                                    <!--</div>-->
+                                <!--</div>-->
+                                <!--<div class="control-group">-->
+                                    <!--<label class="control-label">은행명</label>-->
+                                    <!--<div class="controls">-->
+                                        <!--<input name="bank_name" type="text" value="" placeholder=""/>-->
+                                    <!--</div>-->
+                                <!--</div>-->
+                                <!--<div class="control-group">-->
+                                    <!--<label class="control-label">예금주명</label>-->
+                                    <!--<div class="controls">-->
+                                        <!--<input name="bank_owner_name" type="text" value="" placeholder=""/>-->
+                                    <!--</div>-->
+                                <!--</div>-->
+
+                                <!--&lt;!&ndash;<div class="control-group">&ndash;&gt;-->
+                                <!--&lt;!&ndash;<label class="control-label">Message</label>&ndash;&gt;-->
+                                <!--&lt;!&ndash;<div class="controls">&ndash;&gt;-->
+                                <!--&lt;!&ndash;<textarea name="message" type="text" value=""> </textarea>&ndash;&gt;-->
+                                <!--&lt;!&ndash;</div>&ndash;&gt;-->
+                                <!--&lt;!&ndash;</div>&ndash;&gt;-->
+                                <!--&lt;!&ndash;<br>&ndash;&gt;-->
+                                <!--&lt;!&ndash;<div class="control-group">&ndash;&gt;-->
+                                <!--&lt;!&ndash;<div class="controls">&ndash;&gt;-->
+                                <!--&lt;!&ndash;<label class="control-label"></label>&ndash;&gt;-->
+                                <!--&lt;!&ndash;<input type="submit" value="생성" class="btn btn-primary"/>&ndash;&gt;-->
+                                <!--&lt;!&ndash;</div>&ndash;&gt;-->
+                                <!--&lt;!&ndash;</div>&ndash;&gt;-->
+                            <!--</tr>-->
+                        <!--</table>-->
+                    <!--</form>-->
+                <!--</div>-->
+                <!--<div class="modal-footer">-->
+                    <!--<button name="cancelCreateAgency" type="button" class="btn btn-default" data-dismiss="modal">닫기</button>-->
+                    <!--<button name="createAgency" type="button" class="btn btn-primary">생성</button>-->
+                    <!--&lt;!&ndash;<input type="submit" value="생성" class="btn btn-primary"/>&ndash;&gt;-->
+                <!--</div>-->
+            <!--</div>-->
+        <!--</div>-->
+    <!--</div>-->
 </template>
 
