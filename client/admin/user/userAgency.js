@@ -12,14 +12,15 @@ Template.userAgency.events({
             schAgency[idx] = $(tmpl.find("[name="+idx+"]")).val();
         });
 
-        $(tmpl.find("[name="+idx+"]")).val();
+//        $(tmpl.find("[name="+idx+"]")).val();
 
         Agencies.insert(schAgency);
 
         tmpl.find('form').reset();
 
 //        $('#myModal').attr('aria-hidden')
-        $('#myModal').modal('toggle');
+//        console.log(tmpl.find('#myModal'));
+        $(tmpl.find('#myModal')).modal({'show':false});
 
     },
     'click #btn_remove' : function(e,tmp) {
