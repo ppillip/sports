@@ -5,6 +5,5 @@
 
 standard-app-packages
 insecure
-bootstrap-3
 iron-router
 iron-router-progress
