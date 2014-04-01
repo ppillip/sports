@@ -17,10 +17,12 @@
                     <h1 class="page-title txt-color-blueDark"><i class="fa-fw fa fa-home"></i> 총판회원 </h1>
                 </div>
             </div>
-
             <div>
-                {{>agencyInput}}
+                {{> agencyInputModal}}
             </div>
+            <!--<div>-->
+                <!--{{>agencyInput}}-->
+            <!--</div>-->
             <br>
             <div>
                 {{#with dataAgency}}
@@ -32,6 +34,7 @@
     </div>
 
 </template>
+
 
 <template name="agencyTable">
 
@@ -65,6 +68,8 @@
             </div>
             <!-- end widget edit box -->
 
+            <!--<a data-toggle="modal" href="#myModal" class="btn btn-success btn-lg pull-right header-btn hidden-mobile"><i class="fa fa-circle-arrow-up fa-lg"></i> Launch form modal</a>-->
+
             <!-- widget content -->
             <div class="widget-body">
                 <p>{{cellphone}}</p>
@@ -76,6 +81,7 @@
                         <th>닉네임</th>
                         <th>전화번호</th>
                         <th>계좌정보</th>
+                        <th>삭제</th>
                     </tr>
                     </thead>
                     <tbody>
@@ -102,5 +108,10 @@
         <td>{{nick_name}}</td>
         <td>{{cellphone}}</td>
         <td>{{bank_account}}</td>
+        <td width=1>
+            <!--<button class="btn btn-success" data-provider="bootstrap-markdown" data-handler="cmdSave"><i class="fa fa-check"></i> Save</button>-->
+            <input type="button" id='btn_remove' value="remove" class="btn btn-danger"/>
+            <!--<a href="#" id="remove" class="btn btn-danger">Remove</a>-->
+        </td>
     </tr>
 </template>

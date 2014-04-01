@@ -1,27 +1,37 @@
 
 Template.userAgency.events({
-    'submit form' : function(e,tmpl) {
+    'click .createAgency' : function(e,tmpl) {
         e.preventDefault();
 
-//        console.log("asdfasdfasdf");
+//        console.log("asdfasdfasdfffffffffffffffffffffffffffff : " + tmpl.find('#id'));
 
         var schAgency = sportsSchema.getSchema('agencies');
 
-
         _.each(schAgency,function(val,idx){
-            console.log("IDX : ", idx);
-            schAgency[idx] = $(e.target).find('[name='+idx+']').val();
+//            console.log("IDX : ", idx, " : ", $("[name="+idx+"]").val());
+            schAgency[idx] = $(tmpl.find("[name="+idx+"]")).val();
         });
+
+        $(tmpl.find("[name="+idx+"]")).val();
 
         Agencies.insert(schAgency);
 
         tmpl.find('form').reset();
 
+//        $('#myModal').attr('aria-hidden')
+        $('#myModal').modal('toggle');
+
+    },
+    'click #btn_remove' : function(e,tmp) {
+        e.preventDefault();
+
+        Agencies.remove({_id:this._id});
+
     }
 });
 
 Template.userAgency.rendered = function(){
-
+//    $('#myModal').modal({show : false});
 };
 
 Template.userAgency.helpers({

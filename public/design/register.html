@@ -477,9 +477,11 @@ Contractology supply a wide variety of commercial legal documents, such as <a hr
 				$this=$("#terms");
 				if($this.checked) {
 					$('#myModal').modal('toggle');
+                    console.log("PRESSED!!!")
 				} else {
 					$this.prop('checked', true);
 					$('#myModal').modal('toggle');
+                    console.log("PRESSED!!!2222")
 				}
 			});
 			
