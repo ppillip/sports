@@ -20,10 +20,7 @@
 
 
 <!-- ####################### -->
-
-
-
-
+<!--
             <div class="modal fade" id="myModal" tabindex="-1" role="dialog" style="display: none;" aria-hidden="true">
                 <div class="modal-dialog">
                     <div class="modal-content">
@@ -91,9 +88,9 @@
 
                         </div>
 
-                    </div><!-- /.modal-content -->
-                </div><!-- /.modal-dialog -->
-            </div>
+                    </div>&lt;!&ndash; /.modal-content &ndash;&gt;
+                </div>&lt;!&ndash; /.modal-dialog &ndash;&gt;
+            </div>-->
 <!-- ####################### -->
 
 
@@ -131,21 +128,7 @@
                     <!-- widget content -->
                     <div class="widget-body">
                         <p>
-                        <div class="well">
-                            <form class="form-inline" role="form">
-                                <fieldset>
-                                    <div class="form-group">
-                                        <input type="text" class="form-control" placeholder="분류명입력">
-                                    </div>
-                                    <div class="form-group">
-                                        <input type="file" class="btn btn-default">
-                                    </div>
-                                    <button type="submit" class="btn btn-primary">
-                                        <i class="fa fa-save"></i> 등록
-                                    </button>
-                                </fieldset>
-                            </form>
-                        </div>
+                          {{>gameInputForm}}
                         </p>
                         <div class="row">
                         <article class="col-sm-12 col-md-12 col-lg-6 sortable-grid ui-sortable">
@@ -156,7 +139,7 @@
                             <span class="widget-icon"> <i class="fa fa-edit"></i> </span>
                             <h2>Basic Form Elements </h2>
 
-                            <a data-toggle="modal" href="#myModal" class="btn btn-success btn-lg pull-right header-btn hidden-mobile"><i class="fa fa-circle-arrow-up fa-lg"></i> Launch form modal</a>
+                            <!--<a data-toggle="modal" href="#myModal" class="btn btn-success btn-lg pull-right header-btn hidden-mobile"><i class="fa fa-circle-arrow-up fa-lg"></i> Launch form modal</a>-->
 
                             <span class="jarviswidget-loader" style="display: none;"><i class="fa fa-refresh fa-spin"></i></span></header>
 
@@ -734,4 +717,23 @@
     <!-- END MAIN CONTENT -->
     </div>
 
+</template>
+
+
+<template name="gameInputForm">
+    <div class="well">
+        <form class="form-inline" role="form">
+            <fieldset>
+                <div class="form-group">
+                    <input type="text" class="form-control" placeholder="분류명입력">
+                </div>
+                <div class="form-group">
+                    <input type="file" class="btn btn-default">
+                </div>
+                <button type="submit" class="btn btn-primary">
+                    <i class="fa fa-save"></i> 등록
+                </button>
+            </fieldset>
+        </form>
+    </div>
 </template>
