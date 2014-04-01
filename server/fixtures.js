@@ -7,7 +7,10 @@
 //--- 사이트 기본 셋팅 ---//
 if(SportsSettings.find().count() !== 1) {
     var tmpSchema = sportsSchema.getSchema('sportsSettings');
-    tmpSchema.title = 'Sports';
+    tmpSchema.프로그램명 = 'Sports';
 
-    SportsSettings.insert(obj);
+    SportsSettings.insert(tmpSchema);
 }
+
+
+

@@ -30,42 +30,42 @@ var tmpAgencies_id = new Array();
 
 //--- 총판 테스트를 위한 초기값 ---//
     if(Agencies.find().count() === 0) {
-        var tmpSchema = sportsSchema.getSchema('agencies');
+        var 임시스키마 = sportsSchema.getSchema('agencies');
 
         for (var i = 0; i < 10; i++) {
-            tmpSchema.id = 'agencyID' + i;
-            tmpSchema.pw = 'agencyPW' + i;
-            tmpSchema.name = 'agencyNAME' + i;
-            tmpSchema.nick_name = 'agencyNickName' + i;
-            tmpSchema.cellphone = 'agencyCellPhone' + i;
-            tmpSchema.level = '' + i;
-            tmpSchema.sign_up_ip = '127.0.0.' + i;
-            tmpSchema.sign_up_date_time = new Date();
-            tmpSchema.bank_account = 'xxx-xxx-xxx-xx' + i;
-            tmpSchema.bank_name = '신한';
-            tmpSchema.bank_owner_name = tmpSchema.name;
-            tmpAgencies_id.push(Agencies.insert(tmpSchema));
+            임시스키마.아이디 = '총판ID' + i;
+            임시스키마.비밀번호 = '총판PW' + i;
+            임시스키마.이름 = '총판 이름' + i;
+            임시스키마.별명= '총판 별명' + i;
+            임시스키마.휴대폰 = '총판 010-1111-222' + i;
+            임시스키마.레벨 = '' + i;
+            임시스키마.가입IP = '127.0.0.' + i;
+            임시스키마.가입일시 = new Date();
+            임시스키마.은행계좌번호 = 'xxx-xxx-xxx-xx' + i;
+            임시스키마.은행명 = '신한';
+            임시스키마.은행계좌주명 = 임시스키마.이름;
+            tmpAgencies_id.push(Agencies.insert(임시스키마));
         }
     }
 
 //--- 매장 테스트를 위한 초기값 ---//
     if(Branches.find().count() === 0) {
-        var tmpSchema = sportsSchema.getSchema('branches');
+        var 임시스키마 = sportsSchema.getSchema('branches');
 
         for (var i = 0; i < 20; i++) {
-            tmpSchema.id = 'agencyID' + i;
-            tmpSchema.pw = 'agencyPW' + i;
-            tmpSchema.name = 'agencyNAME' + i;
-            tmpSchema.nick_name = 'agencyNickName' + i;
-            tmpSchema.cellphone = 'agencyCellPhone' + i;
-            tmpSchema.level = '' + i;
-            tmpSchema.sign_up_ip = '127.0.0.' + i;
-            tmpSchema.sign_up_date_time = new Date();
-            tmpSchema.bank_account = '000-000-000-00' + i;
-            tmpSchema.bank_name = '씨';
-            tmpSchema.bank_owner_name = tmpSchema.name;
-            tmpSchema.schema_agency_id = tmpAgencies_id[i%10];
-            Branches.insert(tmpSchema);
+            임시스키마.아이디 = '매장ID' + i;
+            임시스키마.비밀번호 = '매장PW' + i;
+            임시스키마.이름 = '매장 이름' + i;
+            임시스키마.별명 = '매장 별명' + i;
+            임시스키마.휴대폰 = '010-0000-000' + i;
+            임시스키마.레벨 = '' + i;
+            임시스키마.가입IP = '127.0.0.' + i;
+            임시스키마.가입일시 = new Date();
+            임시스키마.은행계좌번호 = '000-000-000-00' + i;
+            임시스키마.은행명 = '씨티';
+            임시스키마.은행계좌주명 = 임시스키마.이름;
+            임시스키마.소속총판_id = tmpAgencies_id[i%10];
+            Branches.insert(임시스키마);
         }
     }
 

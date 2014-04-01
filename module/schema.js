@@ -22,7 +22,7 @@ schema = [
             ,{ "key"   : {"name" : "비밀번호"              } , "value" : {"type" : "string" , "default":''   , "desc" : "총판 PW" }}
             ,{ "key"   : {"name" : "이름"            } , "value" : {"type" : "string" , "default":''   , "desc" : "총판 이름" }}
             ,{ "key"   : {"name" : "별명"       } , "value" : {"type" : "string" , "default":''   , "desc" : "총판 별명 (사용 미정)" }}
-            ,{ "key"   : {"name" : "휴대좌폰"       } , "value" : {"type" : "string" , "default":''   , "desc" : "총판 휴대폰" }}
+            ,{ "key"   : {"name" : "휴대폰"       } , "value" : {"type" : "string" , "default":''   , "desc" : "총판 휴대폰" }}
             ,{ "key"   : {"name" : "레벨"           } , "value" : {"type" : "string" , "default":''   , "desc" : "총판 등급" }}
             ,{ "key"   : {"name" : "가입IP"      } , "value" : {"type" : "string" , "default":''   , "desc" : "총판 가입 IP" }}
             ,{ "key"   : {"name" : "가입일시"} , "value" : {"type" : "object" , "default":''   , "desc" : "총판 가입 일시" }}
@@ -30,8 +30,6 @@ schema = [
             ,{ "key"   : {"name" : "은행명"       } , "value" : {"type" : "string" , "default":''   , "desc" : "총판 계좌은행명" }}
             ,{ "key"   : {"name" : "은행계좌주명" } , "value" : {"type" : "string" , "default":''   , "desc" : "총판 계좌주명" }}
             ,{ "key"   : {"name" : "정산방식" } , "value" : {"type" : "string" , "default":''   , "desc" : "정산 방식. bet(배팅액기준)/profit(당첨금 기준)" }}
-            ,{ "key"   : {"name" : "은행계좌주명" } , "value" : {"type" : "string" , "default":''   , "desc" : "총판 계좌주명" }}
-            ,{ "key"   : {"name" : "은행계좌주명" } , "value" : {"type" : "string" , "default":''   , "desc" : "총판 계좌주명" }}
         ]
     }}
     ,{
