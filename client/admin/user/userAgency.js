@@ -19,7 +19,8 @@ Template.userAgency.events({
         tmpl.find('form').reset();
 
 //        $('#myModal').attr('aria-hidden')
-//        console.log(tmpl.find('#myModal'));
+        console.log("fffffffffff : ");
+        console.log(tmpl.find('#myModal'));
         $(tmpl.find('#myModal')).modal({'show':false});
 
     },
@@ -49,8 +50,8 @@ Template.agencyTable.helpers({
     dataAgency: function(){
         var obj = Agencies.find();
 //        Session.set('tmp', obj);
-        console.log("asdfasdfasdf");
-        console.log(obj.fetch());
+//        console.log("asdfasdfasdf");
+//        console.log(obj.fetch());
         return Agencies.find();
     }
 });
