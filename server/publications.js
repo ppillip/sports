@@ -4,3 +4,7 @@ Meteor.publish('sportsSettings', function() {
 Meteor.publish('agencies', function() {
     return Agencies.find();
 });
+
+Meteor.publish('gameCategoryEvents', function() {
+    return GameCategoryEvents.find();
+});
