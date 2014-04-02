@@ -47,7 +47,7 @@ this.route('gameCategoryInfo', {
     path: '/gameCategoryInfo'
     ,template:'gameCategoryInfo'
     ,waitOn: function () {
-        return [ Meteor.subscribe('gameCategoryEvents') ];
+        return [ Meteor.subscribe('게임카테고리종목') ];
     }
     ,data: function() {
         return {

@@ -13,7 +13,7 @@ Meteor.methods({
         if(!obj._id)
             obj["_id"] = Meteor.uuid();
 
-        GameCategoryEvents.insert(obj);
+        게임카테고리종목.insert(obj);
 
         return {msg:"저장하였습니다"};
 

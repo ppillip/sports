@@ -2,11 +2,8 @@
  실행순서 : 공통 파트 -> 서버 파트 -> startup();
  */
 
-console.log("### OUTSIDE SERVER STARTUP");
-
 Meteor.startup(function () {
 
-    console.log("### INSIDE SERVER STARTUP");
     /*
      운영 // 테스트
      if(실행모드==='테스트') 일때로 테스트 코드를 정의.
