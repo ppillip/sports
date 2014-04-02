@@ -5,7 +5,7 @@ Template.userAgency.events({
 
 //        console.log("asdfasdfasdfffffffffffffffffffffffffffff : " + tmpl.find('#id'));
 
-        var schAgency = sportsSchema.getSchema('agencies');
+        var schAgency = sportsSchema.getSchema('총판');
 
         _.each(schAgency,function(val,idx){
 //            console.log("IDX : ", idx, " : ", $("[name="+idx+"]").val());
@@ -14,21 +14,24 @@ Template.userAgency.events({
 
 //        $(tmpl.find("[name="+idx+"]")).val();
 
-        Agencies.insert(schAgency);
+        총판.insert(schAgency);
 
         tmpl.find('form').reset();
-//        $(tmpl.find('[name=cancelCreateAgency]')).trigger('click');
+        $(tmpl.find('[name=cancelCreateAgency]')).trigger('click');
 
 //        $('#myModal').attr('aria-hidden')
 //        console.log("fffffffffff : ");
 //        console.log(tmpl.find('#myModal'));
-        $(tmpl.find('#myModal')).modal({'show':false});
+//        $(tmpl.find('#myModal')).modal({'show':false});
+
+//        var tmp = $(tmpl.find('#select-1')).val();
+//        console.log(tmp);
 
     },
     'click #btn_remove' : function(e,tmp) {
         e.preventDefault();
 
-        Agencies.remove({_id:this._id});
+        총판.remove({_id:this._id});
 
     }
 });
@@ -39,20 +42,28 @@ Template.userAgency.rendered = function(){
 
 Template.userAgency.helpers({
     dataAgency: function(){
-        var obj = Agencies.find();
+        var obj = 총판.find();
 //        Session.set('tmp', obj);
 //        console.log(obj.fetch());
-        return Agencies.find();
+        return 총판.find();
     }
 });
 
 
 Template.agencyTable.helpers({
     dataAgency: function(){
-        var obj = Agencies.find();
+        var obj = 총판.find();
 //        Session.set('tmp', obj);
 //        console.log("asdfasdfasdf");
 //        console.log(obj.fetch());
-        return Agencies.find();
+        return 총판.find();
     }
+});
+
+
+
+Template.userAgencyInputModal.helpers({
+   회원종류 : function() {
+       return 코드성데이터.회원종류;
+   }
 });

@@ -29,8 +29,8 @@ Meteor.startup(function() {
 var tmpAgencies_id = new Array();
 
 //--- 총판 테스트를 위한 초기값 ---//
-    if(Agencies.find().count() === 0) {
-        var 임시스키마 = sportsSchema.getSchema('agencies');
+    if(총판.find().count() === 0) {
+        var 임시스키마 = sportsSchema.getSchema('총판');
 
         for (var i = 0; i < 10; i++) {
             임시스키마.아이디 = '총판ID' + i;
@@ -49,13 +49,13 @@ var tmpAgencies_id = new Array();
             임시스키마.회원승인가능여부 = '아니오';
             임시스키마.게시판관리가능여부 = '아니오';
             임시스키마.전체회원조회가능여부 = '아니오';
-            tmpAgencies_id.push(Agencies.insert(임시스키마));
+            tmpAgencies_id.push(총판.insert(임시스키마));
         }
     }
 
 //--- 매장 테스트를 위한 초기값 ---//
-    if(Branches.find().count() === 0) {
-        var 임시스키마 = sportsSchema.getSchema('branches');
+    if(매장.find().count() === 0) {
+        var 임시스키마 = sportsSchema.getSchema('매장');
 
         for (var i = 0; i < 20; i++) {
             임시스키마.아이디 = '매장ID' + i;
@@ -75,7 +75,7 @@ var tmpAgencies_id = new Array();
             임시스키마.게시판관리가능여부 = '아니오';
             임시스키마.전체회원조회가능여부 = '아니오';
             임시스키마.소속총판_id = tmpAgencies_id[i%10];
-            Branches.insert(임시스키마);
+            매장.insert(임시스키마);
         }
     }
 

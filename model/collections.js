@@ -1,4 +1,6 @@
-SportsSettings     = new Meteor.Collection('sportsSettings');
-Agencies           = new Meteor.Collection('agencies');
-GameCategoryEvents = new Meteor.Collection('gameCategoryEvents');
-Branches = new Meteor.Collection('branches');                           //매장
+스포츠세팅     = new Meteor.Collection('스포츠세팅');
+총판           = new Meteor.Collection('총판');
+게임카테고리종목 = new Meteor.Collection('게임카테고리종목');
+매장 = new Meteor.Collection('매장');                           //매장
+
+

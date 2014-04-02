@@ -13,7 +13,7 @@ sportsSchema =
 
 schema = [
     {
-        name : 'agencies'
+        name : '총판'
         ,definition : {
         "name" : "총판"
         ,"desc" : "매장을 소유하고 있음. (매장에 총판 키가 있음.)"
@@ -37,7 +37,7 @@ schema = [
         ]
     }}
     ,{
-        name : 'branches'
+        name : '매장'
         ,definition : {
             "name" : "매장"
             ,"desc" : "총판에서 소유한 매장"
@@ -119,7 +119,7 @@ schema = [
             ]
         }}
     ,{
-        name : 'gameCategoryEvents'
+        name : '게임카테고리종목'
         ,definition : {
             "name" : "게임 카테고리 대분류"
             ,"desc" : "종목명 (축구/농구)"
@@ -186,7 +186,7 @@ schema = [
         }
     }
     ,{
-        name : 'sportsSettings'
+        name : '스포츠세팅'
         ,definition : {
             "name" : "설정정보"
             ,"desc" : "게임 진행에 필요한 전반적인 셋팅들을 저장"

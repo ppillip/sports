@@ -1,13 +1,13 @@
-Meteor.publish('sportsSettings', function() {
-    return SportsSettings.find();
+Meteor.publish('스포츠세팅', function() {
+    return 스포츠세팅.find();
 });
-Meteor.publish('agencies', function() {
-    return Agencies.find();
+Meteor.publish('총판', function() {
+    return 총판.find();
 });
 
-Meteor.publish('gameCategoryEvents', function() {
-    return GameCategoryEvents.find();
+Meteor.publish('게임카테고리종목', function() {
+    return 게임카테고리종목.find();
 });
-Meteor.publish('branches', function() {
-    return Branches.find();
+Meteor.publish('매장', function() {
+    return 매장.find();
 });

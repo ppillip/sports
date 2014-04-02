@@ -1,47 +1,5 @@
 
-
-
 <template name="userAgencyInputModal">
-
-    <div class="bs-example">
-        <ul class="nav nav-pills">
-            <li class="active"><a href="#">Regular link</a></li>
-            <li class="dropdown">
-                <a id="drop4" role="button" data-toggle="dropdown" href="#">Dropdown <b class="caret"></b></a>
-                <ul id="menu1" class="dropdown-menu" role="menu" aria-labelledby="drop4">
-                    <li role="presentation"><a role="menuitem" tabindex="-1" href="http://twitter.com/fat">Action</a></li>
-                    <li role="presentation"><a role="menuitem" tabindex="-1" href="http://twitter.com/fat">Another action</a></li>
-                    <li role="presentation"><a role="menuitem" tabindex="-1" href="http://twitter.com/fat">Something else here</a></li>
-                    <li role="presentation" class="divider"></li>
-                    <li role="presentation"><a role="menuitem" tabindex="-1" href="http://twitter.com/fat">Separated link</a></li>
-                </ul>
-            </li>
-            <li class="dropdown">
-                <a id="drop5" role="button" data-toggle="dropdown" href="#">Dropdown 2 <b class="caret"></b></a>
-                <ul id="menu2" class="dropdown-menu" role="menu" aria-labelledby="drop5">
-                    <li role="presentation"><a role="menuitem" tabindex="-1" href="http://twitter.com/fat">Action</a></li>
-                    <li role="presentation"><a role="menuitem" tabindex="-1" href="http://twitter.com/fat">Another action</a></li>
-                    <li role="presentation"><a role="menuitem" tabindex="-1" href="http://twitter.com/fat">Something else here</a></li>
-                    <li role="presentation" class="divider"></li>
-                    <li role="presentation"><a role="menuitem" tabindex="-1" href="http://twitter.com/fat">Separated link</a></li>
-                </ul>
-            </li>
-            <li class="dropdown">
-                <a id="drop6" role="button" data-toggle="dropdown" href="#">Dropdown 3 <b class="caret"></b></a>
-                <ul id="menu3" class="dropdown-menu" role="menu" aria-labelledby="drop6">
-                    <li role="presentation"><a role="menuitem" tabindex="-1" href="http://twitter.com/fat">Action</a></li>
-                    <li role="presentation"><a role="menuitem" tabindex="-1" href="http://twitter.com/fat">Another action</a></li>
-                    <li role="presentation"><a role="menuitem" tabindex="-1" href="http://twitter.com/fat">Something else here</a></li>
-                    <li role="presentation" class="divider"></li>
-                    <li role="presentation"><a role="menuitem" tabindex="-1" href="http://twitter.com/fat">Separated link</a></li>
-                </ul>
-            </li>
-        </ul> <!-- /pills -->
-    </div>
-
-
-
-
     <!--Button trigger modal-->
     <button class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">
         총판 생성
@@ -58,33 +16,13 @@
                     <form id="insertAgency">
                         <table>
                             <tr>
-                                <div class="form-group">
-                                    <label class="col-md-2 control-label" for="select-1">Select</label>
-                                    <div class="col-md-10">
-
+                                <div class="control-group">
+                                    <label class="control-label">Select</label>
                                         <select class="form-control" id="select-1">
-                                            <option>Amsterdam</option>
-                                            <option>Atlanta</option>
-                                            <option>Baltimore</option>
-                                            <option>Boston</option>
-                                            <option>Buenos Aires</option>
-                                            <option>Calgary</option>
-                                            <option>Chicago</option>
-                                            <option>Denver</option>
-                                            <option>Dubai</option>
-                                            <option>Frankfurt</option>
-                                            <option>Hong Kong</option>
-                                            <option>Honolulu</option>
-                                            <option>Houston</option>
-                                            <option>Kuala Lumpur</option>
-                                            <option>London</option>
-                                            <option>Los Angeles</option>
-                                            <option>Melbourne</option>
-                                            <option>Mexico City</option>
-                                            <option>Miami</option>
-                                            <option>Minneapolis</option>
+                                            {{#each 회원종류}}
+                                            <option>{{이름}}</option>
+                                            {{/each}}
                                         </select>
-                                    </div>
                                 </div>
 
                                 <div class="control-group">
