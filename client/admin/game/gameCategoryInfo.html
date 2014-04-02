@@ -55,8 +55,21 @@
 
                         <form class="smart-form">
                         <header>
-                            Standard Form Header
+                            운동종목
                         </header>
+
+                            <fieldset>
+                                <section>
+
+                                    {{#each list}}
+                                        {{>listItem}}
+                                    {{/each}}
+
+                                </section>
+                            </fieldset>
+
+
+
 
                         <footer>
                             <button type="submit" class="btn btn-primary">
@@ -105,8 +118,13 @@
 
                         <form class="smart-form">
                         <header>
-                            Standard Form Header
+                            하위 종목 목록
                         </header>
+
+
+
+
+
 
                         <fieldset>
 
@@ -573,18 +591,25 @@
 
 <template name="gameInputForm">
     <div class="well">
-        <form class="form-inline" role="form">
+        <div class="form-inline" role="form">
             <fieldset>
                 <div class="form-group">
-                    <input type="text" class="form-control" placeholder="분류명입력">
+                    <input type="text" name="분류명" class="form-control" placeholder="분류명입력">
                 </div>
                 <div class="form-group">
                     <input type="file" class="btn btn-default">
                 </div>
-                <button class="btn btn-primary">
+                <button name="save" class="btn btn-primary">
                     <i class="fa fa-save"></i> 등록
                 </button>
             </fieldset>
-        </form>
+        </div>
     </div>
 </template>
+
+
+<template name="listItem">
+    <p class="well">{{이름}}</p>
+</template>
+
+

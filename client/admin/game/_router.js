@@ -47,7 +47,7 @@ this.route('gameCategoryInfo', {
     path: '/gameCategoryInfo'
     ,template:'gameCategoryInfo'
     ,waitOn: function () {
-        return [  ];
+        return [ Meteor.subscribe('gameCategoryEvents') ];
     }
     ,data: function() {
         return {
