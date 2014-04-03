@@ -28,14 +28,14 @@ Template.userAgency.rendered = function(){
 };
 
 Template.userAgency.helpers({
-    dataAgency: function(){
+    회원정보: function(){
         return 총판.find();
     }
 });
 
 
 Template.agencyTable.helpers({
-    dataAgency: function(){
+    회원정보: function(){
         return 총판.find();
     }
 });

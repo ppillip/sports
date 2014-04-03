@@ -36,8 +36,6 @@ Template.userInfo.helpers({
 
 Template.userTable.helpers({
     회원정보: function(){
-        console.log("DDDDDDDDDDDDDD");
-        console.log(회원.find().fetch()  );
         return 회원.find();
     }
 });

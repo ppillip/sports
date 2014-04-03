@@ -101,7 +101,7 @@ schema =
         }
         ,
         {
-            name: 'userMoneyLogs',
+            name: '회원머니로그',
             definition: {
                 "name": "회원 머니",
                 "desc": "회원 머니 입출금 로그",
@@ -119,7 +119,7 @@ schema =
         }
         ,
         {
-            name: 'userPointLogs',
+            name: '회원포인트로그',
             definition: {
                 "name": "회원 포인트",
                 "desc": "회원 포인트 입출금 로그",
@@ -149,7 +149,7 @@ schema =
         }
         ,
         {
-            name: 'gameCategoryLeagues',
+            name: '게임카테고리리그',
             definition: {
                 "name": "게임 카테고리 중분류",
                 "desc": "리그명 (MLB / NBA)",
@@ -162,7 +162,7 @@ schema =
         }
         ,
         {
-            name: 'createdGames',
+            name: '게임정보',
             definition: {
                 "name": "생성된 게임 정보",
                 "desc": "관리자에 의해 생성된 게임 정보. 리그명 _id 키를 포함한다. 게임 사전 정보만 가지고 있다.",
@@ -194,7 +194,7 @@ schema =
              (검색 퍼포먼스 문제시 차선책 : 유저정보와 게임정보를 모두 포함하고 있으며, 게임 종료 시 (폴더의 마지막 게임이 종료 될 시) 해당 폴더 전체를 종료 게임 로그로 넘긴다.)
              */
 
-            name: 'bettingGameLogs',
+            name: '게임베팅로그',
             definition: {
                 "name": "베팅 게임 로그",
                 "desc": "유저+생성된게임 으로 베팅된 게임 로그. 결과입력시 결과",

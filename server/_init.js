@@ -10,7 +10,6 @@ Meteor.startup(function () {
      */
     실행모드 = '테스트';
 
-
     console.log('#############################################');
     console.log('################## 시작 ##################');
     console.log('############ 실행모드 : ' + 실행모드 + '##################');
@@ -39,7 +38,6 @@ Meteor.startup(function () {
     if (스포츠세팅.find().count() !== 1) {
         var 임시스키마 = sportsSchema.getSchema('스포츠세팅');
         임시스키마.프로그램명 = 'Sports';
-
         스포츠세팅.insert(임시스키마);
     }
 
@@ -53,9 +51,9 @@ Meteor.startup(function () {
     }
 
     //--- 관리자 최초 생성 ---//
-    ddd = 회원.find({아이디: '관리자'}).fetch();
-//    console.log('result : ', 회원.find({아이디: '관리자'}));
-    if (!회원.find({아이디: '관리자'})) {
+    if (회원.find({아이디: '관리자'}).count() === 0) {
+        콘솔 ('지랄');
+
         var 임시스키마 = sportsSchema.getSchema('회원');
 
         임시스키마.아이디 = '관리자';
