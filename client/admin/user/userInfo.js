@@ -39,9 +39,3 @@ Template.userTable.helpers({
         return 회원.find();
     }
 });
-
-Template.userInfoInputModal.helpers({
-    회원종류 : function() {
-        return 코드성데이터.회원종류;
-    }
-});

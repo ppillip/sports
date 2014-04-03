@@ -14,56 +14,54 @@ sportsSchema =
 schema =
     [
         {
-            name: '총판',
+            name: '관리자',
             definition: {
-                "name": "총판",
-                "desc": "매장을 소유하고 있음. (매장에 총판 키가 있음.)",
+                "name": "관리자",
+                "desc": "관리자 정보",
                 "properties": [
-                    { "key": {"name": "아이디"}, "value": {"type": "string", "default": '', "desc": "총판 ID"}}
-                    ,{ "key": {"name": "비밀번호"}, "value": {"type": "string", "default": '', "desc": "총판 PW"}}
-                    ,{ "key": {"name": "이름"}, "value": {"type": "string", "default": '', "desc": "총판 이름"}}
-                    ,{ "key": {"name": "별명"}, "value": {"type": "string", "default": '', "desc": "총판 별명 (사용 미정)"}}
-                    ,{ "key": {"name": "휴대폰"}, "value": {"type": "string", "default": '', "desc": "총판 휴대폰"}}
-                    ,{ "key": {"name": "레벨"}, "value": {"type": "string", "default": '', "desc": "총판 등급"}}
-                    ,{ "key": {"name": "가입IP"}, "value": {"type": "string", "default": '', "desc": "총판 가입 IP"}}
-                    ,{ "key": {"name": "가입일시"}, "value": {"type": "object", "default": '', "desc": "총판 가입 일시"}}
-                    ,{ "key": {"name": "은행계좌번호"}, "value": {"type": "string", "default": '', "desc": "총판 계좌번호"}}
-                    ,{ "key": {"name": "은행명"}, "value": {"type": "string", "default": '', "desc": "총판 계좌은행명"}}
-                    ,{ "key": {"name": "은행계좌주명"}, "value": {"type": "string", "default": '', "desc": "총판 계좌주명"}}
+                    { "key": {"name": "아이디"}, "value": {"type": "string", "default": '', "desc": "아이디"}}
+                    ,{ "key": {"name": "비밀번호"}, "value": {"type": "string", "default": '', "desc": "PW"}}
+                    ,{ "key": {"name": "이름"}, "value": {"type": "string", "default": '', "desc": "이름"}}
+                    ,{ "key": {"name": "닉네임"}, "value": {"type": "string", "default": '', "desc": "닉네임 (사용 미정)"}}
+                    ,{ "key": {"name": "전화번호"}, "value": {"type": "string", "default": '', "desc": "전화번호"}}
+                    ,{ "key": {"name": "레벨"}, "value": {"type": "string", "default": '', "desc": "등급"}}
+                    ,{ "key": {"name": "가입IP"}, "value": {"type": "string", "default": '', "desc": "가입 IP"}}
+                    ,{ "key": {"name": "가입일시"}, "value": {"type": "object", "default": '', "desc": "가입 일시"}}
                     ,{ "key": {"name": "최종접속일시"}, "value": {"type": "object", "default": {}, "desc": "최종접속일시"}}
-                    ,{ "key": {"name": "정산방식"}, "value": {"type": "string", "default": '', "desc": "베팅액기준/당첨액기준 (구메뉴 낙첨액 = 당첨액)"}}
-                    ,{ "key": {"name": "정산비율"}, "value": {"type": "string", "default": '', "desc": "%"}}
                     ,{ "key": {"name": "회원승인가능여부"}, "value": {"type": "string", "default": '', "desc": "네/아니오"}}
                     ,{ "key": {"name": "게시판관리가능여부"}, "value": {"type": "string", "default": '', "desc": "네/아니오"}}
                     ,{ "key": {"name": "전체회원조회가능여부"}, "value": {"type": "string", "default": '', "desc": "네/아니오"}}
+                    ,{ "key": {"name": "로그인횟수"}, "value": {"type": "string", "default": '', "desc": "로그인시 +1"}}
+//                    ,{ "key": {"name": "소속_id"}, "value": {"type": "string", "default": '', "desc": ""}}
                 ]
             }
         }
         ,
         {
-            name: '매장',
+            name: '총판매장',
             definition: {
-                "name": "매장",
-                "desc": "총판에서 소유한 매장",
+                "name": "총판매장",
+                "desc": "총판과 매장. 소속_id가 없으면 총판",
                 "properties": [
-                    { "key": {"name": "아이디"}, "value": {"type": "string", "default": '', "desc": "매장 ID"}}
-                    ,{ "key": {"name": "비밀번호"}, "value": {"type": "string", "default": '', "desc": "매장 PW"}}
-                    ,{ "key": {"name": "이름"}, "value": {"type": "string", "default": '', "desc": "매장 이름"}}
-                    ,{ "key": {"name": "별명"}, "value": {"type": "string", "default": '', "desc": "매장 별명 (사용 미정)"}}
-                    ,{ "key": {"name": "휴대폰"}, "value": {"type": "string", "default": '', "desc": "매장 휴대폰"}}
-                    ,{ "key": {"name": "레벨"}, "value": {"type": "string", "default": '', "desc": "매장 등급"}}
-                    ,{ "key": {"name": "가입IP"}, "value": {"type": "string", "default": '', "desc": "매장 가입 IP"}}
-                    ,{ "key": {"name": "가입일시"}, "value": {"type": "object", "default": {}, "desc": "매장 가입일시"}}
-                    ,{ "key": {"name": "은행계좌번호"}, "value": {"type": "string", "default": '', "desc": "매장 계좌번호"}}
-                    ,{ "key": {"name": "은행명"}, "value": {"type": "string", "default": '', "desc": "매장 계좌은행명"}}
-                    ,{ "key": {"name": "은행계좌주명"}, "value": {"type": "string", "default": '', "desc": "매장 계좌주명"}}
+                    { "key": {"name": "아이디"}, "value": {"type": "string", "default": '', "desc": "아이디"}}
+                    ,{ "key": {"name": "비밀번호"}, "value": {"type": "string", "default": '', "desc": "PW"}}
+                    ,{ "key": {"name": "이름"}, "value": {"type": "string", "default": '', "desc": "이름"}}
+                    ,{ "key": {"name": "닉네임"}, "value": {"type": "string", "default": '', "desc": "닉네임 (사용 미정)"}}
+                    ,{ "key": {"name": "전화번호"}, "value": {"type": "string", "default": '', "desc": "전화번호"}}
+                    ,{ "key": {"name": "레벨"}, "value": {"type": "string", "default": '', "desc": "등급"}}
+                    ,{ "key": {"name": "가입IP"}, "value": {"type": "string", "default": '', "desc": "가입 IP"}}
+                    ,{ "key": {"name": "가입일시"}, "value": {"type": "object", "default": '', "desc": "가입 일시"}}
+                    ,{ "key": {"name": "은행계좌번호"}, "value": {"type": "string", "default": '', "desc": "계좌번호"}}
+                    ,{ "key": {"name": "은행명"}, "value": {"type": "string", "default": '', "desc": "계좌은행명"}}
+                    ,{ "key": {"name": "은행계좌주명"}, "value": {"type": "string", "default": '', "desc": "계좌주명"}}
                     ,{ "key": {"name": "최종접속일시"}, "value": {"type": "object", "default": {}, "desc": "최종접속일시"}}
                     ,{ "key": {"name": "정산방식"}, "value": {"type": "string", "default": '', "desc": "베팅액기준/당첨액기준 (구메뉴 낙첨액 = 당첨액)"}}
                     ,{ "key": {"name": "정산비율"}, "value": {"type": "string", "default": '', "desc": "%"}}
                     ,{ "key": {"name": "회원승인가능여부"}, "value": {"type": "string", "default": '', "desc": "네/아니오"}}
                     ,{ "key": {"name": "게시판관리가능여부"}, "value": {"type": "string", "default": '', "desc": "네/아니오"}}
                     ,{ "key": {"name": "전체회원조회가능여부"}, "value": {"type": "string", "default": '', "desc": "네/아니오"}}
-                    ,{ "key": {"name": "소속총판_id"}, "value": {"type": "string", "default": '', "desc": "소속된 총판 _id"}}
+                    ,{ "key": {"name": "로그인횟수"}, "value": {"type": "string", "default": '', "desc": "로그인시 +1"}}
+                    ,{ "key": {"name": "소속_id"}, "value": {"type": "string", "default": '', "desc": "소속된 총판의 _id"}}
                 ]
             }
         }
@@ -79,10 +77,10 @@ schema =
                 "properties": [
                     { "key": {"name": "아이디"}, "value": {"type": "string", "default": '', "desc": "회원 아이디"}}
                     ,{ "key": {"name": "비밀번호"}, "value": {"type": "string", "default": '', "desc": "회원 비밀번호"}}
-                    ,{ "key": {"name": "출금계좌번호"}, "value": {"type": "string", "default": '', "desc": "회원 출금 비밀번호"}}
+                    ,{ "key": {"name": "출금비밀번호"}, "value": {"type": "string", "default": '', "desc": "회원 출금 비밀번호"}}
                     ,{ "key": {"name": "이름"}, "value": {"type": "string", "default": '', "desc": "회원 이름"}}
-                    ,{ "key": {"name": "별명"}, "value": {"type": "string", "default": '', "desc": "회원 별명"}}
-                    ,{ "key": {"name": "휴대폰"}, "value": {"type": "string", "default": '', "desc": "회원 전화번호"}}
+                    ,{ "key": {"name": "닉네임"}, "value": {"type": "string", "default": '', "desc": "회원 닉네임"}}
+                    ,{ "key": {"name": "전화번호"}, "value": {"type": "string", "default": '', "desc": "회원 전화번호"}}
                     ,{ "key": {"name": "레벨"}, "value": {"type": "string", "default": '', "desc": "회원 등급"}}
                     ,{ "key": {"name": "보유금액"}, "value": {"type": "string", "default": '', "desc": "회원 보유 금액"}}
                     ,{ "key": {"name": "보유포인트"}, "value": {"type": "string", "default": '', "desc": "회원 보유 포인트"}}
@@ -95,6 +93,7 @@ schema =
                     ,{ "key": {"name": "메모"}, "value": {"type": "string", "default": '', "desc": "회원 메모"}}
                     ,{ "key": {"name": "간단메모"}, "value": {"type": "string", "default": '', "desc": "회원 간단 메모"}}
                     ,{ "key": {"name": "회원종류"}, "value": {"type": "string", "default": '', "desc": "일반/관리"}}
+                    ,{ "key": {"name": "로그인횟수"}, "value": {"type": "string", "default": '', "desc": "로그인시 +1"}}
                     ,{ "key": {"name": "소속매장_id"}, "value": {"type": "string", "default": '', "desc": "회원 소속 매장 _id. 총판에 바로 소속은 불가. (운영용 아이디의 경우는 '관리자'"}}
                 ]
             }

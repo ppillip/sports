@@ -8,7 +8,7 @@ Router.map(function () {
         }
         ,data: function() {
             return {
-                test     : 'userInfo'
+                화면이름     : '회원정보'
             }
         }
     });
@@ -22,7 +22,7 @@ Router.map(function () {
         }
         ,data: function() {
             return {
-                test     : 'userBettingUser'
+                화면이름     : '베팅회원'
             }
         }
     });
@@ -36,7 +36,7 @@ Router.map(function () {
         }
         ,data: function() {
             return {
-                test     : 'userBlackList'
+                화면이름     : '블랙리스트'
             }
         }
     });
@@ -50,7 +50,7 @@ Router.map(function () {
         }
         ,data: function() {
             return {
-                test     : 'gameUserBettingStatus'
+                화면이름     : '유저베팅현황'
             }
         }
     });
@@ -64,7 +64,7 @@ Router.map(function () {
         }
         ,data: function() {
             return {
-                test     : 'gameHQUserBettingStatus'
+                화면이름     : '본사회원베팅현황'
             }
         }
     });
@@ -78,7 +78,7 @@ Router.map(function () {
         }
         ,data: function() {
             return {
-                test     : 'userHQUser'
+                화면이름     : '본사회원'
             }
         }
     });
@@ -92,7 +92,7 @@ Router.map(function () {
         }
         ,data: function() {
             return {
-                test     : 'userAgency'
+                화면이름     : '총판'
             }
         }
     });
@@ -100,13 +100,13 @@ Router.map(function () {
     /*회원관리 > 매장회원*/
     this.route('userBranch', {
         path: '/userBranch'
-        ,template:'userBranch'
+        ,template:'userAgency'
         ,waitOn: function () {
             return [  ];
         }
         ,data: function() {
             return {
-                test     : 'userBranch'
+                화면이름     : '매장'
             }
         }
     });
@@ -120,7 +120,7 @@ Router.map(function () {
         }
         ,data: function() {
             return {
-                test     : 'userLeft'
+                화면이름     : '탈퇴회원'
             }
         }
     });
@@ -134,7 +134,7 @@ Router.map(function () {
         }
         ,data: function() {
             return {
-                test     : 'userJoinApprove'
+                화면이름     : '가입승인'
             }
         }
     });
