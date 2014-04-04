@@ -17,17 +17,20 @@ Template.gameCategoryInfo.helpers({
 
 Template.gameInputForm.events({
     'click button[name=save]' : function(e,tmpl){
-        alert('nice');
         var _이름 = tmpl.find('input[name=분류명]').value;
         var obj = sportsSchema.getSchema('게임카테고리종목',{이름:_이름});
-        console.log(obj);
 
         Meteor.call('saveGameCategoryEvents',obj,'', '', 'UTF-8',function(err,result){
-            if(err){
 
+            if(err){
+                alert(err);
+            }else{
+                tmpl.find('input[name=분류명]').value = '';
+                tmpl.find('file').value = '';
+                alert(result.msg);
             }
 
-            console.log(result);
+
         });
 
     }
@@ -42,7 +45,15 @@ Template.gameInputForm.helpers({
 });
 
 Template.listItem.events({
-
+    'click .glyphicon-remove' : function(){
+        Meteor.call('removeGame',this._id,function(err,result){
+            if(err){
+                alert(err);
+            }else{
+                alert(result.msg || '성공했습니다.');
+            }
+        });
+    }
 });
 
 Template.listItem.rendered = function(){

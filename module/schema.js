@@ -153,9 +153,9 @@ schema =
                 "name": "게임 카테고리 중분류",
                 "desc": "리그명 (MLB / NBA)",
                 "properties": [
-                    { "key": {"name": "이미지"}, "value": {"type": "object", "default": null, "desc": "리그 이미지 (공모양 / 깃발 등)"}}
-                    ,{ "key": {"name": "이름"}, "value": {"type": "string", "default": '', "desc": "리그명"}}
-                    ,{ "key": {"name": "소속종목_id"}, "value": {"type": "string", "default": '', "desc": "상위 대분류(종목명) _id"}}
+                     { "key": {"name": "이미지"     }, "value": {"type": "object", "default": null , "desc": "리그 이미지 (공모양 / 깃발 등)"}}
+                    ,{ "key": {"name": "이름"       }, "value": {"type": "string", "default": ''   , "desc": "리그명"                      }}
+                    ,{ "key": {"name": "소속종목_id"}, "value": {"type": "string", "default": ''   , "desc": "상위 대분류(종목명) _id"       }}
                 ]
             }
         }
