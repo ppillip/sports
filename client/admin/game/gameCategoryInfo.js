@@ -18,12 +18,12 @@ Template.gameCategoryInfo.helpers({
     }
     ,
     game : function(){
-        Session.get('game');
+        Session.get('game_id');
     }
 });
 
 Deps.autorun(function() {
-    console.log(Session.get('game'));
+    console.log(Session.get('game_id'));
 });
 
 
@@ -38,7 +38,7 @@ Template.gameInputForm.events({
                 alert(err);
             }else{
                 tmpl.find('input[name=분류명]').value = '';
-                tmpl.find('file').value = '';
+                $(tmpl.find('file')).val('');
                 alert(result.msg);
             }
 
@@ -75,9 +75,10 @@ Template.listItem.events({
     'click .dd-handle' : function(e,tmpl){
 
         console.log('this',this);
-        $('input[name=_hidden_gameid]').val(this._id);
+
         $('h2[name=_hidden_gameName]').html('['+this.이름+'] 리그목록');
-        Session.set('game',this);
+
+        Session.set('game_id',this._id);
 
     }
 });
@@ -96,7 +97,7 @@ Template.leagueInputForm.events({
 
     'click button[name=save]' : function(e,tmpl){
 
-        if( (Session.get('game'))._id) {
+        if( !Session.get('game_id')) {
             alert('종목을 선택하세요');
             return;
         };
@@ -105,7 +106,7 @@ Template.leagueInputForm.events({
 
         var obj = sportsSchema.getSchema('게임카테고리리그',{이름:리그명});
 
-        obj.소속종목_id = Session.get('game')._id;
+        obj.소속종목_id = Session.get('game_id');
 
         Meteor.call('saveGameCategoryLeague',obj,'', '', 'UTF-8',function(err,result){
 
@@ -113,7 +114,7 @@ Template.leagueInputForm.events({
                 alert(err);
             }else{
                 tmpl.find('input[name=리그명]').value = '';
-                tmpl.find('file').value = '';
+                $(tmpl.find('file')).val('');
                 alert(result.msg);
             }
 

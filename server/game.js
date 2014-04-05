@@ -45,7 +45,7 @@ Meteor.methods({
         return {msg:"저장하였습니다"};
 
     }
-    ,
+
 
 
 
