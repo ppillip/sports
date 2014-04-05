@@ -88,7 +88,7 @@ Router.map(function () {
         path: '/userAgency'
         ,template:'userAgency'
         ,waitOn: function () {
-            return [  ];
+            return [ Meteor.subscribe('총판매장') ];
         }
         ,data: function() {
             return {
