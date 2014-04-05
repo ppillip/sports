@@ -15,19 +15,21 @@ Meteor.startup(function () {
     console.log('############ 실행모드 : ' + 실행모드 + '##################');
     console.log('#############################################');
 
-    /*
-     console.log(connect);
 
-     app.use(connect.multipart({
-     limit: '1000mb'
-     }));
 
-     app.use(connect.bodyParser({
-     limit: '1000mb'
-     }));
+	/*
+	 console.log(connect);
 
-     console.log(app);
-     */
+	 app.use(connect.multipart({
+	 limit: '1000mb'
+	 }));
+
+	 app.use(connect.bodyParser({
+	 limit: '1000mb'
+	 }));
+
+	 console.log(app);
+	 */
 
 
     /*
