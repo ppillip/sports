@@ -26,7 +26,9 @@ Deps.autorun(function() {
     console.log(Session.get('game_id'));
 });
 
-
+/*
+* 종목등록
+* */
 Template.gameInputForm.events({
     'click button[name=save]' : function(e,tmpl){
         var _이름 = tmpl.find('input[name=분류명]').value;
@@ -38,7 +40,6 @@ Template.gameInputForm.events({
                 alert(err);
             }else{
                 tmpl.find('input[name=분류명]').value = '';
-                $(tmpl.find('file')).val('');
                 alert(result.msg);
             }
 
@@ -76,7 +77,7 @@ Template.listItem.events({
 
         console.log('this',this);
 
-        $('h2[name=_hidden_gameName]').html('['+this.이름+'] 리그목록');
+        $('h3[name=_hidden_gameName]').html('<b>['+this.이름+']</b> 목록');
 
         Session.set('game_id',this._id);
 
@@ -92,7 +93,9 @@ Template.listItem.helpers({
 });
 
 
-
+/*
+ * 리그등록
+ * */
 Template.leagueInputForm.events({
 
     'click button[name=save]' : function(e,tmpl){
@@ -102,23 +105,30 @@ Template.leagueInputForm.events({
             return;
         };
 
-        var 리그명 = tmpl.find('input[name=리그명]').value;
+        var obj = sportsSchema.getSchema('게임카테고리리그',{
+            이름          :tmpl.find('input[name=리그명]').value
+           ,소속종목_id   :Session.get('game_id')
+        })
 
-        var obj = sportsSchema.getSchema('게임카테고리리그',{이름:리그명});
+        ,fileObj = tmpl.find('input[type=file]').files[0]
 
-        obj.소속종목_id = Session.get('game_id');
+        ,fileReader = new FileReader();
 
-        Meteor.call('saveGameCategoryLeague',obj,'', '', 'UTF-8',function(err,result){
+        fileReader.onload = function(file) {
+            Meteor.call('saveGameCategoryLeague',obj,file.srcElement.result,obj.name,'binary',function(err,result){
 
-            if(err){
-                alert(err);
-            }else{
-                tmpl.find('input[name=리그명]').value = '';
-                $(tmpl.find('file')).val('');
-                alert(result.msg);
-            }
+                if(err){
+                    alert(err);
+                }else{
+                    tmpl.find('input[name=리그명]').value = '';
+                    $(tmpl.find('file')).val('');
+                    alert(result.msg);
+                }
 
-        });
+            });
+        };
+
+        fileReader['readAsBinaryString'](fileObj);
 
     }
 });
@@ -133,7 +143,21 @@ Template.leagueInputForm.helpers({
 
 
 Template.leagueListItem.events({
+    'click .glyphicon-remove' : function(e){
 
+        if(!confirm('삭제하시겠습니까?')){
+            console.log('취소됨',this._id);
+            return;
+        }
+
+        Meteor.call('removeGameCategoryLeague',this._id,function(err,result){
+            if(err){
+                alert(err);
+            }else{
+                alert(result.msg || '성공했습니다.');
+            }
+        });
+    }
 });
 
 Template.leagueListItem.rendered = function(){

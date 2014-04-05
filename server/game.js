@@ -1,5 +1,5 @@
 Future = Npm.require('fibers/future');
-
+fs = Npm.require( 'fs' );
 Meteor.methods({
     /*
      *   대분류 저장
@@ -23,6 +23,12 @@ Meteor.methods({
     removeGameCategoryEvents: function(gid) {
         console.log('# removeGame');
 
+        var cnt = 게임카테고리리그.find({소속종목_id:gid}).count();
+        if( cnt >0){
+            return {msg: cnt + " 건의 하위분류가 존재합니다."};
+        };
+
+
         게임카테고리종목.remove({_id:gid});
 
         console.log('## removeGame');
@@ -39,18 +45,41 @@ Meteor.methods({
         if(!obj._id)
             obj["_id"] = Meteor.uuid();
 
+        var fut = new Future()
+            ,path = process.env.PWD+'/public/icon/'
+            ,name = obj["_id"];
+
+        fs.writeFile(path + name, blob, encoding, function(err) {
+            if (err) {
+                throw (new Meteor.Error(500, 'Failed to save file.', err));
+            } else {
+                console.log( 'The file ' + name + ' (' + encoding + ') was saved to ' + path);
+            }
+            fut.return("good");
+        });
+
+        fut.wait();
+
+
+        console.log( process.env.PWD )
+
         게임카테고리리그.insert(obj);
 
         console.log('## saveGameCategoryLeague');
+
         return {msg:"저장하였습니다"};
 
     }
+    ,
+    removeGameCategoryLeague: function(gid) {
+        console.log('# removeGame');
 
+        게임카테고리리그.remove({_id:gid});
 
+        console.log('## removeGame');
+        return {msg:"삭제 하였습니다."};
 
-
-
-
+    }
 
 
 });
