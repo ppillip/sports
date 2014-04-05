@@ -77,8 +77,12 @@ Template.userAgencyInputModal.helpers({
 	}
 	,총판리스트 : function() {
 		if(this.화면이름 === '매장') {
-			var 임시총판 = 총판매장.find({$where:"this.소속_id.length === 0"});
-
+			var 임시총판 = 총판매장.find({$where:"this.소속_id.length === 0"}).fetch();
+			_.extend(_.clone(임시총판[0]), { a : 'test data' });
+//			콘솔("ㅁㄴㅇㄹ");
+//			var test = 임시총판[0];
+//			_.extend(test,{test : 'test data'});
+//			console.log(임시총판[0]);
 			return 임시총판 = 총판매장.find({$where:"this.소속_id.length === 0"});
 		}
 	}
