@@ -112,7 +112,8 @@
         <td>{{정산비율}}%</td>
         <td width=1>
             <!--<button class="btn btn-success" data-provider="bootstrap-markdown" data-handler="cmdSave"><i class="fa fa-check"></i> Save</button>-->
-            <input type="button" id='btn_remove' value="remove" class="btn btn-danger"/>
+            <button class="btn btn-danger btn-xs pull-right" id='btn_remove' style="margin-left:3px;"><i class="glyphicon glyphicon-remove"></i></button>
+            <!--<input type="button" id='btn_remove' value="remove" class="btn btn-danger"/>-->
             <!--<a href="#" id="remove" class="btn btn-danger">Remove</a>-->
         </td>
     </tr>
@@ -136,16 +137,21 @@
                 <div class="modal-body">
                     <form id="insertAgency">
                         <table>
+                            {{#if 총판리스트}}
+                            <tr>
+                                <div class="control-group">
+                                    <td><label class="control-label">Select</label></td>
+                                    <td>
+                                        <select name="소속_id">
+                                            {{#each 총판리스트}}
+                                            <option data-id="{{_id}}">{{아이디}}</option>
+                                            {{/each}}
+                                        </select>
+                                    </td>
 
-                            <!--<div class="control-group">-->
-                            <!--<label class="control-label">Select</label>-->
-                            <!--<select class="form-control" id="select-1">-->
-                            <!--{{#each 회원종류}}-->
-                            <!--<option>{{이름}}</option>-->
-                            <!--{{/each}}-->
-                            <!--</select>-->
-                            <!--</div>-->
-
+                                </div>
+                            </tr>
+                            {{/if}}
                             <tr>
                                 <div class="control-group">
                                     <td><label class="control-label">아이디</label></td>
