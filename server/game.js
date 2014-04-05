@@ -20,7 +20,7 @@ Meteor.methods({
 
     }
     ,
-    removeGame: function(gid) {
+    removeGameCategoryEvents: function(gid) {
         console.log('# removeGame');
 
         게임카테고리종목.remove({_id:gid});
@@ -29,6 +29,28 @@ Meteor.methods({
         return {msg:"삭제 하였습니다."};
 
     }
+    ,
+    saveGameCategoryLeague: function(obj, blob, name, encoding) {
+        console.log('# saveGameCategoryLeague');
+
+        if(!obj.이름)
+            throw new Meteor.Error(404, '이름누락');
+
+        if(!obj._id)
+            obj["_id"] = Meteor.uuid();
+
+        게임카테고리리그.insert(obj);
+
+        console.log('## saveGameCategoryLeague');
+        return {msg:"저장하였습니다"};
+
+    }
+    ,
+
+
+
+
+
 
 
 });

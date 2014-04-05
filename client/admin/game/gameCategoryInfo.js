@@ -12,6 +12,18 @@ Template.gameCategoryInfo.helpers({
     list : function(){
         return 게임카테고리종목.find();
     }
+    ,
+    leagueList : function(){
+        return 게임카테고리리그.find();
+    }
+    ,
+    game : function(){
+        Session.get('game');
+    }
+});
+
+Deps.autorun(function() {
+    console.log(Session.get('game'));
 });
 
 
@@ -30,7 +42,6 @@ Template.gameInputForm.events({
                 alert(result.msg);
             }
 
-
         });
 
     }
@@ -45,8 +56,14 @@ Template.gameInputForm.helpers({
 });
 
 Template.listItem.events({
-    'click .glyphicon-remove' : function(){
-        Meteor.call('removeGame',this._id,function(err,result){
+    'click .glyphicon-remove' : function(e){
+
+        if(!confirm('삭제하시겠습니까?')){
+            console.log('취소됨',this._id);
+            return;
+        }
+
+        Meteor.call('removeGameCategoryEvents',this._id,function(err,result){
             if(err){
                 alert(err);
             }else{
@@ -54,12 +71,74 @@ Template.listItem.events({
             }
         });
     }
+    ,
+    'click .dd-handle' : function(e,tmpl){
+
+        console.log('this',this);
+        $('input[name=_hidden_gameid]').val(this._id);
+        $('h2[name=_hidden_gameName]').html('['+this.이름+'] 리그목록');
+        Session.set('game',this);
+
+    }
 });
 
-Template.listItem.rendered = function(){
-
+Template.listItem.rendered = function(a,b){
+    cl('listItem rendered');
 };
 
 Template.listItem.helpers({
+
+});
+
+
+
+Template.leagueInputForm.events({
+
+    'click button[name=save]' : function(e,tmpl){
+
+        if( (Session.get('game'))._id) {
+            alert('종목을 선택하세요');
+            return;
+        };
+
+        var 리그명 = tmpl.find('input[name=리그명]').value;
+
+        var obj = sportsSchema.getSchema('게임카테고리리그',{이름:리그명});
+
+        obj.소속종목_id = Session.get('game')._id;
+
+        Meteor.call('saveGameCategoryLeague',obj,'', '', 'UTF-8',function(err,result){
+
+            if(err){
+                alert(err);
+            }else{
+                tmpl.find('input[name=리그명]').value = '';
+                tmpl.find('file').value = '';
+                alert(result.msg);
+            }
+
+        });
+
+    }
+});
+
+Template.leagueInputForm.rendered = function(){
+
+};
+
+Template.leagueInputForm.helpers({
+
+});
+
+
+Template.leagueListItem.events({
+
+});
+
+Template.leagueListItem.rendered = function(){
+    cl('leagueListItem rendered');
+};
+
+Template.leagueListItem.helpers({
 
 });

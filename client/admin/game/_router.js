@@ -47,7 +47,8 @@ this.route('gameCategoryInfo', {
     path: '/gameCategoryInfo'
     ,template:'gameCategoryInfo'
     ,waitOn: function () {
-        return [ Meteor.subscribe('게임카테고리종목') ];
+        return [ Meteor.subscribe('게임카테고리종목')
+                , Meteor.subscribe('종목별리그',Session.get('종목id')||'') ];
     }
     ,data: function() {
         return {
