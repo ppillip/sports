@@ -5,7 +5,6 @@ sportsSchema =
         var rtn = {};
         (_.findWhere(schema, {name: name})).definition.properties.forEach(function (x) {
             rtn[x.key.name] = x.value.default;
-//			console.log(x.key.name + ':' + x.value.default);
         });
         return _.extend(rtn, ext);
     }

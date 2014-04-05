@@ -1,0 +1,1 @@
+NODE_OPTIONS=--debug MONGO_URL=mongodb://localhost:27017/sports mrt

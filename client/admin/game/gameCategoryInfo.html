@@ -31,9 +31,6 @@
 
                     <!-- widget content -->
                     <div class="widget-body">
-                        <p>
-                          {{>gameInputForm}}
-                        </p>
                         <div class="row">
                         <article class="col-sm-12 col-md-12 col-lg-6 sortable-grid ui-sortable">
 
@@ -53,6 +50,11 @@
 
                         <!-- widget content -->
                         <div class="widget-body no-padding">
+
+                        <p>
+                            {{>gameInputForm}}
+                        </p>
+
 
                         <div class="smart-form">
 
@@ -83,7 +85,7 @@
 
                         <header role="heading"><div class="jarviswidget-ctrls" role="menu"></div>
                             <span class="widget-icon"> <i class="fa fa-edit"></i> </span>
-                            <h2>리그 목록 </h2>
+                            <h2 name="_hidden_gameName">리그 목록</h2>
 
                             <span class="jarviswidget-loader" style="display: none;"><i class="fa fa-refresh fa-spin"></i></span></header>
 
@@ -98,14 +100,32 @@
                         <!-- end widget edit box -->
 
                         <!-- widget content -->
-                        <div class="widget-body no-padding">
-
-                            <form class="smart-form">
 
 
-                            </form>
+                            <!-- widget content -->
+                            <div class="widget-body no-padding">
 
-                        </div>
+                                <p>
+                                    {{>leagueInputForm}}
+                                </p>
+
+
+                                <div class="smart-form">
+
+                                    <fieldset>
+                                        <section>
+
+                                            {{#each leagueList}}
+                                                {{>leagueListItem}}
+                                            {{/each}}
+
+                                        </section>
+                                    </fieldset>
+
+                                </div>
+                            </div>
+
+
                         <!-- end widget content -->
 
                         </div>
@@ -129,16 +149,43 @@
 
 </template>
 
-
 <template name="gameInputForm">
     <div class="well">
-        <div class="form-inline" role="form">
+        <div class="form-inline" role="form" style="text-align:center;">
             <fieldset>
                 <div class="form-group">
-                    <input type="text" name="분류명" class="form-control" placeholder="분류명입력">
+                    <input type="text" name="분류명" class="form-control" style="max-width:200px;" placeholder="분류명입력">
                 </div>
                 <div class="form-group">
-                    <input type="file" class="btn btn-default">
+                    <input type="file" class="btn btn-default" style="max-width:200px;">
+                </div>
+                <button name="save" class="btn btn-primary">
+                    <i class="fa fa-save"></i> 등록
+                </button>
+            </fieldset>
+        </div>
+    </div>
+</template>
+
+<template name="listItem">
+    <div class="dd-handle">
+        {{이름}}
+        <button class="btn btn-danger btn-xs pull-right"  style="margin-left:3px;"><i class="glyphicon glyphicon-remove"></i></button>
+        <button class="btn btn-primary btn-xs pull-right" style="margin-left:3px;"><i class="glyphicon glyphicon-plus"></i></button>
+        <button class="btn btn-success btn-xs pull-right" style="margin-left:3px;"><i class="glyphicon glyphicon-cog"></i></button>
+    </div>
+</template>
+
+
+<template name="leagueInputForm">
+    <div class="well">
+        <div class="form-inline" role="form" style="text-align:center;">
+            <fieldset>
+                <div class="form-group">
+                    <input type="text" name="리그명" class="form-control" style="max-width:200px;" placeholder="리그명입력">
+                </div>
+                <div class="form-group">
+                    <input type="file" class="btn btn-default" style="max-width:200px;">
                 </div>
                 <button name="save" class="btn btn-primary">
                     <i class="fa fa-save"></i> 등록
@@ -149,16 +196,7 @@
 </template>
 
 
-<template name="listItem">
-
-    <div class="dd-handle">
-        {{이름}}
-        <button class="btn btn-danger btn-xs pull-right"  style="margin-left:3px;"><i class="glyphicon glyphicon-remove"></i></button>
-        <button class="btn btn-primary btn-xs pull-right" style="margin-left:3px;"><i class="glyphicon glyphicon-plus"></i></button>
-        <button class="btn btn-success btn-xs pull-right" style="margin-left:3px;"><i class="glyphicon glyphicon-cog"></i></button>
-
-    </div>
-
+<template name="leagueListItem">
+    {{이름}}
 </template>
-
 
