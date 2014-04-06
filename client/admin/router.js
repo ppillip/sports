@@ -7,7 +7,13 @@ Router.map(function () {
     this.route('admin', {
         path: '/admin',
         action: function () {
-            Route.go('dashBoard');
+            Router.go('dashBoard');
+        }
+    });
+    this.route('root', {
+        path: '/',
+        action: function () {
+            Router.go('dashBoard');
         }
     });
     this.route('dashBoard', {
