@@ -57,7 +57,7 @@ Template.gameInputForm.helpers({
 });
 
 Template.listItem.events({
-    'click .glyphicon-remove' : function(e){
+    'click .glyphicon-remove' : function(e,tmpl){
 
         if(!confirm('삭제하시겠습니까?')){
             console.log('취소됨',this._id);
