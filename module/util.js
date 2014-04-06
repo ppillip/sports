@@ -1,6 +1,3 @@
-콘솔 = function (obj) {
-    console.log(obj);
-};
 
 cl = function(a){Meteor.call('cl',a);}
 

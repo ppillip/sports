@@ -23,7 +23,7 @@
 
             <br>
             <div>
-                <!--{{#with 회원정보}}-->
+                <!--{{#with ddd}}-->
                 {{>agencyTable}}
                 <!--{{/with}}-->
             </div>
@@ -32,7 +32,6 @@
     </div>
 
 </template>
-
 
 <template name="agencyTable">
 
@@ -74,6 +73,9 @@
                 <table class="table table-bordered table-striped table-hover table-condensed">
                     <thead>
                     <tr class="info">
+                        {{#if 화면이름 "매장회원"}}
+                        <th>소속 총판 아이디</th>
+                        {{/if}}
                         <th>아이디</th>
                         <th>이름</th>
                         <th>닉네임</th>
@@ -103,6 +105,9 @@
 
 <template name="agencyList">
     <tr>
+        {{#if 화면이름 "매장회원"}}
+        <td>{{소속총판아이디}}</td>
+        {{/if}}
         <td>{{아이디}}</td>
         <td>{{이름}}</td>
         <td>{{닉네임}}</td>
@@ -137,103 +142,103 @@
                 <div class="modal-body">
                     <form id="insertAgency">
                         <table>
-                            {{#if 총판리스트}}
+                            {{#if 총판리스트 "매장회원"}}
                             <tr>
-                                <div class="control-group">
+                                <!--<div class="control-group">-->
                                     <td><label class="control-label">Select</label></td>
                                     <td>
-                                        <select name="소속_id">
+                                        <select name="소속_id" class="form-control">
                                             {{#each 총판리스트}}
                                             <option data-id="{{test}}">{{아이디}}</option>
                                             {{/each}}
                                         </select>
                                     </td>
 
-                                </div>
+                                <!--</div>-->
                             </tr>
                             {{/if}}
                             <tr>
                                 <div class="control-group">
                                     <td><label class="control-label">아이디</label></td>
-                                    <td><input name="아이디" type="text" value="" placeholder=""/></td>
+                                    <td><input name="아이디" type="text" class="form-control" value="" placeholder=""/></td>
                                 </div>
                             </tr>
                             <tr>
                                 <div class="control-group">
                                     <td><label class="control-label">이름</label></td>
-                                    <td><input name="이름" type="text" value="" placeholder=""/></td>
+                                    <td><input name="이름" type="text" class="form-control" value="" placeholder=""/></td>
                                 </div>
                             </tr>
                             <tr>
                                 <div class="control-group">
                                     <td><label class="control-label">닉네임</label></td>
-                                    <td><input name="닉네임" type="text" value="" placeholder=""/></td>
+                                    <td><input name="닉네임" type="text" class="form-control" value="" placeholder=""/></td>
                                 </div>
                             </tr>
                             <tr>
                                 <div class="control-group">
                                     <td><label class="control-label">비밀번호</label></td>
-                                    <td><input name="비밀번호" type="text" value="" placeholder=""/></td>
+                                    <td><input name="비밀번호" type="text" class="form-control" value="" placeholder=""/></td>
                                 </div>
                             </tr>
                             <tr>
                                 <div class="control-group">
                                     <td><label class="control-label">비밀번호 확인</label></td>
-                                    <td><input name="나띵" type="text" value="" placeholder=""/></td>
+                                    <td><input name="나띵" type="text" class="form-control" value="" placeholder=""/></td>
                                 </div>
                             </tr>
                             <tr>
                                 <div class="control-group">
                                     <td><label class="control-label">전화번호</label></td>
-                                    <td><input name="전화번호" type="text" value="" placeholder=""/></td>
+                                    <td><input name="전화번호" type="text" class="form-control" value="" placeholder=""/></td>
                                 </div>
                             </tr>
                             <tr>
                                 <div class="control-group">
                                     <td><label class="control-label">계좌번호</label></td>
-                                    <td><input name="은행계좌번호" type="text" value="" placeholder=""/></td>
+                                    <td><input name="은행계좌번호" type="text" class="form-control" value="" placeholder=""/></td>
                                 </div>
                             </tr>
                             <tr>
                                 <div class="control-group">
                                     <td><label class="control-label">은행명</label></td>
-                                    <td><input name="은행명" type="text" value="" placeholder=""/></td>
+                                    <td><input name="은행명" type="text" class="form-control" value="" placeholder=""/></td>
                                 </div>
                             </tr>
                             <tr>
                                 <div class="control-group">
                                     <td><label class="control-label">은행계좌주명</label></td>
-                                    <td><input name="은행계좌주명" type="text" value="" placeholder=""/></td>
+                                    <td><input name="은행계좌주명" type="text" class="form-control" value="" placeholder=""/></td>
                                 </div>
                             </tr>
                             <tr>
                                 <div class="control-group">
                                     <td><label class="control-label">정산방식</label></td>
-                                    <td><input name="정산방식" type="text" value="" placeholder=""/></td>
+                                    <td><input name="정산방식" type="text" class="form-control" value="" placeholder=""/></td>
                                 </div>
                             </tr>
                             <tr>
                                 <div class="control-group">
                                     <td><label class="control-label">정산비율</label></td>
-                                    <td><input name="정산비율" type="text" value="" placeholder=""/></td>
+                                    <td><input name="정산비율" type="text" class="form-control" value="" placeholder=""/></td>
                                 </div>
                             </tr>
                             <tr>
                                 <div class="control-group">
                                     <td><label class="control-label">회원승인가능</label></td>
-                                    <td><input name="회원승인가능여부" type="text" value="" placeholder=""/></td>
+                                    <td><input name="회원승인가능여부" type="text" class="form-control" value="" placeholder=""/></td>
                                 </div>
                             </tr>
                             <tr>
                                 <div class="control-group">
                                     <td><label class="control-label">게시판관리가능</label></td>
-                                    <td><input name="게시판관리가능여부" type="text" value="" placeholder=""/></td>
+                                    <td><input name="게시판관리가능여부" type="text" class="form-control" value="" placeholder=""/></td>
                                 </div>
                             </tr>
                             <tr>
                                 <div class="control-group">
                                     <td><label class="control-label">전체회원조회가능</label></td>
-                                    <td><input name="전체회원조회가능여부" type="text" value="" placeholder=""/></td>
+                                    <td><input name="전체회원조회가능여부" type="text" class="form-control" value="" placeholder=""/></td>
                                 </div>
                             </tr>
 
