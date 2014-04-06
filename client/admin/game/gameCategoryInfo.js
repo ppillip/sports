@@ -105,6 +105,11 @@ Template.leagueInputForm.events({
             return;
         };
 
+        if(!tmpl.find('input[type=file]').files[0]){
+            alert('아이콘이미지 필수입니다.');
+            return;
+        }
+
         var obj = sportsSchema.getSchema('게임카테고리리그',{
             이름          :tmpl.find('input[name=리그명]').value
            ,소속종목_id   :Session.get('game_id')
