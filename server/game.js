@@ -46,7 +46,7 @@ Meteor.methods({
             obj["_id"] = Meteor.uuid();
 
         var fut = new Future()
-            ,path = process.env.PWD+'/public/icon/'
+            ,path =     process.env.PWD+'/public/icon/'
             ,name = obj["_id"];
 
         fs.writeFile(path + name, blob, encoding, function(err) {
@@ -60,8 +60,6 @@ Meteor.methods({
 
         fut.wait();
 
-
-        console.log( process.env.PWD )
 
         게임카테고리리그.insert(obj);
 

@@ -57,7 +57,7 @@ Template.gameInputForm.helpers({
 });
 
 Template.listItem.events({
-    'click .glyphicon-remove' : function(e){
+    'click .glyphicon-remove' : function(e,tmpl){
 
         if(!confirm('삭제하시겠습니까?')){
             console.log('취소됨',this._id);
@@ -104,6 +104,11 @@ Template.leagueInputForm.events({
             alert('종목을 선택하세요');
             return;
         };
+
+        if(!tmpl.find('input[type=file]').files[0]){
+            alert('아이콘이미지 필수입니다.');
+            return;
+        }
 
         var obj = sportsSchema.getSchema('게임카테고리리그',{
             이름          :tmpl.find('input[name=리그명]').value
