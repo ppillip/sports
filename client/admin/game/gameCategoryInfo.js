@@ -168,12 +168,3 @@ Template.leagueListItem.helpers({
 
 });
 
-
-if (Meteor.isClient) {
-    window.onload = function(){
-
-
-        alert($('#logo').html());
-
-    };
-}
