@@ -71,7 +71,6 @@ Meteor.startup(function () {
 		관리자.insert(임시스키마);
 	}
 
-
 	if (실행모드 === '테스트') {
 		var 임시총판_id = new Array();
 		var 임시매장_id = new Array();
@@ -138,7 +137,7 @@ Meteor.startup(function () {
 				임시스키마.간단메모 = '간단메모메모메모';
 				if ((i % 10 === 0)) {
 					//운영용 아이디
-					임시스키마.회원종류 = '관리';
+					임시스키마.회원종류 = '운영';
 					임시스키마.소속매장_id = 관리자.findOne({ 아이디: '관리자' })._id;
 				}
 				else {
@@ -151,6 +150,9 @@ Meteor.startup(function () {
 			}
 		}
 	}
+
+
+
 
 //	testJson = {
 //		array1: [
@@ -169,10 +171,22 @@ Meteor.startup(function () {
 //			oField2 : {ofieldData3 : "ofData2", ofieldData4 : 'ofData2'}
 //		}
 //	}
+
+//	testJson2 = [
+//		{
+//			test1 : "test1val"
+//		}
+//		,{
+//			test1 : "test1val"
+//		}
+//	];
 //
 //
-//	console.log(testJson.object1.oField1.ofieldData1);
-//    cl(관리자.findOne({ 아이디 : '관리자' })._id);
+//	_.each(testJson2 ,function(val,idx){
+//		_.extend(val, {test2 : "test2val"});
+//	});
+//
+//	console.log(testJson2);
 
 
 });
