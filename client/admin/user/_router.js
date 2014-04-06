@@ -88,11 +88,12 @@ Router.map(function () {
         path: '/userAgency'
         ,template:'userAgency'
         ,waitOn: function () {
-            return [ Meteor.subscribe('총판매장') ];
+//            return Meteor.subscribe('총판매장');
+			return [  ];
         }
         ,data: function() {
             return {
-                화면이름     : '총판'
+                화면이름     : '총판회원'
             }
         }
     });
@@ -102,11 +103,12 @@ Router.map(function () {
         path: '/userBranch'
         ,template:'userAgency'
         ,waitOn: function () {
-            return [  ];
+//            return Meteor.subscribe('총판매장');
+			return [  ];
         }
         ,data: function() {
             return {
-                화면이름     : '매장'
+                화면이름     : '매장회원'
             }
         }
     });

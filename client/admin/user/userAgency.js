@@ -54,9 +54,9 @@ Template.userAgency.helpers({
 Template.agencyTable.helpers({
 	회원정보 : function() {
 		콘솔(this.화면이름);
-		if(this.화면이름 === '총판')
+		if(this.화면이름 === '총판회원')
 			return 총판매장.find({$where:"this.소속_id.length === 0"});
-		else if(this.화면이름 === '매장')
+		else if(this.화면이름 === '매장회원')
 			return 총판매장.find({$where:"this.소속_id.length > 0"});
 		else
 			alert('Template.agencyTable.helpers({ : 화면이름에러');
@@ -76,13 +76,14 @@ Template.userAgencyInputModal.helpers({
 		return this.화면이름;
 	}
 	,총판리스트 : function() {
-		if(this.화면이름 === '매장') {
+		if(this.화면이름 === '매장회원') {
 			var 임시총판 = 총판매장.find({$where:"this.소속_id.length === 0"}).fetch();
-			_.extend(_.clone(임시총판[0]), { a : 'test data' });
+//			console.log(임시총판.length);
+//			_.extend(임시총판[0] || {}, { a : 'test data' });
 //			콘솔("ㅁㄴㅇㄹ");
 //			var test = 임시총판[0];
 //			_.extend(test,{test : 'test data'});
-//			console.log(임시총판[0]);
+			console.log(임시총판[0]);
 			return 임시총판 = 총판매장.find({$where:"this.소속_id.length === 0"});
 		}
 	}
