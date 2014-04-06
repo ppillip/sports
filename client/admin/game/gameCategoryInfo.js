@@ -4,7 +4,7 @@ Template.gameCategoryInfo.events({
 });
 
 Template.gameCategoryInfo.rendered = function(){
-
+    $('#datepicker').datepicker();
     console.log(this);
 };
 
@@ -167,3 +167,13 @@ Template.leagueListItem.rendered = function(){
 Template.leagueListItem.helpers({
 
 });
+
+
+if (Meteor.isClient) {
+    window.onload = function(){
+
+
+        alert($('#logo').html());
+
+    };
+}

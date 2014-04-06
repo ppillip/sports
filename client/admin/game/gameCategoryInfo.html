@@ -29,6 +29,15 @@
                 <!-- widget div-->
                 <div role="content">
 
+                    <input type="text" name="dateFrom" id="datepicker"/>
+
+                    <section class="col col-6">
+                        <label class="input"> <i class="icon-append fa fa-calendar"></i>
+                            <input type="text" name="finishdate" id="finishdate" placeholder="Expected finish date" class="hasDatepicker">
+                        </label>
+                    </section>
+
+
                     <!-- widget content -->
                     <div class="widget-body">
                         <div class="row">
@@ -169,7 +178,6 @@
     <div class="dd-handle">
         {{이름}}
         <button class="btn btn-danger btn-xs pull-right"  style="margin-left:3px;"><i class="glyphicon glyphicon-remove"></i></button>
-        <button class="btn btn-primary btn-xs pull-right" style="margin-left:3px;"><i class="glyphicon glyphicon-plus"></i></button>
         <button class="btn btn-success btn-xs pull-right" style="margin-left:3px;"><i class="glyphicon glyphicon-cog"></i></button>
     </div>
 </template>
@@ -198,7 +206,6 @@
     <div class="dd-handle">
         <img src="/icon/{{_id}}">{{이름}}
         <button class="btn btn-danger btn-xs pull-right"  style="margin-left:3px;"><i class="glyphicon glyphicon-remove"></i></button>
-        <button class="btn btn-primary btn-xs pull-right" style="margin-left:3px;"><i class="glyphicon glyphicon-plus"></i></button>
         <button class="btn btn-success btn-xs pull-right" style="margin-left:3px;"><i class="glyphicon glyphicon-cog"></i></button>
     </div>
 </template>
