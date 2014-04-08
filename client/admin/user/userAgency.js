@@ -32,6 +32,7 @@ Template.userAgency.events({
 });
 
 Template.userAgency.rendered = function(){
+	nav_page_height();
 };
 
 Template.userAgency.helpers({
