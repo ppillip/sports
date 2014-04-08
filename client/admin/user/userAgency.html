@@ -14,7 +14,7 @@
         <div id="content">
             <div class="row">
                 <div class="col-xs-12 col-sm-7 col-md-7 col-lg-4">
-                    <h1 class="page-title txt-color-blueDark"><i class="fa-fw fa fa-home"></i> {{화면이름}}회원 </h1>
+                    <h1 class="page-title txt-color-blueDark"><i class="fa-fw fa fa-home"></i> {{현재화면이름}}회원 </h1>
                 </div>
             </div>
             <div>
@@ -23,9 +23,7 @@
 
             <br>
             <div>
-                <!--{{#with ddd}}-->
-                {{>agencyTable}}
-                <!--{{/with}}-->
+                {{> agencyTable}}
             </div>
         </div>
         <!-- END MAIN CONTENT -->
@@ -51,7 +49,7 @@
         -->
         <header role="heading"><div class="jarviswidget-ctrls" role="menu">   <a href="#" class="button-icon jarviswidget-toggle-btn" rel="tooltip" title="" data-placement="bottom" data-original-title="Collapse"><i class="fa fa-minus "></i></a> <a href="javascript:void(0);" class="button-icon jarviswidget-fullscreen-btn" rel="tooltip" title="" data-placement="bottom" data-original-title="Fullscreen"><i class="fa fa-resize-full "></i></a> <a href="javascript:void(0);" class="button-icon jarviswidget-delete-btn" rel="tooltip" title="" data-placement="bottom" data-original-title="Delete"><i class="fa fa-times"></i></a></div><div class="widget-toolbar" role="menu"><a data-toggle="dropdown" class="dropdown-toggle color-box selector" href="javascript:void(0);"></a><ul class="dropdown-menu arrow-box-up-right color-select pull-right"><li><span class="bg-color-green" data-widget-setstyle="jarviswidget-color-green" rel="tooltip" data-placement="left" data-original-title="Green Grass"></span></li><li><span class="bg-color-greenDark" data-widget-setstyle="jarviswidget-color-greenDark" rel="tooltip" data-placement="top" data-original-title="Dark Green"></span></li><li><span class="bg-color-greenLight" data-widget-setstyle="jarviswidget-color-greenLight" rel="tooltip" data-placement="top" data-original-title="Light Green"></span></li><li><span class="bg-color-purple" data-widget-setstyle="jarviswidget-color-purple" rel="tooltip" data-placement="top" data-original-title="Purple"></span></li><li><span class="bg-color-magenta" data-widget-setstyle="jarviswidget-color-magenta" rel="tooltip" data-placement="top" data-original-title="Magenta"></span></li><li><span class="bg-color-pink" data-widget-setstyle="jarviswidget-color-pink" rel="tooltip" data-placement="right" data-original-title="Pink"></span></li><li><span class="bg-color-pinkDark" data-widget-setstyle="jarviswidget-color-pinkDark" rel="tooltip" data-placement="left" data-original-title="Fade Pink"></span></li><li><span class="bg-color-blueLight" data-widget-setstyle="jarviswidget-color-blueLight" rel="tooltip" data-placement="top" data-original-title="Light Blue"></span></li><li><span class="bg-color-teal" data-widget-setstyle="jarviswidget-color-teal" rel="tooltip" data-placement="top" data-original-title="Teal"></span></li><li><span class="bg-color-blue" data-widget-setstyle="jarviswidget-color-blue" rel="tooltip" data-placement="top" data-original-title="Ocean Blue"></span></li><li><span class="bg-color-blueDark" data-widget-setstyle="jarviswidget-color-blueDark" rel="tooltip" data-placement="top" data-original-title="Night Sky"></span></li><li><span class="bg-color-darken" data-widget-setstyle="jarviswidget-color-darken" rel="tooltip" data-placement="right" data-original-title="Night"></span></li><li><span class="bg-color-yellow" data-widget-setstyle="jarviswidget-color-yellow" rel="tooltip" data-placement="left" data-original-title="Day Light"></span></li><li><span class="bg-color-orange" data-widget-setstyle="jarviswidget-color-orange" rel="tooltip" data-placement="bottom" data-original-title="Orange"></span></li><li><span class="bg-color-orangeDark" data-widget-setstyle="jarviswidget-color-orangeDark" rel="tooltip" data-placement="bottom" data-original-title="Dark Orange"></span></li><li><span class="bg-color-red" data-widget-setstyle="jarviswidget-color-red" rel="tooltip" data-placement="bottom" data-original-title="Red Rose"></span></li><li><span class="bg-color-redLight" data-widget-setstyle="jarviswidget-color-redLight" rel="tooltip" data-placement="bottom" data-original-title="Light Red"></span></li><li><span class="bg-color-white" data-widget-setstyle="jarviswidget-color-white" rel="tooltip" data-placement="right" data-original-title="Purity"></span></li><li><a href="javascript:void(0);" class="jarviswidget-remove-colors" data-widget-setstyle="" rel="tooltip" data-placement="bottom" data-original-title="Reset widget color to default">Remove</a></li></ul></div>
             <span class="widget-icon"> <i class="fa fa-table"></i> </span>
-            <h2>{{화면이름}}회원정보</h2>
+            <h2>{{현재화면이름}}회원정보</h2>
 
             <span class="jarviswidget-loader"><i class="fa fa-refresh fa-spin"></i></span></header>
 
@@ -66,15 +64,15 @@
             <!-- end widget edit box -->
 
             <!--<a data-toggle="modal" href="#myModal" class="btn btn-success btn-lg pull-right header-btn hidden-mobile"><i class="fa fa-circle-arrow-up fa-lg"></i> Launch form modal</a>-->
-
             <!-- widget content -->
+            {{현재화면이름}}
             <div class="widget-body">
                 <p>{{cellphone}}</p>
                 <table class="table table-bordered table-striped table-hover table-condensed">
                     <thead>
                     <tr class="info">
-                        {{#if 화면이름 "매장회원"}}
-                        <th>소속 총판 아이디</th>
+                        {{#if 현재화면이름 "매장"}}
+                        <th>상위 아이디</th>
                         {{/if}}
                         <th>아이디</th>
                         <th>이름</th>
@@ -87,9 +85,10 @@
                     </tr>
                     </thead>
                     <tbody>
-                    {{#each 회원정보}}
+                    {{#with 현재화면이름}}
                     {{>agencyList}}
-                    {{/each}}
+                    {{/with}}
+
                     </tbody>
                 </table>
 
@@ -104,9 +103,10 @@
 </template>
 
 <template name="agencyList">
+    {{#each 회원정보}}
     <tr>
-        {{#if 화면이름 "매장회원"}}
-        <td>{{소속총판아이디}}</td>
+        {{#if 현재화면이름 "매장"}}
+        <td>{{소속총판정보.아이디}}</td>
         {{/if}}
         <td>{{아이디}}</td>
         <td>{{이름}}</td>
@@ -122,6 +122,7 @@
             <!--<a href="#" id="remove" class="btn btn-danger">Remove</a>-->
         </td>
     </tr>
+    {{/each}}
 </template>
 
 
@@ -129,7 +130,7 @@
 <template name="userAgencyInputModal">
     <!--Button trigger modal-->
     <button class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">
-        {{화면이름}} 생성
+        {{현재화면이름}} 생성
     </button>
 
     <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
@@ -137,19 +138,19 @@
             <div class="modal-content modal-sm">
                 <div class="modal-header">
                     <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                    <h4 class="modal-title" id="myModalLabel" align="center">{{화면이름}} 등록</h4>
+                    <h4 class="modal-title" id="myModalLabel" align="center">{{현재화면이름}} 등록</h4>
                 </div>
                 <div class="modal-body">
                     <form id="insertAgency">
                         <table>
-                            {{#if 총판리스트 "매장회원"}}
+                            {{#if 총판리스트}}
                             <tr>
                                 <!--<div class="control-group">-->
-                                    <td><label class="control-label">Select</label></td>
+                                    <td><label class="control-label">총판아이디</label></td>
                                     <td>
                                         <select name="소속_id" class="form-control">
                                             {{#each 총판리스트}}
-                                            <option data-id="{{test}}">{{아이디}}</option>
+                                            <option data-id="{{_id}}">{{아이디}}</option>
                                             {{/each}}
                                         </select>
                                     </td>
@@ -183,7 +184,7 @@
                             </tr>
                             <tr>
                                 <div class="control-group">
-                                    <td><label class="control-label">비밀번호 확인</label></td>
+                                    <td><label class="control-label">비밀번호확인</label></td>
                                     <td><input name="나띵" type="text" class="form-control" value="" placeholder=""/></td>
                                 </div>
                             </tr>
@@ -225,19 +226,19 @@
                             </tr>
                             <tr>
                                 <div class="control-group">
-                                    <td><label class="control-label">회원승인가능</label></td>
+                                    <td><label class="control-label">회원승인</label></td>
                                     <td><input name="회원승인가능여부" type="text" class="form-control" value="" placeholder=""/></td>
                                 </div>
                             </tr>
                             <tr>
                                 <div class="control-group">
-                                    <td><label class="control-label">게시판관리가능</label></td>
+                                    <td><label class="control-label">게시판관리</label></td>
                                     <td><input name="게시판관리가능여부" type="text" class="form-control" value="" placeholder=""/></td>
                                 </div>
                             </tr>
                             <tr>
                                 <div class="control-group">
-                                    <td><label class="control-label">전체회원조회가능</label></td>
+                                    <td><label class="control-label">회원조회</label></td>
                                     <td><input name="전체회원조회가능여부" type="text" class="form-control" value="" placeholder=""/></td>
                                 </div>
                             </tr>

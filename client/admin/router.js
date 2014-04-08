@@ -20,7 +20,6 @@ Router.map(function () {
         path: '/dashBoard',
         template: 'dashBoard',
         data: function () {
-            console.log("dashBoard");
             return {
                 hey: "헤이 맨"
             };
