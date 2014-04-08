@@ -1,5 +1,5 @@
 Handlebars.registerHelper('isPopup', function (obj) {
-    return Session.get("isPopup");
+	return Session.get("isPopup");
 });
 
 Handlebars.registerHelper('현재화면이름', function (obj) {
