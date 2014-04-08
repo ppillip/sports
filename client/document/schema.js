@@ -11,4 +11,4 @@ Template.schema.helpers({
     schema : function(){
         return schema;
     }
-})
+});

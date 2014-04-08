@@ -36,10 +36,10 @@ Template.userAgency.rendered = function(){
 };
 
 Template.userAgency.helpers({
-	현재화면이름 : function() {
-
-		return Session.get("현재화면이름");
-	}
+//	현재화면이름 : function(object) {
+//		cl(object);
+//		return (object === null) ? Session.get("현재화면이름") : Session.get("현재화면이름") === object;
+//	}
 });
 
 
@@ -47,20 +47,22 @@ Template.userAgency.helpers({
 
 Template.agencyTable.helpers({
 
-	현재화면이름 : function() {
-		return Session.get("현재화면이름");
-	}
-	,test : function() {
+//	현재화면이름 : function() {
+//		return Session.get("현재화면이름");
+//	}
+//	,
+	test : function() {
 		return {no1 : "no1"};
 	}
 });
 
 
 Template.userAgencyInputModal.helpers({
-	현재화면이름 : function() {
-		return Session.get("현재화면이름");
-	}
-	,총판리스트 : function() {
+//	현재화면이름 : function() {
+//		return Session.get("현재화면이름");
+//	}
+//	,
+	총판리스트 : function() {
 		if(Session.get("현재화면이름") === '매장') {
 			var 임시총판 = 총판매장.find({$where:"this.소속_id.length === 0"}).fetch();
 			_.each(임시총판 ,function(val,idx){
@@ -79,10 +81,11 @@ Template.userAgencyInputModal.helpers({
 });
 
 Template.agencyList.helpers({
-	현재화면이름 : function() {
-		return Session.get("현재화면이름");
-	}
-	,회원정보 : function() {
+//	현재화면이름 : function() {
+//		return Session.get("현재화면이름");
+//	}
+//	,
+	회원정보 : function() {
 
 		if(Session.get("현재화면이름") === '총판')
 			return 총판매장.find({$where:"this.소속_id.length === 0"});
