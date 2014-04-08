@@ -30,6 +30,7 @@ Template.userInfo.events({
 });
 
 Template.userInfo.rendered = function(){
+	nav_page_height();
 };
 
 Template.userInfo.helpers({

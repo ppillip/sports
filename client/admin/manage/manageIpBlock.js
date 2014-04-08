@@ -4,6 +4,7 @@ Template.manageIpBlock.events({
 });
 
 Template.manageIpBlock.rendered = function(){
+	nav_page_height();
 
 };
 

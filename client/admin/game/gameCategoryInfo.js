@@ -4,6 +4,7 @@ Template.gameCategoryInfo.events({
 });
 
 Template.gameCategoryInfo.rendered = function(){
+	nav_page_height();
     $('#datepicker').datepicker();
     console.log(this);
 };
@@ -49,6 +50,7 @@ Template.gameInputForm.events({
 });
 
 Template.gameInputForm.rendered = function(){
+	nav_page_height();
 
 };
 
@@ -139,6 +141,7 @@ Template.leagueInputForm.events({
 });
 
 Template.leagueInputForm.rendered = function(){
+	nav_page_height();
 
 };
 
@@ -166,6 +169,7 @@ Template.leagueListItem.events({
 });
 
 Template.leagueListItem.rendered = function(){
+	nav_page_height();
     cl('leagueListItem rendered');
 };
 

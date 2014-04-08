@@ -4,6 +4,7 @@ Template.moneyAdminPoint.events({
 });
 
 Template.moneyAdminPoint.rendered = function(){
+	nav_page_height();
 
 };
 
