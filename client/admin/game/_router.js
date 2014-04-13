@@ -15,6 +15,23 @@ this.route('gameInfo', {
 });
 
 /*게임관리 > 진행게임정보*/
+this.route('gameCreate', {
+    path: '/gameCreate'
+    ,template:'gameCreate'
+    ,onRun : function(){
+        Session.set('isPopup',true);
+    }
+    ,waitOn: function () {
+        return [Meteor.subscribe('리그전체목록')];
+    }
+    ,data: function() {
+        return {
+            test     : 'gameCreate'
+        }
+    }
+});
+
+/*게임관리 > 진행게임정보*/
 this.route('gameStatus', {
     path: '/gameStatus'
     ,template:'gameStatus'
@@ -28,7 +45,7 @@ this.route('gameStatus', {
     }
 });
 
-/*게임관리 > 종료게임정보*/
+    /*게임관리 > 종료게임정보*/
 this.route('gameFinished', {
     path: '/gameFinished'
     ,template:'gameFinished'

@@ -6,7 +6,6 @@ Template.gameCategoryInfo.events({
 Template.gameCategoryInfo.rendered = function(){
 	nav_page_height();
     $('#datepicker').datepicker();
-    console.log(this);
 };
 
 Template.gameCategoryInfo.helpers({
@@ -77,11 +76,10 @@ Template.listItem.events({
     ,
     'click .dd-handle' : function(e,tmpl){
 
-        console.log('this',this);
-
         $('h3[name=_hidden_gameName]').html('<b>['+this.이름+']</b> 목록');
 
         Session.set('game_id',this._id);
+        Session.set('종목명',this.이름);
 
     }
 });
@@ -115,6 +113,8 @@ Template.leagueInputForm.events({
         var obj = sportsSchema.getSchema('게임카테고리리그',{
             이름          :tmpl.find('input[name=리그명]').value
            ,소속종목_id   :Session.get('game_id')
+           ,경로명        :Session.get('종목명') + ' > ' + tmpl.find('input[name=리그명]').value
+           ,fullPath     :Session.get('종목명') + ' > ' + tmpl.find('input[name=리그명]').value
         })
 
         ,fileObj = tmpl.find('input[type=file]').files[0]

@@ -4,7 +4,8 @@
     "basePackages": {
       "iron-router": {},
       "iron-router-progress": {},
-      "streams": {}
+      "streams": {},
+      "autocomplete": {}
     },
     "packages": {
       "iron-router": {
@@ -22,10 +23,20 @@
         "tag": "v0.1.17",
         "commit": "9fcbbc9b7bf542827babc92089c19e730892a22f"
       },
+      "autocomplete": {
+        "git": "https://github.com/mizzao/meteor-autocomplete.git",
+        "tag": "v0.3.0",
+        "commit": "3130f6911e3ece890532be7c669b1ffa42dbb097"
+      },
       "blaze-layout": {
         "git": "https://github.com/EventedMind/blaze-layout.git",
         "tag": "v0.2.2",
         "commit": "8bc53798fe5965669ae67c72f91829fcfdceabfd"
+      },
+      "jquery-migrate": {
+        "git": "https://github.com/canadaduane/meteor-jquery-migrate.git",
+        "tag": "v2.0.0",
+        "commit": "636819c9de59f66410e148867b229869bb045cea"
       }
     }
   }

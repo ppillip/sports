@@ -1,0 +1,81 @@
+<template name="gameCreate">
+
+    <div class="well">
+
+    </div>
+
+    <table name="table01" class="table table-bordered table-condensed" style="width:100%">
+        <thead>
+        <tr>
+            <th rowspan="2">날짜</th>
+            <th rowspan="2">시간</th>
+            <th rowspan="2">리그</th>
+            <th colspan="2">팀</th>
+            <th colspan="3">승무패 배당률</th>
+            <th colspan="3">핸디캡 배당률</th>
+            <th colspan="3">언더오버 배당률</th>
+            <th rowspan="2">타입</th>
+            <th rowspan="2"><button class="btn btn-xs" name="addGameCreateInput"><i class="fa fa-plus-square"></i></button></th>
+        </tr>
+        <tr>
+            <th>홈팀(기준팀)</th>
+            <th>원정팀(상대팀)</th>
+            <th>승</th>
+            <th>무</th>
+            <th>패</th>
+            <th>승</th>
+            <th>핸디</th>
+            <th>패</th>
+            <th>언더</th>
+            <th>기준</th>
+            <th>오버</th>
+        </tr>
+        </thead>
+        <tbody>
+        {{#each blankList}}
+            {{>gameCreateInput}}
+        {{/each}}
+
+        </tbody>
+    </table>
+
+</template>
+
+<template name="gameCreateInput">
+    <tr name="game" id="{{_id}}">
+        <td><input type="text" name="" class="input"  style="width:100px;"/></td>
+        <td>
+            <input type="text" name="" class="input"  style="width:55px;"/>
+            <input type="text" name="" class="input"  style="width:55px;"/>
+        </td>
+        <td>
+            {{> inputAutocomplete settings=settings class="input-xlarge" placeholder="@ 입력"}}
+        </td>
+        <td><input type="text" name="" class="input" /></td>
+        <td><input type="text" name="" class="input" /></td>
+        <td><input type="text" name="" class="pull-center" style="width:50px;"/></td>
+        <td><input type="text" name="" class="pull-center" style="width:50px;"/></td>
+        <td><input type="text" name="" class="pull-center" style="width:50px;"/></td>
+        <td><input type="text" name="" class="pull-center" style="width:50px;"/></td>
+        <td><input type="text" name="" class="pull-center" style="width:50px;"/></td>
+        <td><input type="text" name="" class="pull-center" style="width:50px;"/></td>
+        <td><input type="text" name="" class="pull-center" style="width:50px;"/></td>
+        <td><input type="text" name="" class="pull-center" style="width:50px;"/></td>
+        <td><input type="text" name="" class="pull-center" style="width:50px;"/></td>
+        <td>
+                <button type="button" class="grp btn btn-default">일반</button>
+                <button type="button" class="grp btn btn-default">SP</button>
+                <button type="button" class="grp btn btn-default">SP2</button>
+                <button type="button" class="grp btn btn-default">교차</button>
+        </td>
+        <td>
+            <button type="button" name="removeThisLine" class="btn btn-default">삭제</button>
+        </td>
+    </tr>
+</template>
+
+<template name="clientCollectionPill">
+    {{경로명}}<!-- <small class="muted">({{경로명}})</small>-->
+</template>
+
+
