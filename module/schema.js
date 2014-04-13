@@ -166,19 +166,19 @@ schema =
                 'name': '생성된 게임 정보',
                 'desc': '관리자에 의해 생성된 게임 정보. 리그명 _id 키를 포함한다. 게임 사전 정보만 가지고 있다.',
                 'properties': [
-                    { 'key': {'name': '게임시작일시'}, 'value': {'type': 'object', 'default': {}, 'desc': '게임시작일시'}}
-                    ,{ 'key': {'name': '게임종료일시'}, 'value': {'type': 'object', 'default': {}, 'desc': '게임종료일시'}}
-                    ,{ 'key': {'name': '게임생성일시'}, 'value': {'type': 'object', 'default': {}, 'desc': '게임이 생성된 일시'}}
-                    ,{ 'key': {'name': '게임타입'}, 'value': {'type': 'string', 'default': '', 'desc': '승무패/핸디캡/언더오버'}}
-                    ,{ 'key': {'name': '게임게시장소'}, 'value': {'type': 'string', 'default': '', 'desc': '승무패/핸디캡/스페셜 등 게시 될 게시판명'}}
-                    ,{ 'key': {'name': '홈팀명'}, 'value': {'type': 'string', 'default': '', 'desc': '홈팀명'}}
-                    ,{ 'key': {'name': '원정팀명'}, 'value': {'type': 'string', 'default': '', 'desc': '원정팀명'}}
-                    ,{ 'key': {'name': '홈팀배당율'}, 'value': {'type': 'string', 'default': '', 'desc': '홈팅승 배당율'}}
-                    ,{ 'key': {'name': '원정팀배당율'}, 'value': {'type': 'string', 'default': '', 'desc': '원정팀승 배당율'}}
-                    ,{ 'key': {'name': '무승부배당율'}, 'value': {'type': 'string', 'default': '', 'desc': '무승부 배당율'}}
-                    ,{ 'key': {'name': '게시여부'}, 'value': {'type': 'string', 'default': '', 'desc': '네/아니오'}}
-                    ,{ 'key': {'name': '취소여부'}, 'value': {'type': 'string', 'default': '', 'desc': '네/아니오 (삭제와 다름)'}}
-                    ,{ 'key': {'name': '소속리그_id'}, 'value': {'type': 'string', 'default': '', 'desc': '소속된 리그의 _id'}}
+                     { 'key': {'name': '게임시작일시' }, 'value': {'type': 'object', 'default': {}, 'desc': '게임시작일시'}}
+                    ,{ 'key': {'name': '게임종료일시' }, 'value': {'type': 'object', 'default': {}, 'desc': '게임종료일시'}}
+                    ,{ 'key': {'name': '게임생성일시' }, 'value': {'type': 'object', 'default': {}, 'desc': '게임이 생성된 일시'}}
+                    ,{ 'key': {'name': '게임타입'     }, 'value': {'type': 'string', 'default': '', 'desc': '승무패/핸디캡/언더오버'}}
+                    ,{ 'key': {'name': '게임게시장소' }, 'value': {'type': 'string', 'default': '', 'desc': '승무패/핸디캡/스페셜 등 게시 될 게시판명'}}
+                    ,{ 'key': {'name': '홈팀명'       }, 'value': {'type': 'string', 'default': '', 'desc': '홈팀명'}}
+                    ,{ 'key': {'name': '원정팀명'     }, 'value': {'type': 'string', 'default': '', 'desc': '원정팀명'}}
+                    ,{ 'key': {'name': '홈팀배당율'   }, 'value': {'type': 'string', 'default': '', 'desc': '홈팅승 배당율'}}
+                    ,{ 'key': {'name': '원정팀배당율' }, 'value': {'type': 'string', 'default': '', 'desc': '원정팀승 배당율'}}
+                    ,{ 'key': {'name': '무승부배당율' }, 'value': {'type': 'string', 'default': '', 'desc': '무승부 배당율'}}
+                    ,{ 'key': {'name': '게시여부'     }, 'value': {'type': 'string', 'default': '', 'desc': '네/아니오'}}
+                    ,{ 'key': {'name': '취소여부'     }, 'value': {'type': 'string', 'default': '', 'desc': '네/아니오 (삭제와 다름)'}}
+                    ,{ 'key': {'name': '소속리그_id'  }, 'value': {'type': 'string', 'default': '', 'desc': '소속된 리그의 _id'}}
                 ]
             }
         }

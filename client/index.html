@@ -4,13 +4,11 @@
 
 <template name="layout">
 
-    {{#if isPopup}}
-    <p>팝업모드임</p>
-    {{else}}
+{{#if isPopup}}
+{{else}}
     {{>adminHeader}}
-
     {{>adminLeftPanel}}
-    {{/if}}
+{{/if}}
 
     {{>yield}}
 </template>

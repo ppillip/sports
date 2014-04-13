@@ -6,7 +6,6 @@ Template.gameCategoryInfo.events({
 Template.gameCategoryInfo.rendered = function(){
 	nav_page_height();
     $('#datepicker').datepicker();
-    console.log(this);
 };
 
 Template.gameCategoryInfo.helpers({
