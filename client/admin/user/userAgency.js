@@ -1,4 +1,3 @@
-
 Template.userAgency.events({
 	'click [name=createAgency]' : function(e,tmpl) {
 		e.preventDefault();
@@ -36,21 +35,19 @@ Template.userAgency.rendered = function(){
 };
 
 Template.userAgency.helpers({
-//	현재화면이름 : function(object) {
-//		cl(object);
-//		return (object === null) ? Session.get("현재화면이름") : Session.get("현재화면이름") === object;
-//	}
+	현재화면이름 : function(obj) {
+		return 현재화면이름(obj);
+	}
 });
 
 
 
 
 Template.agencyTable.helpers({
-
-//	현재화면이름 : function() {
-//		return Session.get("현재화면이름");
-//	}
-//	,
+	현재화면이름 : function(obj) {
+		return 현재화면이름(obj);
+	}
+	,
 	test : function() {
 		return {no1 : "no1"};
 	}
@@ -58,10 +55,10 @@ Template.agencyTable.helpers({
 
 
 Template.userAgencyInputModal.helpers({
-//	현재화면이름 : function() {
-//		return Session.get("현재화면이름");
-//	}
-//	,
+	현재화면이름 : function(obj) {
+		return 현재화면이름(obj);
+	}
+	,
 	총판리스트 : function() {
 		if(Session.get("현재화면이름") === '매장') {
 			var 임시총판 = 총판매장.find({$where:"this.소속_id.length === 0"}).fetch();
@@ -81,10 +78,10 @@ Template.userAgencyInputModal.helpers({
 });
 
 Template.agencyList.helpers({
-//	현재화면이름 : function() {
-//		return Session.get("현재화면이름");
-//	}
-//	,
+	현재화면이름 : function(obj) {
+		return 현재화면이름(obj);
+	}
+	,
 	회원정보 : function() {
 
 		if(Session.get("현재화면이름") === '총판')
@@ -107,3 +104,8 @@ Template.agencyList.helpers({
 //		}
 	}
 });
+
+var 현재화면이름 = function(object) {
+//	cl(object);
+	return (typeof object === "undefined") ? Session.get("현재화면이름") : Session.get("현재화면이름") === object;
+}

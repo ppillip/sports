@@ -17,11 +17,27 @@ Template.userInfo.events({
 //        $(tmpl.find('#myModal')).modal({'show':false});
 
     }
-	,'click #btn_remove' : function(e,tmp) {
+	,
+	'click #btn_remove' : function(e,tmpl) {
         e.preventDefault();
 
         회원.remove({_id:this._id});
     }
+	,
+	'click [name=link_userDetails]' : function(e, tmpl) {
+		var selectedId = $(e.target).attr('user_id');
+//		Clipboard.insert({ selected_id : $(e.target).attr('user_id') });
+
+
+		openPOP('/userDetails/'+selectedId, 'userDetails', 600, 600, 'yes');
+
+//		ClipStream.on('selected_id', function(msg) {
+//			console.log('msg' + msg);
+//		});
+//
+//		ClipStream.emit('selected_id', $(e.target).attr('user_id'));
+	}
+
 //	// start new windows
 //	,'click a[target=_blank]' : function (event) {
 //		event.preventDefault();
@@ -31,11 +47,13 @@ Template.userInfo.events({
 
 Template.userInfo.rendered = function(){
 	nav_page_height();
+//	cl("test");
+//	cl(this.data.testData);
 };
 
 Template.userInfo.helpers({
 	현재화면이름 : function() {
-		return Session.get("현재화면이름");
+		return 현재화면이름();
 	}
 });
 
@@ -50,9 +68,13 @@ Template.userTable.helpers({
 		else if(Session.get("현재화면이름") === "블랙리스트"){
 			return 회원.find({회원종류 : "일반", $or : [ {$where:"this.메모.length > 0"}, {$where:"this.간단메모 > 0"} ] });
 		}
-
 	}
-	,현재화면이름 : function() {
-		return Session.get("현재화면이름");
+	,
+	현재화면이름 : function() {
+		return 현재화면이름();
 	}
 });
+
+var 현재화면이름 = function() {
+	return Session.get("현재화면이름");
+}

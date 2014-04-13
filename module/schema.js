@@ -94,7 +94,7 @@ schema =
                     ,{ 'key': {'name': '간단메모'}, 'value': {'type': 'string', 'default': '', 'desc': '회원 간단 메모'}}
                     ,{ 'key': {'name': '회원종류'}, 'value': {'type': 'string', 'default': '', 'desc': '일반/운영'}}
                     ,{ 'key': {'name': '로그인횟수'}, 'value': {'type': 'string', 'default': '', 'desc': '로그인시 +1'}}
-                    ,{ 'key': {'name': '소속매장_id'}, 'value': {'type': 'string', 'default': '', 'desc': '회원 소속 매장 _id. 총판에 바로 소속은 불가. (운영용 아이디의 경우는 "관리자"'}}
+                    ,{ 'key': {'name': '소속_id'}, 'value': {'type': 'string', 'default': '', 'desc': '회원 소속 매장 _id. 총판에 바로 소속은 불가. (운영용 아이디의 경우는 "관리자"'}}
                 ]
             }
         }

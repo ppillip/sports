@@ -1,8 +1,9 @@
 <template name="adminLeftPanel">
-    <aside id="left-panel" style="min-height: 1682px;">
+    <div name="aLeftPanel">
+        <aside id="left-panel" style="min-height: 1682px;">
 
-    <!-- User info -->
-    <div class="login-info">
+            <!-- User info -->
+            <div class="login-info">
         <span> <!-- User image size is adjusted inside CSS, it should stay as it -->
 
             <a href="javascript:void(0);" id="show-shortcut">
@@ -14,129 +15,130 @@
             </a>
 
         </span>
-    </div>
-    <!-- end user info -->
+            </div>
+            <!-- end user info -->
 
-    <!-- NAVIGATION : This navigation is also responsive
+            <!-- NAVIGATION : This navigation is also responsive
 
-    To make this navigation dynamic please make sure to link the node
-    (the reference to the nav > ul) after page load. Or the navigation
-    will not initialize.
-    -->
-    <nav>
-    <!-- NOTE: Notice the gaps after each icon usage <i></i>..
-    Please note that these links work a bit different than
-    traditional hre="" links. See documentation for details.
-    -->
+            To make this navigation dynamic please make sure to link the node
+            (the reference to the nav > ul) after page load. Or the navigation
+            will not initialize.
+            -->
+            <nav>
+                <!-- NOTE: Notice the gaps after each icon usage <i></i>..
+                Please note that these links work a bit different than
+                traditional hre="" links. See documentation for details.
+                -->
 
-    <ul>
-    <li class="active">
-        <a href="/dashBoard" title="Dashboard"><i class="fa fa-lg fa-fw fa-home"></i> <span class="menu-item-parent">대시보드</span></a>
-    </li>
-    <li>
-        <a href="inbox.html"><i class="fa fa-lg fa-fw fa-inbox"></i> <span class="menu-item-parent">메세지</span><span class="badge pull-right inbox-badge">14</span></a>
-    </li>
-    <li>
-        <a href="#"><i class="fa fa-lg fa-fw fa-gamepad"></i> <span class="menu-item-parent">게임관리</span></a>
-        <ul>
-            <li><a href="/gameInfo">게임정보</a></li>
-            <li><a href="/gameStatus">진행게임정보</a></li>
-            <li><a href="/gameFinished">종료게임정보</a></li>
-            <li><a href="/gameCategoryInfo">게임분류정보</a></li>
-            <li><a href="/gameUserBettingStatus">유저베팅현황</a></li>
-            <li><a href="/gameHQUserBettingStatus">본사회원베팅현황</a></li>
-            <li><a href="/gameBonusConfig">보너스배당</a></li>
-        </ul>
-    </li>
-    <li>
-        <a href="#"><i class="fa fa-lg fa-fw fa-money"></i> <span class="menu-item-parent">머니내역</span></a>
-        <ul>
-            <li><a href="/moneyDeposit">충전내역</a></li>
-            <li><a href="/moneyWithdraw">환전내역</a></li>
-            <li><a href="/moneyDividend">배당내역</a></li>
-            <li><a href="/moneyPurchase">베팅내역</a></li>
-            <li><a href="/moneyPayment">지급내역</a></li>
-            <li><a href="/moneyPayback">회수내역</a></li>
-        </ul>
-    </li>
-    <li>
-        <a href="#"><i class="fa fa-lg fa-fw fa-user"></i> <span class="menu-item-parent">회원관리</span></a>
-        <ul>
-            <li><a href="/userInfo">회원정보</a></li>
-            <li><a href="/userHQUser">운영회원</a></li>
-            <li><a href="/userBettingUser">베팅회원</a></li>
-            <li><a href="/userBlackList">블랙리스트</a></li>
-            <li><a href="/userAgency">총판회원</a></li>
-            <li><a href="/userBranch">매장회원</a></li>
-            <li><a href="/userLeft">탈퇴회원</a></li>
-            <li><a href="/userJoinApprove">가입승인 <span class="badge pull-right inbox-badge bg-color-yellow">new</span> </a></li>
-        </ul>
-    </li>
-    <li>
-        <a href="#"><i class="fa fa-lg fa-fw fa-bar-chart-o"></i> <span class="menu-item-parent">통계관리</span></a>
-        <ul>
-            <!--<li><a href="/statisticsInfo">통계정보</a></li>-->
-            <!--<li><a href="/statisticsAggrBettingByTerm">기간별베팅집계</a></li>-->
-            <!--<li><a href="/statisticsAggrBettingByUser">회원별베팅집계</a></li>-->
-            <li><a href="/statisticsAggrMoneyByTerm">기간별입출금집계</a></li>
-            <!--<li><a href="/statisticsAggrMoneyByUser">회원별입출금집계</a></li>-->
-            <!--<li><a href="/statisticsMoneyByTerm">기간별금액</a></li>-->
-            <li><a href="/statisticsSettle ">정산내역</a></li>
-        </ul>
-    </li>
-    <li>
-        <a href="#"><i class="fa fa-lg fa-fw fa-group"></i> <span class="menu-item-parent">커뮤니티</span></a>
-        <ul>
-            <li><a href="/communityBoards">게시판</a></li>
-            <li><a href="/communityBoardNotice">공지사항</a></li>
-            <!--<li><a href="/communityEvents">이벤트</a></li>-->
-            <!--<li><a href="/communityEventNotice">이벤트공지</a></li>-->
-            <li><a href="/communityCs">고객센터</a></li>
-            <!--<li><a href="/communityCsNotice">고객센터 공지</a></li>-->
-            <!--<li><a href="/communityBoardManage">게시판관리</a></li>-->
-        </ul>
-    </li>
-    <li>
-        <a href="#"><i class="fa fa-lg fa-fw fa-wrench"></i> <span class="menu-item-parent">기타관리</span></a>
-        <ul>
-            <li><a href="/manageSettings">설정정보</a></li>
-            <li><a href="/manageNoticeManage">공지관리</a></li>
-            <!--<li><a href="/manageIpBlock">IP차단</a></li>-->
-            <!--<li><a href="/manageAdminIp">관리자 IP</a></li>-->
-        </ul>
-    </li>
-        <li>
-            <a href="#"><i class="fa fa-lg fa-fw fa-wrench"></i> <span class="menu-item-parent">개발정보</span></a>
+                <ul>
+                    <li class="active">
+                        <a href="/dashBoard" title="Dashboard"><i class="fa fa-lg fa-fw fa-home"></i> <span class="menu-item-parent">대시보드</span></a>
+                    </li>
+                    <li>
+                        <a href="inbox.html"><i class="fa fa-lg fa-fw fa-inbox"></i> <span class="menu-item-parent">메세지</span><span class="badge pull-right inbox-badge">14</span></a>
+                    </li>
+                    <li>
+                        <a href="#"><i class="fa fa-lg fa-fw fa-gamepad"></i> <span class="menu-item-parent">게임관리</span></a>
+                        <ul>
+                            <li><a href="/gameInfo">게임정보</a></li>
+                            <li><a href="/gameStatus">진행게임정보</a></li>
+                            <li><a href="/gameFinished">종료게임정보</a></li>
+                            <li><a href="/gameCategoryInfo">게임분류정보</a></li>
+                            <li><a href="/gameUserBettingStatus">유저베팅현황</a></li>
+                            <li><a href="/gameHQUserBettingStatus">본사회원베팅현황</a></li>
+                            <li><a href="/gameBonusConfig">보너스배당</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#"><i class="fa fa-lg fa-fw fa-money"></i> <span class="menu-item-parent">머니내역</span></a>
+                        <ul>
+                            <li><a href="/moneyDeposit">충전내역</a></li>
+                            <li><a href="/moneyWithdraw">환전내역</a></li>
+                            <li><a href="/moneyDividend">배당내역</a></li>
+                            <li><a href="/moneyPurchase">베팅내역</a></li>
+                            <li><a href="/moneyPayment">지급내역</a></li>
+                            <li><a href="/moneyPayback">회수내역</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#"><i class="fa fa-lg fa-fw fa-user"></i> <span class="menu-item-parent">회원관리</span></a>
+                        <ul>
+                            <li><a href="/userInfo">회원정보</a></li>
+                            <li><a href="/userHQUser">운영회원</a></li>
+                            <li><a href="/userBettingUser">베팅회원</a></li>
+                            <li><a href="/userBlackList">블랙리스트</a></li>
+                            <li><a href="/userAgency">총판회원</a></li>
+                            <li><a href="/userBranch">매장회원</a></li>
+                            <li><a href="/userLeft">탈퇴회원</a></li>
+                            <li><a href="/userJoinApprove">가입승인 <span class="badge pull-right inbox-badge bg-color-yellow">new</span> </a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#"><i class="fa fa-lg fa-fw fa-bar-chart-o"></i> <span class="menu-item-parent">통계관리</span></a>
+                        <ul>
+                            <!--<li><a href="/statisticsInfo">통계정보</a></li>-->
+                            <!--<li><a href="/statisticsAggrBettingByTerm">기간별베팅집계</a></li>-->
+                            <!--<li><a href="/statisticsAggrBettingByUser">회원별베팅집계</a></li>-->
+                            <li><a href="/statisticsAggrMoneyByTerm">기간별입출금집계</a></li>
+                            <!--<li><a href="/statisticsAggrMoneyByUser">회원별입출금집계</a></li>-->
+                            <!--<li><a href="/statisticsMoneyByTerm">기간별금액</a></li>-->
+                            <li><a href="/statisticsSettle ">정산내역</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#"><i class="fa fa-lg fa-fw fa-group"></i> <span class="menu-item-parent">커뮤니티</span></a>
+                        <ul>
+                            <li><a href="/communityBoards">게시판</a></li>
+                            <li><a href="/communityBoardNotice">공지사항</a></li>
+                            <!--<li><a href="/communityEvents">이벤트</a></li>-->
+                            <!--<li><a href="/communityEventNotice">이벤트공지</a></li>-->
+                            <li><a href="/communityCs">고객센터</a></li>
+                            <!--<li><a href="/communityCsNotice">고객센터 공지</a></li>-->
+                            <!--<li><a href="/communityBoardManage">게시판관리</a></li>-->
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#"><i class="fa fa-lg fa-fw fa-wrench"></i> <span class="menu-item-parent">기타관리</span></a>
+                        <ul>
+                            <li><a href="/manageSettings">설정정보</a></li>
+                            <li><a href="/manageNoticeManage">공지관리</a></li>
+                            <!--<li><a href="/manageIpBlock">IP차단</a></li>-->
+                            <!--<li><a href="/manageAdminIp">관리자 IP</a></li>-->
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#"><i class="fa fa-lg fa-fw fa-wrench"></i> <span class="menu-item-parent">개발정보</span></a>
+                        <ul>
+                            <li><a href="/schema">스키마</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </nav>
+            <span class="minifyme"> <i class="fa fa-arrow-circle-left hit"></i> </span>
+
+        </aside>
+
+        <div id="shortcut">
             <ul>
-                <li><a href="/schema">스키마</a></li>
+                <li>
+                    <a href="#inbox.html" class="jarvismetro-tile big-cubes bg-color-blue"> <span class="iconbox"> <i class="fa fa-envelope fa-4x"></i> <span>Mail <span class="label pull-right bg-color-darken">14</span></span> </span> </a>
+                </li>
+                <li>
+                    <a href="#calendar.html" class="jarvismetro-tile big-cubes bg-color-orangeDark"> <span class="iconbox"> <i class="fa fa-calendar fa-4x"></i> <span>Calendar</span> </span> </a>
+                </li>
+                <li>
+                    <a href="#gmap-xml.html" class="jarvismetro-tile big-cubes bg-color-purple"> <span class="iconbox"> <i class="fa fa-map-marker fa-4x"></i> <span>Maps</span> </span> </a>
+                </li>
+                <li>
+                    <a href="#invoice.html" class="jarvismetro-tile big-cubes bg-color-blueDark"> <span class="iconbox"> <i class="fa fa-book fa-4x"></i> <span>Invoice <span class="label pull-right bg-color-darken">99</span></span> </span> </a>
+                </li>
+                <li>
+                    <a href="#gallery.html" class="jarvismetro-tile big-cubes bg-color-greenLight"> <span class="iconbox"> <i class="fa fa-picture-o fa-4x"></i> <span>Gallery </span> </span> </a>
+                </li>
+                <li>
+                    <a href="javascript:void(0);" class="jarvismetro-tile big-cubes selected bg-color-pinkDark"> <span class="iconbox"> <i class="fa fa-user fa-4x"></i> <span>My Profile </span> </span> </a>
+                </li>
             </ul>
-        </li>
-    </ul>
-    </nav>
-    <span class="minifyme"> <i class="fa fa-arrow-circle-left hit"></i> </span>
-
-    </aside>
-
-    <div id="shortcut">
-        <ul>
-            <li>
-                <a href="#inbox.html" class="jarvismetro-tile big-cubes bg-color-blue"> <span class="iconbox"> <i class="fa fa-envelope fa-4x"></i> <span>Mail <span class="label pull-right bg-color-darken">14</span></span> </span> </a>
-            </li>
-            <li>
-                <a href="#calendar.html" class="jarvismetro-tile big-cubes bg-color-orangeDark"> <span class="iconbox"> <i class="fa fa-calendar fa-4x"></i> <span>Calendar</span> </span> </a>
-            </li>
-            <li>
-                <a href="#gmap-xml.html" class="jarvismetro-tile big-cubes bg-color-purple"> <span class="iconbox"> <i class="fa fa-map-marker fa-4x"></i> <span>Maps</span> </span> </a>
-            </li>
-            <li>
-                <a href="#invoice.html" class="jarvismetro-tile big-cubes bg-color-blueDark"> <span class="iconbox"> <i class="fa fa-book fa-4x"></i> <span>Invoice <span class="label pull-right bg-color-darken">99</span></span> </span> </a>
-            </li>
-            <li>
-                <a href="#gallery.html" class="jarvismetro-tile big-cubes bg-color-greenLight"> <span class="iconbox"> <i class="fa fa-picture-o fa-4x"></i> <span>Gallery </span> </span> </a>
-            </li>
-            <li>
-                <a href="javascript:void(0);" class="jarvismetro-tile big-cubes selected bg-color-pinkDark"> <span class="iconbox"> <i class="fa fa-user fa-4x"></i> <span>My Profile </span> </span> </a>
-            </li>
-        </ul>
+        </div>
     </div>
 </template>
