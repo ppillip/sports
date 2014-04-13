@@ -1,17 +1,20 @@
 Router.map(function () {
 	/*회원관리 > 회원정보 상세화면*/
 	this.route('userDetails', {
-		path: '/userDetails'
+		path: '/userDetails/:_id'
 		,template:'userDetails'
 		,waitOn: function () {
+			$('#header').hide();
+			$('[name=aLeftPanel]').hide();
 			return [
 				Meteor.subscribe('회원')
+				,Meteor.subscribe('총판매장')
 			];
 		}
 		,data: function() {
-			Session.set("현재화면이름", '회원상세')
+			Session.set("현재화면이름", '회원상세');
 			return {
-				testData     : '회원상세'
+				selectedId     : this.params._id
 			}
 		}
 	});
