@@ -22,7 +22,7 @@ this.route('gameCreate', {
         Session.set('isPopup',true);
     }
     ,waitOn: function () {
-        return [  ];
+        return [Meteor.subscribe('리그전체목록')];
     }
     ,data: function() {
         return {

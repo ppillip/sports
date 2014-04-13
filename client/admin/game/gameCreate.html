@@ -42,13 +42,15 @@
 </template>
 
 <template name="gameCreateInput">
-    <tr name="game">
+    <tr name="game" id="{{_id}}">
         <td><input type="text" name="" class="input"  style="width:100px;"/></td>
         <td>
             <input type="text" name="" class="input"  style="width:55px;"/>
             <input type="text" name="" class="input"  style="width:55px;"/>
         </td>
-        <td><input type="text" name="" class="input" /></td>
+        <td>
+            {{> inputAutocomplete settings=settings class="input-xlarge" placeholder="@ 입력"}}
+        </td>
         <td><input type="text" name="" class="input" /></td>
         <td><input type="text" name="" class="input" /></td>
         <td><input type="text" name="" class="pull-center" style="width:50px;"/></td>
@@ -70,6 +72,10 @@
             <button type="button" name="removeThisLine" class="btn btn-default">삭제</button>
         </td>
     </tr>
+</template>
+
+<template name="clientCollectionPill">
+    {{경로명}}<!-- <small class="muted">({{경로명}})</small>-->
 </template>
 
 

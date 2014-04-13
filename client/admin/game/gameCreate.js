@@ -41,6 +41,14 @@ Template.gameCreateInput.events({
     "click button[name=removeThisLine]" : function(e,tmpl){
         Bulk.remove({_id:this._id});
     }
+    ,
+    "focus input" : function(e,tmpl){
+
+        var tr = $(e.target).closest("tr[name=game]");
+
+        console.log( $(tr).attr("id") );
+
+    }
 });
 
 Template.gameCreateInput.rendered = function(){
@@ -50,3 +58,27 @@ Template.gameCreateInput.rendered = function(){
 Template.gameCreateInput.helpers({
 
 });
+
+
+
+Template.gameCreateInput.settings = {
+    position: 'bottom',
+    limit: 30,  // more than 20, to emphasize matches outside strings *starting* with the filter
+    rules: [
+        {
+            token: '@',
+            collection: '게임카테고리리그',  // Meteor.Collection object means client-side collection
+            field: 'fullPath',
+            limit: 10000,
+            // set to true to search anywhere in the field, which cannot use an index.
+            matchAll: true,  // 'ba' will match 'bar' and 'baz' first, then 'abacus'
+            option:'g',
+            template: Template.clientCollectionPill,
+            callback: function(doc) {
+
+
+                console.log(doc);
+            }
+        }
+    ]
+};

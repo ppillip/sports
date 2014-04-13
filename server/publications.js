@@ -17,6 +17,12 @@ Meteor.publish('종목별리그', function(id) {
     return 게임카테고리리그.find({'소속종목_id':id});
 });
 
+Meteor.publish('리그전체목록', function(text) {
+    console.log('publish',' 리그전체목록');
+    return 게임카테고리리그.find();
+});
+
+
 Meteor.publish('회원', function() {
    return 회원.find();
 });

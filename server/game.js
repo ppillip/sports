@@ -36,6 +36,9 @@ Meteor.methods({
 
     }
     ,
+    /*
+     *   소분류 저장
+     * */
     saveGameCategoryLeague: function(obj, blob, name, encoding) {
         console.log('# saveGameCategoryLeague');
 
