@@ -23,6 +23,9 @@ Template.gameCreate.created = function(){
 Template.gameCreate.helpers({
     blankList : function(){
         return Bulk.find();
+    },
+    nba :  function(){
+        return ['축구','축축구','축축축구'];
     }
 });
 
@@ -41,6 +44,7 @@ Template.gameCreateInput.events({
     "click button[name=removeThisLine]" : function(e,tmpl){
         Bulk.remove({_id:this._id});
     }
+
     ,
     "focus input" : function(e,tmpl){
 
@@ -49,36 +53,35 @@ Template.gameCreateInput.events({
         console.log( $(tr).attr("id") );
 
     }
+    ,
+    //??????????
+    "focus .typeahead" : function(e,tmpl){
+
+        Meteor.typeahead.inject();
+
+        console.log('여기야','오ㅑㅗ야');
+        //Meteor.typeahead(e.target);
+
+    }
+
+
+
 });
 
 Template.gameCreateInput.rendered = function(){
-
 };
 
 Template.gameCreateInput.helpers({
-
+    nba :  function(){
+        return ['축구','축축구','축축축구'];
+    }
 });
 
 
-
-Template.gameCreateInput.settings = {
-    position: 'bottom',
-    limit: 30,  // more than 20, to emphasize matches outside strings *starting* with the filter
-    rules: [
-        {
-            token: '@',
-            collection: '게임카테고리리그',  // Meteor.Collection object means client-side collection
-            field: 'fullPath',
-            limit: 10000,
-            // set to true to search anywhere in the field, which cannot use an index.
-            matchAll: true,  // 'ba' will match 'bar' and 'baz' first, then 'abacus'
-            option:'g',
-            template: Template.clientCollectionPill,
-            callback: function(doc) {
+//UI.body.rendered = function(){
+//    Meteor.typeahead.inject();
+//};
 
 
-                console.log(doc);
-            }
-        }
-    ]
-};
+
+

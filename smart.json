@@ -3,6 +3,6 @@
     "iron-router": {},
     "iron-router-progress": {},
     "streams": {},
-    "autocomplete": {}
+    "typeahead": {}
   }
 }
